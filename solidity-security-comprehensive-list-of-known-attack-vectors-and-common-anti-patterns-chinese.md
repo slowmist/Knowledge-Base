@@ -55,7 +55,7 @@
 	* [预防技术](#预防技术-8)
 	* [真实的例子：Etherpot和以太之王](#真实的例子etherpot和以太之王)
 
-* [竞争条件/非法预先交易](#竞争条件非法预先交易)
+* [条件竞争/非法预先交易](#条件竞争非法预先交易)
 	* [漏洞](#漏洞-9)
 	* [预防技术](#预防技术-9)
 	* [真实世界的例子：ERC20和Bancor](#真实世界的例子erc20和bancor)
@@ -112,11 +112,11 @@
 
 以太坊智能合约的特点之一是能够调用和利用其他外部合约的代码。合约通常也处理Ether，因此通常会将Ether发送给各种外部用户地址。调用外部合约或将以太网发送到地址的操作需要合约提交外部调用。这些外部调用可能被攻击者劫持，迫使合约执行进一步的代码（即通过回退函数），包括回调自身。因此代码执行“ 重新进入 ”合约。这种攻击被用于臭名昭着的DAO攻击。
 
-有关重新入侵攻击的进一步阅读，请参阅[重入式对智能合约](https://medium.com/@gus_tavo_guim/reentrancy-attack-on-smart-contracts-how-to-identify-the-exploitable-and-an-example-of-an-attack-4470a2d8dfe4)和[Consensus - 以太坊智能合约最佳实践](https://consensys.github.io/smart-contract-best-practices/known_attacks/#dos-with-unexpected-revert)。
+有关重入攻击的进一步阅读，请参阅[重入式对智能合约](https://medium.com/@gus_tavo_guim/reentrancy-attack-on-smart-contracts-how-to-identify-the-exploitable-and-an-example-of-an-attack-4470a2d8dfe4)和[Consensus - 以太坊智能合约最佳实践](https://consensys.github.io/smart-contract-best-practices/known_attacks/#dos-with-unexpected-revert)。
 
 ### 漏洞
 
-当合约将ether发送到未知地址时，可能会发生此攻击。攻击者可以在[fallback函数](https://solidity.readthedocs.io/en/latest/contracts.html?highlight=fallback#fallback-function)中的外部地址处构建一个包含恶意代码的合约。因此，当合约向此地址发送ether时，它将调用恶意代码。通常，恶意代码在易受攻击的合约上执行一项功能，执行开发人员不希望的操作。“再入侵”这个名称来源于外部恶意合约回复了易受攻击合约的功能，并在易受攻击的合约的任意位置“ 重新输入”了代码执行。
+当合约将ether发送到未知地址时，可能会发生此攻击。攻击者可以在[fallback函数](https://solidity.readthedocs.io/en/latest/contracts.html?highlight=fallback#fallback-function)中的外部地址处构建一个包含恶意代码的合约。因此，当合约向此地址发送ether时，它将调用恶意代码。通常，恶意代码在易受攻击的合约上执行一项功能，执行开发人员不希望的操作。“重入”这个名称来源于外部恶意合约回复了易受攻击合约的功能，并在易受攻击的合约的任意位置“ 重新输入”了代码执行。
 
 为了澄清这一点，请考虑简单易受伤害的合约，该合约充当以太坊保险库，允许存款人每周只提取1个Ether。
 
@@ -185,11 +185,11 @@ contract Attack {
 }
 ```
 
-让我们看看这个恶意合约是如何利用我们的EtherStore合约的。攻击者可以0x0...123使用EtherStore合约地址作为构造函数参数来创建上述合约（假设在地址中）。这将初始化并将公共变量etherStore指向我们想要攻击的合约。
+让我们看看这个恶意合约是如何利用我们的`EtherStore`合约的。攻击者可以`0x0...123`使用`EtherStore`合约地址作为构造函数参数来创建上述合约（假设在地址中）。这将初始化并将公共变量`etherStore`指向我们想要攻击的合约。
 
-然后攻击者会调用这个pwnEtherStore()函数，并且有一些以太（大于或等于1），1 ether这个例子可以说。在这个例子中，我们假设一些其他用户已经将以太币存入这份合约中，这样它的当前余额就是10 ether。然后会发生以下情况：
+然后攻击者会调用这个`pwnEtherStore()`函数，并且有一些以太（大于或等于1），`1 ether`这个例子可以说。在这个例子中，我们假设一些其他用户已经将以太币存入这份合约中，这样它的当前余额就是`10 ether`。然后会发生以下情况：
 
-1. Attack.sol -Line[15] -的depositFunds()所述EtherStore合约的功能将与被叫msg.value的1 ether（和大量gas）。sender（msg.sender）将是我们的恶意合约（0x0...123）。因此，balances[0x0..123] = 1 ether。
+1. Attack.sol -Line[15] -的`depositFunds()`所述EtherStore合约的功能将与被叫`msg.value`的`1 ether`（和大量gas）。sender（msg.sender）将是我们的恶意合约`（0x0...123）`。因此，`balances[0x0..123] = 1 ether`。
 1. Attack.sol - Line [17] - 恶意合约将使用一个参数来调用合约的withdrawFunds()功能。这将通过所有要求（合约的行[12] - [16] ），因为我们以前没有提款。
 1. EtherStore.sol - 行[17] - 合约将发送1 ether回恶意合约。
 1. Attack.sol - Line [25] - 发送给恶意合约的以太网将执行后备功能。
@@ -205,9 +205,9 @@ contract Attack {
 
 ### 预防技术
 
-有许多常用技术可以帮助避免智能合约中潜在的重入漏洞。首先是（在可能的情况下）在将ether发送给外部合约时使用内置的transfer（）函数。转账功能只发送2300 gas不足以使目的地地址/合约调用另一份合约（即重新输入发送合约）。
+有许多常用技术可以帮助避免智能合约中潜在的重入漏洞。首先是（在可能的情况下）在将ether发送给外部合约时使用内置的[transfer()函数](http://solidity.readthedocs.io/en/latest/units-and-global-variables.html#address-related)。转账功能只发送2300 gas不足以使目的地地址/合约调用另一份合约（即重新输入发送合约）。
 
-第二种技术是确保所有改变状态变量的逻辑发生在ether被发送出合约（或任何外部调用）之前。在这个EtherStore例子中，[18]和[19]行EtherStore.sol应放在行[17]之前。将任何执行外部调用的代码放置在未知地址上作为本地化函数或代码执行中的最后一个操作是一种很好的做法。这被称为检查效果交互模式。
+第二种技术是确保所有改变状态变量的逻辑发生在ether被发送出合约（或任何外部调用）之前。在这个EtherStore例子中，[18]和[19]行EtherStore.sol应放在行[17]之前。将任何执行外部调用的代码放置在未知地址上作为本地化函数或代码执行中的最后一个操作是一种很好的做法。这被称为[检查效果交互(checks-effects-interactions)](http://solidity.readthedocs.io/en/latest/security-considerations.html#use-the-checks-effects-interactions-pattern)模式。
 
 第三种技术是引入互斥锁。也就是说，要添加一个在代码执行过程中锁定合约的状态变量，阻止重入调用。
 应用所有这些技术（所有这三种技术都是不必要的，但是这些技术是为了演示目的而完成的）
@@ -247,7 +247,7 @@ contract EtherStore {
 
 ### 真实的例子：DAO
 
-[DAO](https://en.wikipedia.org/wiki/The_DAO_(organization))（分散式自治组织）是以太坊早期发展的主要黑客之一。当时，该合约持有1.5亿美元以上。重新入侵在这次攻击中发挥了重要作用，最终导致了Ethereum Classic（ETC）的分叉。有关DAO漏洞的详细分析，请参阅[Phil Daian的文章](http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/)。
+[DAO](https://en.wikipedia.org/wiki/The_DAO_(organization))（分散式自治组织）是以太坊早期发展的主要黑客之一。当时，该合约持有1.5亿美元以上。重入在这次攻击中发挥了重要作用，最终导致了Ethereum Classic（ETC）的分叉。有关DAO漏洞的详细分析，请参阅[Phil Daian的文章](http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/)。
 
 ## 算法上下溢出
 
@@ -295,7 +295,7 @@ contract TimeLock {
 
 攻击者可以确定lockTime他们现在拥有密钥的地址（它是一个公共变量）。我们称之为userLockTime。然后他们可以调用该increaseLockTime函数并将该数字作为参数传递2^256 - userLockTime。该号码将被添加到当前userLockTime并导致溢出，重置lockTime[msg.sender]为0。攻击者然后可以简单地调用withdraw函数来获得他们的奖励。
 
-我们来看另一个例子，来自Ethernaut Challanges的这个例子。
+我们来看另一个例子，来自[Ethernaut Challanges](https://github.com/OpenZeppelin/ethernaut)的这个例子。
 
 SPOILER ALERT： 如果你还没有完成Ethernaut的挑战，这可以解决其中一个难题。
 
@@ -332,7 +332,7 @@ contract Token {
 
 防止溢出漏洞的（当前）常规技术是使用或建立取代标准数学运算符的数学库; 加法，减法和乘法（划分被排除，因为它不会导致过量/不足流量，并且EVM将被0除法）。
 
-OppenZepplin在构建和审计Ethereum社区可以利用的安全库方面做得非常出色。特别是，他们的安全数学库是一个参考或库，用来避免漏洞/溢出漏洞。
+[OppenZepplin](https://github.com/OpenZeppelin/zeppelin-solidity)在构建和审计Ethereum社区可以利用的安全库方面做得非常出色。特别是，他们的[SafeMath](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/math/SafeMath.sol)是一个参考或库，用来避免漏洞/溢出漏洞。
 
 为了演示如何在Solidity中使用这些库，让我们TimeLock使用Open Zepplin的SafeMath库更正合约。超自由合约将变为：
 
@@ -393,21 +393,21 @@ contract TimeLock {
 请注意，所有标准的数学运算已被SafeMath库中定义的数学运算所取代。该TimeLock合约不再执行任何能够进行一个 向下/越界的操作。
 
 
-### 实际示例：PoWHC和批量传输溢出（CVE-2018-10299）
+### 实际示例：PoWHC和批量传输溢出（[CVE-2018-10299](https://nvd.nist.gov/vuln/detail/CVE-2018-10299)）
 
-一个4chan小组决定用Solidity编写一个在Ethereum上构建庞氏骗局的好主意。他们称它为弱手硬币证明（PoWHC）。不幸的是，似乎合约的作者之前没有看到过/不足的流量，因此，866Ether从合约中解放出来。在Eric Banisadar的文章中，我们很好地概述了下溢是如何发生的（这与上面的Ethernaut挑战不太相似）。
+一个4chan小组决定用Solidity编写一个在Ethereum上构建庞氏骗局的好主意。他们称它为弱手硬币证明（PoWHC）。不幸的是，似乎合约的作者之前没有看到过/不足的流量，因此，866Ether从合约中解放出来。在[Eric Banisadar的文章](https://blog.goodaudience.com/how-800k-evaporated-from-the-powh-coin-ponzi-scheme-overnight-1b025c33b530)中，我们很好地概述了下溢是如何发生的（这与上面的Ethernaut挑战不太相似）。
 
-一些开发人员还batchTransfer()为一些ERC20令牌合约实施了一项功能。该实现包含溢出。这篇文章对此进行了解释，但是我认为标题有误导性，因为它与ERC20标准无关，而是一些ERC20令牌合约batchTransfer()实施了易受攻击的功能。
+一些开发人员还batchTransfer()为一些[ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)令牌合约实施了一项功能。该实现包含溢出。[这篇文章](https://medium.com/@peckshield/alert-new-batchoverflow-bug-in-multiple-erc20-smart-contracts-cve-2018-10299-511067db6536)对此进行了解释，但是我认为标题有误导性，因为它与ERC20标准无关，而是一些ERC20令牌合约batchTransfer()实施了易受攻击的功能。
 
 ## 意外的Ether
 
 通常，当Ether发送到合约时，它必须执行回退功能或合约中描述的其他功能。这有两个例外，其中ether可以存在于合约中而不执行任何代码。依赖代码执行的合约发送给合约的每个以太可能容易受到强制发送给合约的攻击。
 
-关于这方面的进一步阅读，请参阅如何保护您的智能合约：6和Solidity security patterns - forcing ether to a contract .。
+关于这方面的进一步阅读，请参阅[如何保护您的智能合约：6](https://medium.com/loom-network/how-to-secure-your-smart-contracts-6-solidity-vulnerabilities-and-how-to-avoid-them-part-2-730db0aa4834)和[Solidity security patterns - forcing ether to a contract](http://danielszego.blogspot.com.au/2018/03/solidity-security-patterns-forcing.html)
 
 ### 漏洞
 
-一种常用的防御性编程技术对于执行正确的状态转换或验证操作很有用，它是不变检查。该技术涉及定义一组不变量（不应改变的度量或参数），并且在单个（或多个）操作之后检查这些不变量保持不变。这通常是很好的设计，只要检查的不变量实际上是不变量。不变量的一个例子是totalSupply固定发行ERC20令牌。由于没有函数应该修改此不变量，因此可以在该transfer()函数中添加一个检查以确保totalSupply保持未修改状态，以确保函数按预期工作。
+一种常用的防御性编程技术对于执行正确的状态转换或验证操作很有用，它是不变检查。该技术涉及定义一组不变量（不应改变的度量或参数），并且在单个（或多个）操作之后检查这些不变量保持不变。这通常是很好的设计，只要检查的不变量实际上是不变量。不变量的一个例子是totalSupply固定发行[ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)令牌。由于没有函数应该修改此不变量，因此可以在该transfer()函数中添加一个检查以确保totalSupply保持未修改状态，以确保函数按预期工作。
 
 不管智能合约中规定的规则如何，特别是有一个明显的“不变”，可能会诱使开发人员使用，但事实上可以由外部用户操纵。这是合约中存储的当前以太。通常，当开发人员首先学习Solidity时，他们有一种误解，认为合约只能通过付费功能接受或获得以太。这种误解可能会导致合约对其内部的以太平衡有错误的假设，这会导致一系列的漏洞。此漏洞的吸烟枪是（不正确）使用this.balance。正如我们将看到的，错误的使用this.balance会导致这种类型的严重漏洞。
 
@@ -415,11 +415,11 @@ contract TimeLock {
 
 #### 自毁/自杀
 
-任何合约都能够实现该selfdestruct(address)功能，该功能从合约地址中删除所有字节码，并将所有存储在那里的ether发送到参数指定的地址。如果此指定的地址也是合约，则不会调用任何功能（包括故障预置）。因此，selfdestruct()无论合约中可能存在的任何代码，该功能都可以用来强制将Ether 发送给任何合约。这包括没有任何应付功能的合约。这意味着，任何攻击者都可以与某个selfdestruct()功能创建合约，向其发送以太，致电selfdestruct(target)并强制将以太网发送至target合约。Martin Swende有一篇出色的博客文章 描述了自毁操作码（Quirk＃2）的一些怪癖，并描述了客户端节点如何检查不正确的不变量，这可能会导致相当灾难性的客户端问题。
+任何合约都能够实现该[selfdestruct(address)](http://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#self-destruct)功能，该功能从合约地址中删除所有字节码，并将所有存储在那里的ether发送到参数指定的地址。如果此指定的地址也是合约，则不会调用任何功能（包括故障预置）。因此，selfdestruct()无论合约中可能存在的任何代码，该功能都可以用来强制将Ether 发送给任何合约。这包括没有任何应付功能的合约。这意味着，任何攻击者都可以与某个selfdestruct()功能创建合约，向其发送以太，致电selfdestruct(target)并强制将以太网发送至target合约。Martin Swende有一篇出色的[博客文章](http://martin.swende.se/blog/Ethereum_quirks_and_vulns.html)描述了自毁操作码（Quirk＃2）的一些怪癖，并描述了客户端节点如何检查不正确的不变量，这可能会导致相当灾难性的客户端问题。
 
 #### 预先发送Ether
 
-合约可以不使用selfdestruct()函数或调用任何应付函数就可以获得以太的第二种方式是使用ether 预装合约地址。合约地址是确定性的，实际上地址是根据创建合约的地址的哈希值和创建合约的事务现时值计算得出的。即形式：（address = sha3(rlp.encode([account_address,transaction_nonce]))请参阅无钥匙以太网的一些有趣的使用情况）。这意味着，任何人都可以在创建合约地址之前计算出合约地址，并将Ether发送到该地址。当合约确实创建时，它将具有非零的Ether余额。
+合约可以不使用selfdestruct()函数或调用任何应付函数就可以获得以太的第二种方式是使用ether 预装合约地址。合约地址是确定性的，实际上地址是根据创建合约的地址的哈希值和创建合约的事务现时值计算得出的。即形式：（address = sha3(rlp.encode([account_address,transaction_nonce]))请参阅[Keyless Ether](https://github.com/sigp/solidity-security-blog#keyless-eth)的一些有趣的使用情况）。这意味着，任何人都可以在创建合约地址之前计算出合约地址，并将Ether发送到该地址。当合约确实创建时，它将具有非零的Ether余额。
 根据上述知识，我们来探讨一些可能出现的缺陷。
 考虑过于简单的合约，
 
@@ -466,7 +466,7 @@ contract EtherGame {
  }    
 ```
 
-这个合约代表一个简单的游戏（自然会引起竞争条件），玩家0.5 ether可以将合约发送给合约，希望成为第一个达到三个里程碑之一的玩家。里程碑以ether计价。当游戏结束时，第一个达到里程碑的人可能会要求其中的一部分。当达到最后的里程碑（10 ether）时，游戏结束，用户可以申请奖励。
+这个合约代表一个简单的游戏（自然会引起[条件竞争](#条件竞争非法预先交易)），玩家0.5 ether可以将合约发送给合约，希望成为第一个达到三个里程碑之一的玩家。里程碑以ether计价。当游戏结束时，第一个达到里程碑的人可能会要求其中的一部分。当达到最后的里程碑（10 ether）时，游戏结束，用户可以申请奖励。
 
 EtherGame合约的问题来自this.balance两条线[14]（以及协会[16]）和[32] 的不良使用。一个调皮的攻击者可以0.1 ether通过selfdestruct()函数（上面讨论过的）强行发送少量的以太，以防止未来的玩家达到一个里程碑。由于所有合法玩家只能发送0.5 ether增量，this.balance不再是半个整数，因为它也会0.1 ether有贡献。这可以防止[18]，[21]和[24]行的所有条件成立。
 
@@ -526,14 +526,15 @@ contract EtherGame {
 
 ### 真实世界的例子：未知
 
-我还没有找到这个在野被利用的例子。然而，在弱势群体竞赛中给出了一些可利用的合约的例子。
+我还没有找到这个在野被利用的例子。然而，在弱势群体竞赛中给出了一些[可利用的合约的例子](https://github.com/Arachnid/uscc/tree/master/submissions-2017/)。
 
 ## Delegatecall
 
 在CALL与DELEGATECALL操作码是允许Ethereum开发者modularise他们的代码非常有用。对契约的标准外部消息调用由CALL操作码处理，由此代码在外部契约/功能的上下文中运行。该DELEGATECALL码是相同的标准消息的调用，但在目标地址执行的代码在调用合约的情况下与事实一起运行msg.sender，并msg.value保持不变。该功能支持实现库，开发人员可以为未来的合约创建可重用的代码。
 
 虽然这两个操作码之间的区别很简单直观，但是使用DELEGATECALL会导致意外的代码执行。
-有关进一步阅读，请参阅以太坊交换问题，固体文档以及如何保护您的智能合约：6。
+
+有关进一步阅读，请参阅[Stake Exchange上关于以太坊的这篇提问](https://ethereum.stackexchange.com/questions/3667/difference-between-call-callcode-and-delegatecall)，[官方文档](http://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#delegatecall-callcode-and-libraries)以及[如何保护您的智能合约：6](https://medium.com/loom-network/how-to-secure-your-smart-contracts-6-solidity-vulnerabilities-and-how-to-avoid-them-part-1-c33048d4d17d)。
 
 ### 漏洞
 
@@ -605,7 +606,7 @@ contract FibonacciBalance {
 
 该合约允许参与者从合约中提取ether，ether的金额等于与参与者提款订单相对应的斐波纳契数字; 即第一个参与者获得1个ether，第二个参与者获得1，第三个获得2，第四个获得3，第五个5等等（直到合约的余额小于被撤回的斐波纳契数）。
 
-本合约中有许多要素可能需要一些解释。首先，有一个有趣的变量，fibSig。这包含字符串“fibonacci（uint256）”的Keccak（SHA-3）散列的前4个字节。这被称为函数选择器，calldata用于指定智能合约的哪个函数将被调用。它在delegatecall[21]行的函数中用来指定我们希望运行该fibonacci(uint256)函数。第二个参数delegatecall是我们传递给函数的参数。其次，我们假设FibonacciLib库的地址在构造函数中正确引用（部署攻击向量部分 如果合约参考初始化，讨论一些与此类相关的潜在漏洞）。
+本合约中有许多要素可能需要一些解释。首先，有一个有趣的变量，fibSig。这包含字符串“fibonacci（uint256）”的Keccak（SHA-3）散列的前4个字节。这被称为[函数选择器](https://solidity.readthedocs.io/en/latest/abi-spec.html#function-selector)，calldata用于指定智能合约的哪个函数将被调用。它在delegatecall[21]行的函数中用来指定我们希望运行该fibonacci(uint256)函数。第二个参数delegatecall是我们传递给函数的参数。其次，我们假设FibonacciLib库的地址在构造函数中正确引用（[部署攻击向量](https://github.com/sigp/solidity-security-blog#deployment)部分 如果合约参考初始化，讨论一些与此类相关的潜在漏洞）。
 
 你能在这份合约中发现任何错误吗？如果你把它改成混音，用ether填充并调用withdraw()，它可能会恢复。
 
@@ -962,7 +963,7 @@ contract Print{
 
 一般来说，应该仔细查看调用外部契约的代码。作为开发人员，在定义外部合约时，最好将合约地址公开（这种情况并非如此），以便用户轻松查看合约引用哪些代码。相反，如果合约具有私人变量合约地址，则它可能是某人恶意行为的标志（如现实示例中所示）。如果特权（或任何）用户能够更改用于调用外部函数的合约地址，则可能很重要（在分散的系统上下文中）来实现时间锁定或投票机制，以允许用户查看哪些代码正在改变或让参与者有机会选择加入/退出新的合约地址。
 
-### 真实世界的例子：再入侵蜜罐
+### 真实世界的例子：重入蜜罐
 
 主网上发布了一些最近的蜜罐。这些合约试图胜过试图利用合约的以太坊黑客，但是谁又会因为他们期望利用的合约而失败。一个例子是通过在构造函数中用恶意代替期望的合约来应用上述攻击。代码可以在这里找到：
 
@@ -1135,9 +1136,9 @@ Etherpot是一个聪明的合约彩票，与上面提到的示例合约不太相
 
 这个错误的更严重的版本发生在以太之王。一个优秀的验尸本合约已被写入详细介绍了如何一个未经检查的失败send()可能会被用来攻击的合约。
 
-## 竞争条件/非法预先交易
+## 条件竞争/非法预先交易
 
-将外部调用与其他合约以及底层区块链的多用户特性结合在一起会产生各种潜在的缺陷，用户可以通过争用代码来获取意外状态。再入侵是这种竞争条件的一个例子。在本节中，我们将更一般地讨论以太坊区块链上可能发生的各种竞态条件。在这个领域有很多不错的帖子，其中一些是：以太坊Wiki - 安全，DASP - 前台运行和共识 - 智能合约最佳实践。
+将外部调用与其他合约以及底层区块链的多用户特性结合在一起会产生各种潜在的缺陷，用户可以通过争用代码来获取意外状态。重入是这种条件竞争的一个例子。在本节中，我们将更一般地讨论以太坊区块链上可能发生的各种竞态条件。在这个领域有很多不错的帖子，其中一些是：以太坊Wiki - 安全，DASP - 前台运行和共识 - 智能合约最佳实践。
 
 ### 漏洞
 
