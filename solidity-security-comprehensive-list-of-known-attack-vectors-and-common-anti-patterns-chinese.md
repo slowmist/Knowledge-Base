@@ -146,7 +146,7 @@ contract EtherStore {
  }
 ```
 
-该合约有两个公共职能。`depositFunds()`和`withdrawFunds()`。该`depositFunds()`功能只是增加发件人余额。该`withdrawFunds()`功能允许发件人指定要撤回的wei的数量。如果所要求的退出金额小于1Ether并且在上周没有发生撤回，它才会成功。还是呢？...
+该合约有两个公共职能。`depositFunds()`和`withdrawFunds()`。该`depositFunds()`功能只是增加发件人余额。该`withdrawFunds()`功能允许发件人指定要撤回的wei的数量。如果所要求的退出金额小于1Ether并且在上周没有发生撤回，它才会成功。还是？...
 
 该漏洞出现在[17]行，我们向用户发送他们所要求的以太数量。考虑一个恶意攻击者创建下列合约，
 
@@ -185,21 +185,21 @@ contract Attack {
 }
 ```
 
-让我们看看这个恶意合约是如何利用我们的`EtherStore`合约的。攻击者可以`0x0...123`使用`EtherStore`合约地址作为构造函数参数来创建上述合约（假设在地址中）。这将初始化并将公共变量`etherStore`指向我们想要攻击的合约。
+让我们看看这个恶意合约是如何利用我们的`EtherStore`合约的。攻击者可以（假定恶意合约地址为`0x0...123`）使用`EtherStore`合约地址作为构造函数参数来创建上述合约。这将初始化并将公共变量`etherStore`指向我们想要攻击的合约。
 
-然后攻击者会调用这个`pwnEtherStore()`函数，并且有一些以太（大于或等于1），`1 ether`这个例子可以说。在这个例子中，我们假设一些其他用户已经将以太币存入这份合约中，这样它的当前余额就是`10 ether`。然后会发生以下情况：
+然后攻击者会调用这个`pwnEtherStore()`函数，并存入一些ehter（大于或等于1），比方说1 ehter,在这个例子中。在这个例子中，我们假设一些其他用户已经将若干ehter存入这份合约中，比方说它的当前余额就是`10 ether`。然后会发生以下情况：
 
-1. Attack.sol -Line[15] -的`depositFunds()`所述EtherStore合约的功能将与被叫`msg.value`的`1 ether`（和大量gas）。sender（msg.sender）将是我们的恶意合约`（0x0...123）`。因此，`balances[0x0..123] = 1 ether`。
-1. Attack.sol - Line [17] - 恶意合约将使用一个参数来调用合约的withdrawFunds()功能。这将通过所有要求（合约的行[12] - [16] ），因为我们以前没有提款。
-1. EtherStore.sol - 行[17] - 合约将发送1 ether回恶意合约。
-1. Attack.sol - Line [25] - 发送给恶意合约的以太网将执行后备功能。
-1. Attack.sol - Line [26] - EtherStore合约的总余额是10 ether，现在9 ether是这样，如果声明通过。
-1. Attack.sol - Line [27] - 回退函数然后EtherStore withdrawFunds()再次调用该函数并“ 重新输入 ” EtherStore合约。
-1. EtherStore.sol - 行[11] - 在第二次调用时withdrawFunds()，我们的余额仍然1 ether是行[18]尚未执行。因此，我们仍然有balances[0x0..123] = 1 ether。lastWithdrawTime变量也是这种情况。我们再次通过所有要求。
-1. EtherStore.sol - 行[17] - 我们撤回另一个1 ether。
-1. 步骤4-8将重复 - 直到EtherStore.balance >= 1[26]行所指定的Attack.sol。
-1. Attack.sol - Line [26] - 一旦在EtherStore合约中留下少于1（或更少）的ether，此if语句将失败。这样就EtherStore可以执行合约的[18]和[19]行（每次调用withdrawFunds()函数）。
-1. EtherStore.sol - 行[18]和[19] - balances和lastWithdrawTime映射将被设置并且执行将结束。
+1. Attack.sol -Line[15] -EtherStore合约的`despoitFunds`函数将会被调用，并伴随1 ether的mag.value(和大量的gas)。sender（msg.sender）将是我们的恶意合约`（0x0...123）`。因此，`balances[0x0..123] = 1 ether`。
+2. Attack.sol - Line [17] - 恶意合约将使用一个参数来调用合约的withdrawFunds()功能。这将通过所有要求（合约的行[12] - [16] ），因为我们以前没有提款。
+3. EtherStore.sol - 行[17] - 合约将发送1 ether回恶意合约。
+4. Attack.sol - Line [25] - 发送给恶意合约的ether将执行fallback函数。
+5. Attack.sol - Line [26] - EtherStore合约的总余额是10 ether，现在是9 ether，如果声明通过。
+6. Attack.sol - Line [27] - 回退函数然后再次动用EtherStore中的withdrawFunds()函数并“ 重入 ” EtherStore合约。
+7. EtherStore.sol - 行[11]- 在第二次调用时withdrawFunds()，我们的余额仍然1 ether是因为行[18]尚未执行。因此，我们仍然有balances[0x0..123] = 1 ether。lastWithdrawTime变量也是这种情况。我们再次通过所有要求。
+8. EtherStore.sol - 行[17] - 我们撤回另一个1 ether。
+9. 步骤4-8将重复 - 直到EtherStore.balance >= 1[26]行所指定的Attack.sol。
+10. Attack.sol - Line [26] - 一旦在EtherStore合约中留下少于1（或更少）的ether，此if语句将失败。这样就EtherStore可以执行合约的[18]和[19]行（每次调用withdrawFunds()函数）。
+11. EtherStore.sol - 行[18]和[19] - balances和lastWithdrawTime映射将被设置并且执行将结束。
 
 最终的结果是，攻击者已经从EtherStore合约中立即撤销了所有（第1条）以太网，只需一笔交易即可。
 
