@@ -11,114 +11,114 @@
 ## 目录
 
 * [重入漏洞](#重入漏洞)
-	* [漏洞](#漏洞)
-	* [预防技术](#预防技术)
-	* [真实世界的例子：DAO](#真实世界的例子dao)
+  * [漏洞](#漏洞)
+  * [预防技术](#预防技术)
+  * [真实世界的例子：DAO](#真实世界的例子dao)
 
 * [算法上下溢出](#算法上下溢出)
-	* [漏洞](#漏洞-1)
-	* [预防技术](#预防技术-1)
-	* [实际示例：PoWHC和批量传输溢出（CVE-2018-10299）](#实际示例powhc和批量传输溢出cve-2018-10299)
+  * [漏洞](#漏洞-1)
+  * [预防技术](#预防技术-1)
+  * [实际示例：PoWHC和批量传输溢出（CVE-2018-10299）](#实际示例powhc和批量传输溢出cve-2018-10299)
 
 * [意外的Ether](#意外的ether)
-	* [漏洞](#漏洞-2)
-	* [预防技术](#预防技术-2)
-	* [真实世界的例子：未知](#真实世界的例子未知)
+  * [漏洞](#漏洞-2)
+  * [预防技术](#预防技术-2)
+  * [真实世界的例子：未知](#真实世界的例子未知)
 
 * [Delegatecall](#delegatecall)
-	* [漏洞](#漏洞-3)
-	* [预防技术](#预防技术-3)
-	* [真实世界的例子：Parity Multisig Wallet（Second Hack）](#真实世界示例parity-multisig-walletsecond-hack)
+  * [漏洞](#漏洞-3)
+  * [预防技术](#预防技术-3)
+  * [真实世界的例子：Parity Multisig Wallet（Second Hack）](#真实世界示例parity-multisig-walletsecond-hack)
 
 * [默认可见性](#默认可见性)
-	* [漏洞](#漏洞-4)
-	* [预防技术](#预防技术-4)
-	* [真实案例：Parity MultiSig Wallet（First Hack）](#真实世界示例奇偶multisig钱包first-hack)
+  * [漏洞](#漏洞-4)
+  * [预防技术](#预防技术-4)
+  * [真实案例：Parity MultiSig Wallet（First Hack）](#真实世界示例奇偶multisig钱包first-hack)
 
 * [函数错误](#函数错误)
-	* [漏洞](#漏洞-5)
-	* [预防技术](#预防技术-5)
-	* [真实案例：PRNG合约](#真实案例prng合约)
+  * [漏洞](#漏洞-5)
+  * [预防技术](#预防技术-5)
+  * [真实案例：PRNG合约](#真实案例prng合约)
 
 * [外部合约引用](#外部合约引用)
-	* [漏洞](#漏洞-6)
-	* [预防技术](#预防技术-6)
-	* [真实的例子：再入蜜罐](#真实的例子再入蜜罐)
+  * [漏洞](#漏洞-6)
+  * [预防技术](#预防技术-6)
+  * [真实的例子：再入蜜罐](#真实的例子再入蜜罐)
 
 * [短地址/参数攻击](#短地址参数攻击)
-	* [漏洞](#漏洞-7)
-	* [预防技术](#预防技术-7)
-	* [真实世界的例子：未知](#真实世界的例子未知-1)
+  * [漏洞](#漏洞-7)
+  * [预防技术](#预防技术-7)
+  * [真实世界的例子：未知](#真实世界的例子未知-1)
 
 * [未检查的CALL返回值](#未检查的call返回值)
-	* [漏洞](#漏洞-8)
-	* [预防技术](#预防技术-8)
-	* [真实的例子：Etherpot和以太之王](#真实的例子etherpot和以太之王)
+  * [漏洞](#漏洞-8)
+  * [预防技术](#预防技术-8)
+  * [真实的例子：Etherpot和以太之王](#真实的例子etherpot和以太之王)
 
 * [条件竞争/非法预先交易](#条件竞争非法预先交易)
-	* [漏洞](#漏洞-9)
-	* [预防技术](#预防技术-9)
-	* [真实世界的例子：ERC20和Bancor](#真实世界的例子erc20和bancor)
+  * [漏洞](#漏洞-9)
+  * [预防技术](#预防技术-9)
+  * [真实世界的例子：ERC20和Bancor](#真实世界的例子erc20和bancor)
 
 * [拒绝服务（DOS）](#拒绝服务dos)
-	* [漏洞](#漏洞-10)
-	* [预防技术](#预防技术-10)
-	* [真实的例子：GovernMental](#真实的例子governmental)
+  * [漏洞](#漏洞-10)
+  * [预防技术](#预防技术-10)
+  * [真实的例子：GovernMental](#真实的例子governmental)
 
 * [锁定时间戳操作](#锁定时间戳操作)
-	* [漏洞](#漏洞-11)
-	* [预防技术](#预防技术-11)
-	* [真实的例子：GovernMental](#真实的例子governmental)
+  * [漏洞](#漏洞-11)
+  * [预防技术](#预防技术-11)
+  * [真实的例子：GovernMental](#真实的例子governmental)
 
 * [谨慎构建函数](#谨慎构建函数)
-	* [漏洞](#漏洞-12)
-	* [预防技术](#预防技术-12)
-	* [真实世界的例子：Rubixi](#真实世界的例子rubixi)
+  * [漏洞](#漏洞-12)
+  * [预防技术](#预防技术-12)
+  * [真实世界的例子：Rubixi](#真实世界的例子rubixi)
 
 * [虚拟化存储指针](#虚拟化存储指针)
-	* [漏洞](#漏洞-13)
-	* [预防技术](#预防技术-13)
-	* [真实世界的例子：蜂蜜罐：OpenAddressLottery和CryptoRoulette](#真实世界的例子蜜罐openaddresslottery和cryptoroulette)
+  * [漏洞](#漏洞-13)
+  * [预防技术](#预防技术-13)
+  * [真实世界的例子：蜂蜜罐：OpenAddressLottery和CryptoRoulette](#真实世界的例子蜜罐openaddresslottery和cryptoroulette)
 
 * [浮点和数值精度](#浮点和数值精度)
-	* [漏洞](#漏洞-14)
-	* [预防技术](#预防技术-14)
-	* [真实世界的例子：Ethstick](#真实世界的例子ethstick)
+  * [漏洞](#漏洞-14)
+  * [预防技术](#预防技术-14)
+  * [真实世界的例子：Ethstick](#真实世界的例子ethstick)
 
 * [tx.origin身份验证](#txorigin身份验证)
-	* [漏洞](#漏洞-15)
-	* [预防技术](#预防技术-15)
-	* [真实世界的例子：未知](#真实世界的例子未知-2)
+  * [漏洞](#漏洞-15)
+  * [预防技术](#预防技术-15)
+  * [真实世界的例子：未知](#真实世界的例子未知-2)
 
 * [以太坊怪异模式](#以太坊怪异模式)
-	* [无键ether](#无键ether)
-	* [一次性地址](#一次性地址)
+  * [无键ether](#无键ether)
+  * [一次性地址](#一次性地址)
 
 * [有趣的加密相关的hacks/bugs列表](#有趣的加密相关的hacksbugs列表)
 
 * [参考文献/更多阅读列表](#参考文献更多阅读列表)
 
-	- [Ethereum Wiki - Safety](https://github.com/ethereum/wiki/wiki/Safety)
-	- [Solidity Docs - Security Considerations](solidity.readthedocs.io/en/latest/security-considerations.html)
-	- [Consensus - Ethereum Smart Contract Best Practices](https://consensys.github.io/smart-contract-best-practices)
-	- [History of Ethereum Security Vulnerabilities, Hacks and Their Fixes](https://applicature.com/blog/history-of-ethereum-security-vulnerabilities-hacks-and-their-fixes)
-	- [Decentralized Application Security Project (DASP) Top 10 of 2018](http://www.dasp.co/)
-	- [A Survey of attacks on Ethereum Smart Contracts](https://eprint.iacr.org/2016/1007.pdf)
-	- [Ethereum Smart Contract Security](https://medium.com/cryptronics/ethereum-smart-contract-security-73b0ede73fa8)
-	- [Lessons Learnt from the Underhanded Solidity Contest](https://medium.com/@chriseth/lessons-learnt-from-the-underhanded-solidity-contest-8388960e09b1)
+  - [Ethereum Wiki - Safety](https://github.com/ethereum/wiki/wiki/Safety)
+  - [Solidity Docs - Security Considerations](solidity.readthedocs.io/en/latest/security-considerations.html)
+  - [Consensus - Ethereum Smart Contract Best Practices](https://consensys.github.io/smart-contract-best-practices)
+  - [History of Ethereum Security Vulnerabilities, Hacks and Their Fixes](https://applicature.com/blog/history-of-ethereum-security-vulnerabilities-hacks-and-their-fixes)
+  - [Decentralized Application Security Project (DASP) Top 10 of 2018](http://www.dasp.co/)
+  - [A Survey of attacks on Ethereum Smart Contracts](https://eprint.iacr.org/2016/1007.pdf)
+  - [Ethereum Smart Contract Security](https://medium.com/cryptronics/ethereum-smart-contract-security-73b0ede73fa8)
+  - [Lessons Learnt from the Underhanded Solidity Contest](https://medium.com/@chriseth/lessons-learnt-from-the-underhanded-solidity-contest-8388960e09b1)
 
 
 ## 重入漏洞
 
-以太坊智能合约的特点之一是能够调用和利用其他外部合约的代码。合约通常也处理Ether，因此通常会将Ether发送给各种外部用户地址。调用外部合约或将以太网发送到地址的操作需要合约提交外部调用。这些外部调用可能被攻击者劫持，迫使合约执行进一步的代码（即通过回退函数），包括回调自身。因此代码执行“ 重新进入 ”合约。这种攻击被用于臭名昭着的DAO攻击。
+以太坊智能合约的特点之一是能够调用和利用其他外部合约的代码。合约通常也处理 Ether，因此通常会将 Ether 发送给各种外部用户地址。调用外部合约或将以太网发送到地址的操作需要合约提交外部调用。这些外部调用可能被攻击者劫持，迫使合约执行进一步的代码（即通过回退函数），包括回调自身。因此代码执行“重新进入”合约。这种攻击被用于臭名昭著的 DAO 攻击。
 
-有关重入攻击的进一步阅读，请参阅[重入式对智能合约](https://medium.com/@gus_tavo_guim/reentrancy-attack-on-smart-contracts-how-to-identify-the-exploitable-and-an-example-of-an-attack-4470a2d8dfe4)和[Consensus - 以太坊智能合约最佳实践](https://consensys.github.io/smart-contract-best-practices/known_attacks/#dos-with-unexpected-revert)。
+有关重入攻击的进一步阅读，请参阅[对智能合约的重入式攻击](https://medium.com/@gus_tavo_guim/reentrancy-attack-on-smart-contracts-how-to-identify-the-exploitable-and-an-example-of-an-attack-4470a2d8dfe4)和 [Consensus - 以太坊智能合约最佳实践](https://consensys.github.io/smart-contract-best-practices/known_attacks/#dos-with-unexpected-revert)。
 
 ### 漏洞
 
-当合约将ether发送到未知地址时，可能会发生此攻击。攻击者可以在[fallback函数](https://solidity.readthedocs.io/en/latest/contracts.html?highlight=fallback#fallback-function)中的外部地址处构建一个包含恶意代码的合约。因此，当合约向此地址发送ether时，它将调用恶意代码。通常，恶意代码在易受攻击的合约上执行一项功能，执行开发人员不希望的操作。“重入”这个名称来源于外部恶意合约回复了易受攻击合约的功能，并在易受攻击的合约的任意位置“ 重新输入”了代码执行。
+当合约将 Ether 发送到未知地址时，可能会发生此攻击。攻击者可以在 [Fallback 函数](https://solidity.readthedocs.io/en/latest/contracts.html?highlight=fallback#fallback-function)中的外部地址处构建一个包含恶意代码的合约。因此，当合约向此地址发送 Ether 时，它将调用恶意代码。通常，恶意代码会在易受攻击的合约上执行一个函数、该函数会运行一项开发人员不希望的操作。“重入”这个名称来源于外部恶意合约回复了易受攻击合约的功能，并在易受攻击的合约的任意位置“重新输入”了代码执行。
 
-为了澄清这一点，请考虑简单易受伤害的合约，该合约充当以太坊保险库，允许存款人每周只提取1个Ether。
+为了澄清这一点，请考虑简单易受伤害的合约，该合约充当以太坊保险库，允许存款人每周只提取 1 个 Ether。
 
 EtherStore.sol：
 
@@ -146,9 +146,9 @@ contract EtherStore {
  }
 ```
 
-该合约有两个公共职能。`depositFunds()`和`withdrawFunds()`。该`depositFunds()`功能只是增加发件人余额。该`withdrawFunds()`功能允许发件人指定要撤回的wei的数量。如果所要求的退出金额小于1Ether并且在上周没有发生撤回，它才会成功。还是？...
+该合约有两个公共职能。 ` depositFunds() ` 和 ` withdrawFunds() ` 。该 ` depositFunds() ` 功能只是增加发件人余额。该 ` withdrawFunds() ` 功能允许发件人指定要撤回的 wei 的数量。如果所要求的退出金额小于 1Ether 并且在上周没有发生撤回，它才会成功。额，真会是这样吗？... 
 
-该漏洞出现在[17]行，我们向用户发送他们所要求的以太数量。考虑一个恶意攻击者创建下列合约，
+该漏洞出现在 [17] 行，我们向用户发送他们所要求的以太数量。考虑一个恶意攻击者创建下列合约，
 
 Attack.sol：
 
@@ -185,34 +185,33 @@ contract Attack {
 }
 ```
 
-让我们看看这个恶意合约是如何利用我们的`EtherStore`合约的。攻击者可以（假定恶意合约地址为`0x0...123`）使用`EtherStore`合约地址作为构造函数参数来创建上述合约。这将初始化并将公共变量`etherStore`指向我们想要攻击的合约。
+让我们看看这个恶意合约是如何利用我们的 ` EtherStore ` 合约的。攻击者可以（假定恶意合约地址为 ` 0x0...123 ` ）使用 ` EtherStore ` 合约地址作为构造函数参数来创建上述合约。这将初始化并将公共变量 ` etherStore ` 指向我们想要攻击的合约。
 
-然后攻击者会调用这个`pwnEtherStore()`函数，并存入一些ehter（大于或等于1），比方说1 ehter,在这个例子中。在这个例子中，我们假设一些其他用户已经将若干ehter存入这份合约中，比方说它的当前余额就是`10 ether`。然后会发生以下情况：
+然后攻击者会调用这个 ` pwnEtherStore() ` 函数，并存入一些 Ehter（大于或等于1），比方说 1Ehter，在这个例子中。在这个例子中，我们假设一些其他用户已经将若干 Ehter 存入这份合约中，比方说它的当前余额就是 ` 10 ether ` 。然后会发生以下情况：
 
-1. Attack.sol -Line[15] -EtherStore合约的`despoitFunds`函数将会被调用，并伴随1 ether的mag.value(和大量的gas)。sender（msg.sender）将是我们的恶意合约`（0x0...123）`。因此，`balances[0x0..123] = 1 ether`。
-2. Attack.sol - Line [17] - 恶意合约将使用一个参数来调用合约的withdrawFunds()功能。这将通过所有要求（合约的行[12] - [16] ），因为我们以前没有提款。
-3. EtherStore.sol - 行[17] - 合约将发送1 ether回恶意合约。
-4. Attack.sol - Line [25] - 发送给恶意合约的ether将执行fallback函数。
-5. Attack.sol - Line [26] - EtherStore合约的总余额是10 ether，现在是9 ether，如果声明通过。
-6. Attack.sol - Line [27] - 回退函数然后再次动用EtherStore中的withdrawFunds()函数并“ 重入 ” EtherStore合约。
-7. EtherStore.sol - 行[11]- 在第二次调用时withdrawFunds()，我们的余额仍然1 ether是因为行[18]尚未执行。因此，我们仍然有balances[0x0..123] = 1 ether。lastWithdrawTime变量也是这种情况。我们再次通过所有要求。
-8. EtherStore.sol - 行[17] - 我们撤回另一个1 ether。
-9. 步骤4-8将重复 - 直到EtherStore.balance >= 1[26]行所指定的Attack.sol。
-10. Attack.sol - Line [26] - 一旦在EtherStore合约中留下少于1（或更少）的ether，此if语句将失败。这样就EtherStore可以执行合约的[18]和[19]行（每次调用withdrawFunds()函数）。
-11. EtherStore.sol - 行[18]和[19] - balances和lastWithdrawTime映射将被设置并且执行将结束。
+1. Attack.sol -Line [15] -EtherStore合约的 ` despoitFunds ` 函数将会被调用，并伴随 1Ether 的 mag.value（和大量的 Gas）。sender(msg.sender) 将是我们的恶意合约 ` （0x0...123） ` 。因此， ` balances[0x0..123] = 1 ether ` 。
+2. Attack.sol - Line [17] - 恶意合约将使用一个参数来调用合约的 ` withdrawFunds() ` 功能。这将通过所有要求（合约的行 [12] - [16] ），因为我们以前没有提款。
+3. EtherStore.sol - 行 [17] - 合约将发送 1Ether 回恶意合约。
+4. Attack.sol - Line [25] - 发送给恶意合约的 Ether 将执行 fallback 函数。
+5. Attack.sol - Line [26] - EtherStore 合约的总余额是 10Ether，现在是 9Ether，如果声明通过。
+6. Attack.sol - Line [27] - 回退函数然后再次动用 EtherStore 中的 ` withdrawFunds() ` 函数并“重入” EtherStore合约。
+7. EtherStore.sol - 行 [11] - 在第二次调用 ` withdrawFunds() ` 时，我们的余额仍然是 1Ether，因为 行[18] 尚未执行。因此，我们仍然有 ` balances[0x0..123] = 1 ether `。` lastWithdrawTime ` 变量也是这种情况。我们再次通过所有要求。
+8. EtherStore.sol - 行[17] - 我们撤回另外的 1Ether。
+9. 步骤4-8将重复 - 直到 ` EtherStore.balance >= 1 `，这是由 Attack.sol - Line [26] 所指定的。
+10. Attack.sol - Line [26] - 一旦在 EtherStore 合约中留下少于 1（或更少）的 Ether，此 if 语句将失败。这样 EtherStore 就会执行合约的 行[18]和 行[19]（每次调用 ` withdrawFunds() ` 函数之后都会执行这两行）。
+11. EtherStore.sol - 行[18]和[19] -  ` balances ` 和 ` lastWithdrawTime ` 映射将被设置并且执行将结束。
 
-最终的结果是，攻击者已经从EtherStore合约中立即撤销了所有（第1条）以太网，只需一笔交易即可。
+最终的结果是，攻击者只用一笔交易，便立即从 EtherStore 合约中取出了（除去 1 个 Ether 以外）所有的 Ether。
 
 ### 预防技术
 
-有许多常用技术可以帮助避免智能合约中潜在的重入漏洞。首先是（在可能的情况下）在将ether发送给外部合约时使用内置的[transfer()函数](http://solidity.readthedocs.io/en/latest/units-and-global-variables.html#address-related)。转账功能只发送2300 gas不足以使目的地地址/合约调用另一份合约（即重新输入发送合约）。
+有许多常用技术可以帮助避免智能合约中潜在的重入漏洞。首先是（在可能的情况下）在将 Ether 发送给外部合约时使用内置的 [transfer() 函数](http://solidity.readthedocs.io/en/latest/units-and-global-variables.html#address-related)。转账功能只发送 ` 2300 gas ` 不足以使目的地址/合约调用另一份合约（即重入发送合约）。
 
-第二种技术是确保所有改变状态变量的逻辑发生在ether被发送出合约（或任何外部调用）之前。在这个EtherStore例子中，[18]和[19]行EtherStore.sol应放在行[17]之前。将任何执行外部调用的代码放置在未知地址上作为本地化函数或代码执行中的最后一个操作是一种很好的做法。这被称为[检查效果交互(checks-effects-interactions)](http://solidity.readthedocs.io/en/latest/security-considerations.html#use-the-checks-effects-interactions-pattern)模式。
+第二种技术是确保所有改变状态变量的逻辑发生在 Ether 被发送出合约（或任何外部调用）之前。在这个 EtherStore 例子中，EtherStore.sol - 行[18]和行[19] 应放在 行[17] 之前。将任何对未知地址执行外部调用的代码，放置在本地化函数或代码执行中作为最后一个操作，是一种很好的做法。这被称为[检查效果交互（checks-effects-interactions）](http://solidity.readthedocs.io/en/latest/security-considerations.html#use-the-checks-effects-interactions-pattern)模式。
 
 第三种技术是引入互斥锁。也就是说，要添加一个在代码执行过程中锁定合约的状态变量，阻止重入调用。
-应用所有这些技术（所有这三种技术都是不必要的，但是这些技术是为了演示目的而完成的）
 
-EtherStore.sol给出了无再签约合约：
+给 EtherStore.sol 应用所有这些技术（同时使用全部三种技术是没必要的，只是为了演示目的而已）会出现如下的防重入合约：
 
 ```solidity
 contract EtherStore {
@@ -245,21 +244,21 @@ contract EtherStore {
  }
 ```
 
-### 真实的例子：DAO
+### 真实的例子：The DAO
 
-[DAO](https://en.wikipedia.org/wiki/The_DAO_(organization))（分散式自治组织）是以太坊早期发展的主要黑客之一。当时，该合约持有1.5亿美元以上。重入在这次攻击中发挥了重要作用，最终导致了Ethereum Classic（ETC）的分叉。有关DAO漏洞的详细分析，请参阅[Phil Daian的文章](http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/)。
+[The DAO](https://en.wikipedia.org/wiki/The_DAO_(organization))（分散式自治组织）是以太坊早期发展的主要黑客之一。当时，该合约持有1.5亿美元以上。重入在这次攻击中发挥了重要作用，最终导致了 Ethereum Classic（ETC）的分叉。有关The DAO 漏洞的详细分析，请参阅 [Phil Daian 的文章](http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/)。
 
 ## 算法上下溢出
 
-以太坊虚拟机（EVM）为整数指定固定大小的数据类型。这意味着一个整型变量只能有一定范围的数字表示。A uint8例如，只能存储在范围[0,255]的数字。试图存储256到一个uint8将导致0。如果不注意，如果不选中用户输入并执行计算，导致数字超出存储它们的数据类型的范围，则可以利用Solidity中的变量。
+以太坊虚拟机（EVM）为整数指定固定大小的数据类型。这意味着一个整型变量只能有一定范围的数字表示。例如，一个 ` uint8 ` ，只能存储在范围 [0,255] 的数字。试图存储 256 到一个 ` uint8 ` 将变成 0。不加注意的话，只要没有检查用户输入又执行计算，导致数字超出存储它们的数据类型允许的范围，Solidity 中的变量就可以被用来组织攻击。
 
-要进一步阅读算法上下流程，请参阅[如何保护您的智能合约](https://medium.com/loom-network/how-to-secure-your-smart-contracts-6-solidity-vulnerabilities-and-how-to-avoid-them-part-1-c33048d4d17d)，[以太坊智能合约最佳实践](https://consensys.github.io/smart-contract-best-practices/known_attacks/#integer-overflow-and-underflow)和[以太坊，可靠性和整数溢出：编程区块链程序 1970年](https://randomoracle.wordpress.com/2018/04/27/ethereum-solidity-and-integer-overflows-programming-blockchains-like-1970/)
+要进一步阅读算法上下溢出，请参阅[如何保护您的智能合约](https://medium.com/loom-network/how-to-secure-your-smart-contracts-6-solidity-vulnerabilities-and-how-to-avoid-them-part-1-c33048d4d17d)，[以太坊智能合约最佳实践](https://consensys.github.io/smart-contract-best-practices/known_attacks/#integer-overflow-and-underflow)和[以太坊，Solidity 和整数溢出：像身处1970 年那样为区块链编程](https://randomoracle.wordpress.com/2018/04/27/ethereum-solidity-and-integer-overflows-programming-blockchains-like-1970/)
 
 ### 漏洞
 
-当执行操作需要固定大小的变量来存储超出变量数据类型范围的数字（或数据）时，会发生溢出/不足流量。
+当执行操作需要固定大小的变量来存储超出变量数据类型范围的数字（或数据）时，会发生数据上溢/下溢。
 
-例如，1从一个uint8（无符号的8位整数，即只有正数）变量中减去存储0该值的变量将导致该数量255。这是一个下溢。我们已经为该范围下的一个数字分配了一个数字uint8，结果包裹并给出了uint8可以存储的最大数字。同样，加入2^8=256 到a uint8会使变量保持不变，因为我们已经包裹了整个长度uint（对于数学家来说，这类似于将三角函数的角度加上$ 2 \ pi $，$ \ sin（x）= \的sin（x + 2 \ PI）$）。添加大于数据类型范围的数字称为溢出。为了清楚起见，添加257到一个uint8目前有一个零值将导致数字1。将固定类型变量设为循环有时很有启发意义，如果我们在最大可能存储数字之上添加数字，我们从零开始，反之亦然为零（我们从最大数字开始倒数，从中减去的数字越多） 0）。
+例如，从一个存储 0 的 ` uint8 ` （无符号的 8 位整数，即只有正数）变量中减去 1，将导致该变量的值变为 255。这是一个下溢。我们明明为该 ` uint8 ` 分配了一个低于其储存范围的值，结果却是 *绕回来* 变成了 ` uint8 ` 所能储存的最大值。同样，给一个 ` uint8 ` 加上  ` 2^8=256 ` 会使变量保持不变，因为我们已经绕过了 ` uint ` 的整个值域又回到原值（对于数学家来说，这类似于将三角函数的角度加上 2pi ，sin(x) = sin(x + 2pi)）。添加大于数据类型范围的数字称为上溢。为了清楚起见，添加 257 到一个目前仅有 0 值的 ` uint8 ` 变量将变成数字 1。将固定类型变量视为循环有时很有启发意义，如果我们加入的数字超出最大可存储数字，等于是从零开始加上超出额，反之也是从零开始（从零中减去一定数额，等同于从最大数字往下减该数额）。
 
 这些类型的漏洞允许攻击者滥用代码并创建意外的逻辑流程。例如，请考虑下面的时间锁定合约。
 
@@ -289,15 +288,15 @@ contract TimeLock {
 }
 ```
 
-这份合约的设计就像是一个时间保险库，用户可以将Ether存入合约，并在那里锁定至少一周。如果用户选择的话，用户可以延长超过1周的时间，但是一旦存放，用户可以确信他们的Ether被安全锁定至少一周。或者他们可以吗？...
+这份合约的设计就像是一个时间保险库，用户可以将 Ether 存入合约，并在那里锁定至少一周。如果用户选择的话，用户可以延长超过1周的时间，但是一旦存放，用户可以确信他们的 Ether 会被安全锁定至少一周。有没有别的可能性？...
 
-如果用户被迫交出他们的私钥（认为是人质情况），像这样的合约可能很方便，以确保在短时间内无法获得Ether。如果用户已经锁定了100 ether合约并将其密钥交给了攻击者，那么攻击者可以使用溢出来接收以太网，无论如何lockTime。
+如果用户被迫交出他们的私钥（考虑绑票的情形），像这样的合约可能很方便，以确保在短时间内无法获得 Ether。但是，如果用户已经锁定了 100Ether 合约并将其密钥交给了攻击者，那么攻击者可以使用溢出来接收 Ether，无视 ` lockTime ` 的限制。
 
-攻击者可以确定lockTime他们现在拥有密钥的地址（它是一个公共变量）。我们称之为userLockTime。然后他们可以调用该increaseLockTime函数并将该数字作为参数传递2^256 - userLockTime。该号码将被添加到当前userLockTime并导致溢出，重置lockTime[msg.sender]为0。攻击者然后可以简单地调用withdraw函数来获得他们的奖励。
+攻击者可以确定他们所持密钥的地址的 ` lockTime ` （它是一个公共变量）。我们称之为 ` userLockTime ` 。然后他们可以调用该 ` increaseLockTime ` 函数并将数字 ` 2^256 - userLockTime ` 作为参数传入。该数字将被添加到当前的 ` userLockTime ` 并导致溢出，重置 ` lockTime[msg.sender] ` 为0。攻击者然后可以简单地调用 ` withdraw ` 函数来获得他们的奖励。
 
-我们来看另一个例子，来自[Ethernaut Challanges](https://github.com/OpenZeppelin/ethernaut)的这个例子。
+我们来看另一个例子，来自 [Ethernaut Challanges](https://github.com/OpenZeppelin/ethernaut) 的这个例子。
 
-SPOILER ALERT： 如果你还没有完成Ethernaut的挑战，这可以解决其中一个难题。
+SPOILER ALERT： 如果你还没有完成 Ethernaut 的挑战，这可以解决其中一个难题。
 
 ```solidity
 pragma solidity ^0.4.18;
@@ -324,17 +323,17 @@ contract Token {
 }
 ```
 
-这是一个简单的令牌合约，它使用一个transfer()功能，允许参与者移动他们的令牌。你能看到这份合约中的错误吗？
+这是一个简单的 Token 合约，它使用一个 ` transfer() ` 函数，允许参与者转移他们的 Token。你能看出这份合约中的错误吗？
 
-缺陷出现在transfer()功能中。行[13]上的require语句可以使用下溢来绕过。考虑一个没有平衡的用户。他们可以transfer()用任何非零值调用函数，_value并在行[13]上传递require语句。这是因为balances[msg.sender] 零（和a uint256）因此减去任何正数（不包括2^256）将导致正数，这是由于我们上面描述的下溢。对于[14]行也是如此，我们的余额将记入正数。因此，在这个例子中，我们由于下溢漏洞而实现了自由标记。
+缺陷出现在 ` transfer() ` 功能中。行[13]上的 require 语句可以使用下溢来绕过。考虑一个没有余额的用户。他们可以用任何非零值 ` _value ` 调用 ` transfer() ` 函数，并将 ` _value ` 传入 行[13] 上的 require 语句。因为 ` balances[msg.sender] ` 为零（也即是 ` uint256 ` ），减去任何正数（不包括 ` 2^256 ` ）都将导致正数（由于我们上面描述的下溢）。对于 行[14] 也是如此，我们的余额将记入正数。因此，在这个例子中，我们由于下溢漏洞得到了免费的 Token。
 
 ### 预防技术
 
-防止溢出漏洞的（当前）常规技术是使用或建立取代标准数学运算符的数学库; 加法，减法和乘法（划分被排除，因为它不会导致过量/不足流量，并且EVM将被0除法）。
+防止溢出漏洞的（当前）常规技术是使用或建立取代标准数学运算符的数学库; 加法，减法和乘法（除法被排除在外，因为它不会导致上溢/下溢，并且 EVM 除以 0 时会丢出错误）。
 
-[OppenZepplin](https://github.com/OpenZeppelin/zeppelin-solidity)在构建和审计Ethereum社区可以利用的安全库方面做得非常出色。特别是，他们的[SafeMath](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/math/SafeMath.sol)是一个参考或库，用来避免漏洞/溢出漏洞。
+[OppenZepplin](https://github.com/OpenZeppelin/zeppelin-solidity) 在构建和审计 Ethereum 社区可以利用的安全库方面做得非常出色。特别是，他们的 [SafeMath](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/math/SafeMath.sol) 是一个用来避免上溢/下溢漏洞的参考或库。
 
-为了演示如何在Solidity中使用这些库，让我们TimeLock使用Open Zepplin的SafeMath库更正合约。超自由合约将变为：
+为了演示如何在 Solidity 中使用这些库，让我们使用 Open Zepplin 的 SafeMath 库更正合约 TimeLock。防溢出的合约长这样：
 
 ```solidity
 library SafeMath {
@@ -390,7 +389,7 @@ contract TimeLock {
 }
 ```
 
-请注意，所有标准的数学运算已被SafeMath库中定义的数学运算所取代。该TimeLock合约不再执行任何能够进行一个 向下/越界的操作。
+请注意，所有标准的数学运算已被 SafeMath 库中定义的数学运算所取代。该 TimeLock 合约不会再执行任何能够导致下溢/上溢的操作。
 
 
 ### 实际示例：PoWHC和批量传输溢出（[CVE-2018-10299](https://nvd.nist.gov/vuln/detail/CVE-2018-10299)）
@@ -668,7 +667,7 @@ contract WalletLibrary is WalletEvents {
     initMultiowned(_owners, _required);
   }
 
-  // kills the contract sending everything to `_to`.
+  // kills the contract sending everything to  ` _to ` .
   function kill(address _to) onlymanyowners(sha3(msg.data)) external {
     suicide(_to);
   }
@@ -1047,7 +1046,7 @@ contract Log
 当第三方应用程序不验证输入时，这会成为问题。最明显的例子是当用户请求提款时，交易所不验证ERC20令牌的地址。Peter Venesses的文章“ 上述ERC20短地址攻击解释 ”中详细介绍了这个例子。
 考虑一下标准的ERC20传输函数接口，注意参数的顺序，
 
-`function transfer(address to, uint tokens) public returns (bool success);`
+ ` function transfer(address to, uint tokens) public returns (bool success); ` 
 
 现在考虑一下，一个交易所持有大量的令牌（比方说REP），并且用户希望撤回他们分享的100个代币。用户将提交他们的地址，0xdeaddeaddeaddeaddeaddeaddeaddeaddeaddead以及令牌的数量100。交换将在由所述指定的顺序编码这些参数transfer()功能，即address然后tokens。编码结果将是a9059cbb000000000000000000000000deaddeaddeaddeaddeaddeaddeaddeaddeaddead0000000000000000000000000000000000000000000000056bc75e2d63100000。前四个字节（a9059cbb）是transfer() 函数签名/选择器，第二个32字节是地址，后面是表示uint256令牌数的最后32个字节。请注意，最后的十六进制56bc75e2d63100000对应于100个令牌（由REP令牌合约指定的小数点后18位）。
 好的，现在让我们看看如果我们发送一个丢失1个字节（2个十六进制数字）的地址会发生什么。具体而言，假设攻击者发送0xdeaddeaddeaddeaddeaddeaddeaddeaddeadde一个地址（缺少最后两位数字）和相同的 100令牌撤回。如果交易所没有验证这个输入，它将被编码为a9059cbb000000000000000000000000deaddeaddeaddeaddeaddeaddeaddeaddeadde0000000000000000000000000000000000000000000000056bc75e2d6310000000。差别是微妙的。请注意，00已将其填充到编码的末尾，以弥补发送的短地址。当它被发送到智能合约时，address参数将被读为，0xdeaddeaddeaddeaddeaddeaddeaddeaddeadde00并且该值将被读为56bc75e2d6310000000（注意两个额外0的）。此值现在是25600令牌（值已被乘以256）。在这个例子中，如果交易所持有这么多的代币，用户会退出25600令牌（而交换机认为用户只是撤回100）到修改后的地址。很显然，在这个例子中攻击者不会拥有修改后的地址，但是如果攻击者在哪里产生以0's 结尾的地址（这可能很容易被强行强制）并且使用了这个生成的地址，他们很容易从毫无防备的交换中窃取令牌。
@@ -1179,7 +1178,7 @@ contract FindThisHash {
 
 该标准规定的approve()功能如下：
 
-`function approve(address _spender, uint256 _value) returns (bool success)`
+ ` function approve(address _spender, uint256 _value) returns (bool success) ` 
 
 该功能允许用户 允许其他用户 代表他们传送令牌。当用户Alice 批准她的朋友Bob花钱时，这种先发制人的漏洞就出现了100 tokens。爱丽丝后来决定，她想撤销Bob批准花费100 tokens，所以她创建了一个交易，设置Bob的分配50 tokens。Bob，他一直在仔细观察这个连锁店，看到这笔交易并且建立了一笔他自己花费的交易100 tokens。他gasPrice的交易比自己的交易要高，他Alice的交易优先于她的交易。一些实现approve()将允许Bob转移他的100 tokens，然后当Alice事务被提交时，重置Bob的批准50 tokens，实际上允许Bob访问150 tokens。这种攻击的缓解策略给出这里上面链接在文档中。
 
@@ -1517,7 +1516,7 @@ tx.origin不应该用于智能合约授权。这并不是说该tx.origin变量�
 
 合约地址是确定性的，这意味着它们可以在实际创建地址之前进行计算。创建合约的地址和产生其他合约的合约都是这种情况。实际上，创建的合约地址取决于：
 
-`keccak256(rlp.encode([<account_address>, <transaction_nonce>])`
+ ` keccak256(rlp.encode([<account_address>, <transaction_nonce>]) ` 
 
 从本质上讲，合约的地址就是keccak256创建它与账户事务随机数[^ 2]连接的账户的哈希值。合约也是如此，除了合约nonce的开始1地址的交易nonce的开始0。
 
