@@ -708,7 +708,7 @@ contract Wallet is WalletEvents {
 
 这些合约的预期运作是生成一个简单的可低成本部署的 Wallet 合约，合约的代码基础和主要功能都在 WalletLibrary 合约中。不幸的是，WalletLibrary 合约本身就是一个合约，并保持它自己的状态。你能能不能看出为什么这会是一个问题？
 
-因为有可能向 WalletLibrary 合约本身发送调用请求。具体来说，WalletLibrary 合约可以初始化，并被用户拥有。一个用户通过调用 WalletLibrary 中的 ` initWallet() ` 函数，成为了 Library 合约的所有者。同一个用户，随后调用 ` kill() ` 功能。因为用户是 Library 合约的所有者，所以修改传入、Library 合约自毁。因为所有现存的 Wallet 合约都引用该 Library 合约，并且不包含更改引用的方法，因此其所有功能（包括撤回 Ether 的功能）都会随 WalletLibrary 合约一起丢失。更直接地说，这种类型的 Parity 多签名钱包中的所有以太都会立即丢失或者说永久不可恢复。
+因为有可能向 WalletLibrary 合约本身发送调用请求。具体来说，WalletLibrary 合约可以初始化，并被用户拥有。一个用户通过调用 WalletLibrary 中的 ` initWallet() ` 函数，成为了 Library 合约的所有者。同一个用户，随后调用 ` kill() ` 功能。因为用户是 Library 合约的所有者，所以修改传入、Library 合约自毁。因为所有现存的 Wallet 合约都引用该 Library 合约，并且不包含更改引用的方法，因此其所有功能（包括取回 Ether 的功能）都会随 WalletLibrary 合约一起丢失。更直接地说，这种类型的 Parity 多签名钱包中的所有以太都会立即丢失或者说永久不可恢复。
 
 ## 默认可见性
 
