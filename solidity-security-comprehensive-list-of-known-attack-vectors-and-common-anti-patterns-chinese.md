@@ -392,33 +392,34 @@ contract TimeLock {
 请注意，所有标准的数学运算已被 SafeMath 库中定义的数学运算所取代。该 TimeLock 合约不会再执行任何能够导致下溢/上溢的操作。
 
 
-### 实际示例：PoWHC和批量传输溢出（[CVE-2018-10299](https://nvd.nist.gov/vuln/detail/CVE-2018-10299)）
+### 实际示例：PoWHC 和批量传输溢出（[CVE-2018-10299](https://nvd.nist.gov/vuln/detail/CVE-2018-10299)）
 
-一个4chan小组决定用Solidity编写一个在Ethereum上构建庞氏骗局的好主意。他们称它为弱手硬币证明（PoWHC）。不幸的是，似乎合约的作者之前没有看到过/不足的流量，因此，866Ether从合约中解放出来。在[Eric Banisadar的文章](https://blog.goodaudience.com/how-800k-evaporated-from-the-powh-coin-ponzi-scheme-overnight-1b025c33b530)中，我们很好地概述了下溢是如何发生的（这与上面的Ethernaut挑战不太相似）。
+一个 4chan 小组认为，用 Solidity 在 Ethereum上 构建一个庞氏骗局是个好主意。他们称它为弱手硬币证明（PoWHC）。不幸的是，似乎合约的作者之前没有看到上溢/下溢问题，因此，866Ether 从合约中解放出来。[Eric Banisadar 的文章](https://blog.goodaudience.com/how-800k-evaporated-from-the-powh-coin-ponzi-scheme-overnight-1b025c33b530)对下溢是如何发生的作出了很好的概述（这与上面的 Ethernaut 挑战不太相似）。
 
-一些开发人员还batchTransfer()为一些[ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)令牌合约实施了一项功能。该实现包含溢出。[这篇文章](https://medium.com/@peckshield/alert-new-batchoverflow-bug-in-multiple-erc20-smart-contracts-cve-2018-10299-511067db6536)对此进行了解释，但是我认为标题有误导性，因为它与ERC20标准无关，而是一些ERC20令牌合约batchTransfer()实施了易受攻击的功能。
+一些开发人员还为一些 [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md) Token 合约实施了一项 ` batchTransfer() ` 函数。该实现包含溢出。[这篇文章](https://medium.com/@peckshield/alert-new-batchoverflow-bug-in-multiple-erc20-smart-contracts-cve-2018-10299-511067db6536)对此进行了解释，但是我认为标题有误导性，因为它与 ERC20 标准无关，而是一些 ERC20 Token 合约实现了易受攻击的 ` batchTransfer() ` 。
 
-## 意外的Ether
+## 不期而至的 Ether
 
-通常，当Ether发送到合约时，它必须执行回退功能或合约中描述的其他功能。这有两个例外，其中ether可以存在于合约中而不执行任何代码。依赖代码执行的合约发送给合约的每个以太可能容易受到强制发送给合约的攻击。
+通常，当 Ether 发送到合约时，它必须执行回退功能或合约中描述的其他功能。这里有两个例外，合约可能会收到了 Ether 但并不会执行任何函数。通过收到以太币来触发代码的合约，对强制将以太币发送到某个合约这类攻击是非常脆弱的。
 
-关于这方面的进一步阅读，请参阅[如何保护您的智能合约：6](https://medium.com/loom-network/how-to-secure-your-smart-contracts-6-solidity-vulnerabilities-and-how-to-avoid-them-part-2-730db0aa4834)和[Solidity security patterns - forcing ether to a contract](http://danielszego.blogspot.com.au/2018/03/solidity-security-patterns-forcing.html)
+关于这方面的进一步阅读，请参阅[如何保护您的智能合约：6](https://medium.com/loom-network/how-to-secure-your-smart-contracts-6-solidity-vulnerabilities-and-how-to-avoid-them-part-2-730db0aa4834) 和 [Solidity security patterns - forcing ether to a contract](http://danielszego.blogspot.com.au/2018/03/solidity-security-patterns-forcing.html)
 
 ### 漏洞
 
-一种常用的防御性编程技术对于执行正确的状态转换或验证操作很有用，它是不变检查。该技术涉及定义一组不变量（不应改变的度量或参数），并且在单个（或多个）操作之后检查这些不变量保持不变。这通常是很好的设计，只要检查的不变量实际上是不变量。不变量的一个例子是totalSupply固定发行[ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)令牌。由于没有函数应该修改此不变量，因此可以在该transfer()函数中添加一个检查以确保totalSupply保持未修改状态，以确保函数按预期工作。
+一种常用的防御性编程技术对于执行正确的状态转换或验证操作很有用，它是不变量检查（Invariant-checking）。该技术涉及定义一组不变量（不应改变的度量或参数），并且在单个（或多个）操作之后检查这些不变量保持不变。这基本上是很好的设计，保证受到检查的不变量在实际上保持不变。不变量的一个例子是发行量固定的 [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md) 代币合约的 ` totalSupply ` 。不应该有函数能修改此不变量，因此可以在该 ` transfer() ` 函数中添加一个检查以确保 ` totalSupply ` 保持未修改状态，确保函数按预期工作。
 
-不管智能合约中规定的规则如何，特别是有一个明显的“不变”，可能会诱使开发人员使用，但事实上可以由外部用户操纵。这是合约中存储的当前以太。通常，当开发人员首先学习Solidity时，他们有一种误解，认为合约只能通过付费功能接受或获得以太。这种误解可能会导致合约对其内部的以太平衡有错误的假设，这会导致一系列的漏洞。此漏洞的吸烟枪是（不正确）使用this.balance。正如我们将看到的，错误的使用this.balance会导致这种类型的严重漏洞。
+不管智能合约中规定的规则如何，有一个量，特别容易诱导开发人员将其当作明显的“不变量”来使用，但它在事实上是可以由外部用户来操纵的，那便是合约中存储的 Ether 数量。通常，开发人员刚开始学习 Solidity 时，他们有一种误解，认为合约只能通过 ` payable ` 函数接受或获得 Ether。这种误解可能会导致合约对其内部的 ETH 余额有错误的假设，进而导致一系列的漏洞。此漏洞的明显信号是（不正确地）使用 ` this.balance ` 。正如我们将看到的，错误地使用 ` this.balance ` 会导致这种类型的严重漏洞。
 
-有两种方式可以将ether（强制）发送给合约，而无需使用payable函数或执行合约中的任何代码。这些在下面列出。
+有两种方式可以将 Ether（强制）发送给合约，而无需使用 ` payable ` 函数或执行合约中的任何代码。这些在下面列出。
 
-#### 自毁/自杀
+**自毁**
 
-任何合约都能够实现该[selfdestruct(address)](http://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#self-destruct)功能，该功能从合约地址中删除所有字节码，并将所有存储在那里的ether发送到参数指定的地址。如果此指定的地址也是合约，则不会调用任何功能（包括故障预置）。因此，selfdestruct()无论合约中可能存在的任何代码，该功能都可以用来强制将Ether 发送给任何合约。这包括没有任何应付功能的合约。这意味着，任何攻击者都可以与某个selfdestruct()功能创建合约，向其发送以太，致电selfdestruct(target)并强制将以太网发送至target合约。Martin Swende有一篇出色的[博客文章](http://martin.swende.se/blog/Ethereum_quirks_and_vulns.html)描述了自毁操作码（Quirk＃2）的一些怪癖，并描述了客户端节点如何检查不正确的不变量，这可能会导致相当灾难性的客户端问题。
+任何合约都能够实现该 [` selfdestruct(address) `](http://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#self-destruct) 功能，该功能从合约地址中删除所有字节码，并将所有存储在那里的 Ether 发送到参数指定的地址。如果此指定的地址也是合约，则不会调用任何功能（包括故障预置）。因此，使用 ` selfdestruct() ` 函数可以无视目标合约中存在的任何代码，强制将 Ether 发送给任一目标合约，包括没有任何可支付函数的合约。这意味着，任何攻击者都可以创建带有 ` selfdestruct() ` 函数的合约，向其发送 Ether，调用 ` selfdestruct(target) ` 并强制将 Ether 发送至 ` target ` 合约。Martin Swende 有一篇出色的[博客文章](http://martin.swende.se/blog/Ethereum_quirks_and_vulns.html)描述了自毁操作码（Quirk＃2）的一些诡异操作，并描述了客户端节点如何检查不正确的不变量，这可能会导致相当灾难性的客户端问题。
 
-#### 预先发送Ether
+**预先发送的 Ether**
 
-合约可以不使用selfdestruct()函数或调用任何应付函数就可以获得以太的第二种方式是使用ether 预装合约地址。合约地址是确定性的，实际上地址是根据创建合约的地址的哈希值和创建合约的事务现时值计算得出的。即形式：（address = sha3(rlp.encode([account_address,transaction_nonce]))请参阅[Keyless Ether](https://github.com/sigp/solidity-security-blog#keyless-eth)的一些有趣的使用情况）。这意味着，任何人都可以在创建合约地址之前计算出合约地址，并将Ether发送到该地址。当合约确实创建时，它将具有非零的Ether余额。
+合约不使用 ` selfdestruct() ` 函数或调用任何 payable 函数仍可以接收到 Ether 的第二种方式是把 Ether 预装进合约地址。合约地址是确定性的，实际上地址是根据创建合约的地址及创建合约的交易 Nonce 的哈希值计算得出的，即下述形式： ` address = sha3(rlp.encode([account_address,transaction_nonce]) ` 请参阅 [Keyless Ether](https://github.com/sigp/solidity-security-blog#keyless-eth) 在这一点上的一些有趣用例）。这意味着，任何人都可以在创建合约之前计算出合约地址，并将 Ether 发送到该地址。当合约确实创建时，它将具有非零的 Ether 余额。
+
 根据上述知识，我们来探讨一些可能出现的缺陷。
 考虑过于简单的合约，
 
@@ -465,17 +466,17 @@ contract EtherGame {
  }    
 ```
 
-这个合约代表一个简单的游戏（自然会引起[条件竞争](#条件竞争非法预先交易)），玩家0.5 ether可以将合约发送给合约，希望成为第一个达到三个里程碑之一的玩家。里程碑以ether计价。当游戏结束时，第一个达到里程碑的人可能会要求其中的一部分。当达到最后的里程碑（10 ether）时，游戏结束，用户可以申请奖励。
+这个合约代表一个简单的游戏（自然会引起[条件竞争（Race-conditions）](#条件竞争非法预先交易)），玩家可以将 ` 0.5 ether ` 发送给合约，希望成为第一个达到三个里程碑之一的玩家。里程碑以 Ether 计价。当游戏结束时，第一个达到里程碑的人可以获得合约的部分 Ether。当达到最后的里程碑（10 Ether）时，游戏结束，用户可以申请奖励。
 
-EtherGame合约的问题来自this.balance两条线[14]（以及协会[16]）和[32] 的不良使用。一个调皮的攻击者可以0.1 ether通过selfdestruct()函数（上面讨论过的）强行发送少量的以太，以防止未来的玩家达到一个里程碑。由于所有合法玩家只能发送0.5 ether增量，this.balance不再是半个整数，因为它也会0.1 ether有贡献。这可以防止[18]，[21]和[24]行的所有条件成立。
+EtherGame 合约的问题出自在 [14] 行（以及相关的 [16] 行）和 [32] 行中对 ` this.balance ` 的错误使用。一个调皮的攻击者可以通过（上面讨论过的） ` selfdestruct() ` 函数强行发送少量的以太，比如 ` 0.1 ether `，以防止未来的玩家达到一个里程碑。由于所有合法玩家只能发送 ` 0.5 ether ` 增量，而合约收到了 ` 0.1 ether ` ，合约的 ` this.balance ` 不再是半个整数。这会阻止 [18]、[21]和[24] 行的所有条件成立。
 
-更糟糕的是，一个错过了里程碑的Ethereum的攻击者可能会强行发送10 ether（或者等同数量的以太会将合约的余额推到上面finalMileStone），这将永久锁定合约中的所有奖励。这是因为该claimReward()函数总是会回复，因为[32]上的要求（即this.balance大于finalMileStone）。
+更糟糕的是，一个因错过了里程碑而复仇心切的攻击者可能会强行发送 ` 10 ether ` （或者会将合约的余额推到高出 ` finalMileStone ` 的数量），这将永久锁定合约中的所有奖励。这是因为 ` claimReward() ` 函数总是会回弹，因为 [32] 行中的要求（即 ` this.balance ` 大于 ` finalMileStone ` ）。
 
 ### 预防技术
 
-这个漏洞通常是由于滥用this.balance。如果可能，合约逻辑应该避免依赖于合约余额的确切值，因为它可以被人为地操纵。如果基于逻辑应用this.balance，确保考虑到意外的余额。
+这个漏洞通常是由于错误运用 ` this.balance ` 而产生的。如果可能，合约逻辑应该避免依赖于合约余额的确切值，因为它可以被人为地操纵。如果应用基于 ` this.balance ` 函数的逻辑语句，请确保考虑到了飞来横 Ether。
 
-如果需要确定的沉积ether值，则应使用自定义变量，以增加应付功能，以安全地追踪沉积的ether。这个变量不会受到通过selfdestruct()调用发送的强制以太网的影响。
+如果需要存储 Ether 的确定值，则应使用自定义变量来获得通过可支付函数获得的增量，以安全地追踪储存 Ether 的值。这个变量不应受到通过调用 ` selfdestruct() ` 强制发送的 Ether 的影响。
 
 考虑到这一点，修正后的EtherGame合约版本可能如下所示：
 
@@ -521,25 +522,25 @@ contract EtherGame {
  }    
 ```
 
-在这里，我们刚刚创建了一个新变量，depositedEther它跟踪已知的以太存储，并且这是我们执行需求和测试的变量。请注意，我们不再有任何参考this.balance。
+在这里，我们刚刚创建了一个新变量， ` depositedEther `，它跟踪已知的 Ether 存储量，并且这也是我们执行需求和测试时用到的变量。请注意，我们不再参考 ` this.balance `。
 
 ### 真实世界的例子：未知
 
-我还没有找到这个在野被利用的例子。然而，在弱势群体竞赛中给出了一些[可利用的合约的例子](https://github.com/Arachnid/uscc/tree/master/submissions-2017/)。
+我还没有找到该漏洞在真实世界中被利用的例子。然而，在 [Underhanded Solidity 竞赛](https://github.com/Arachnid/uscc/tree/master/submissions-2017/)中出现了一些可利用该漏洞的合约的例子。
 
 ## Delegatecall
 
-在CALL与DELEGATECALL操作码是允许Ethereum开发者modularise他们的代码非常有用。对契约的标准外部消息调用由CALL操作码处理，由此代码在外部契约/功能的上下文中运行。该DELEGATECALL码是相同的标准消息的调用，但在目标地址执行的代码在调用合约的情况下与事实一起运行msg.sender，并msg.value保持不变。该功能支持实现库，开发人员可以为未来的合约创建可重用的代码。
+ ` CALL ` 与 ` DELEGATECALL ` 操作码是非常有用的，它们让 Ethereum 开发者将他们的代码模块化（Modularise）。用 ` CALL ` 操作码来处理对合约的外部标准信息调用（Standard Message Call）时，代码在外部合约/功能的环境中运行。 ` DELEGATECALL ` 操作码也是标准消息调用，但在目标地址中的代码会在调用合约的环境下运行，也就是说，保持 ` msg.sender ` 和 ` msg.value ` 不变。该功能支持实现库，开发人员可以为未来的合约创建可重用的代码。 
 
-虽然这两个操作码之间的区别很简单直观，但是使用DELEGATECALL会导致意外的代码执行。
+虽然这两个操作码之间的区别很简单直观，但是使用 ` DELEGATECALL ` 可能会导致意外的代码执行。
 
-有关进一步阅读，请参阅[Stake Exchange上关于以太坊的这篇提问](https://ethereum.stackexchange.com/questions/3667/difference-between-call-callcode-and-delegatecall)，[官方文档](http://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#delegatecall-callcode-and-libraries)以及[如何保护您的智能合约：6](https://medium.com/loom-network/how-to-secure-your-smart-contracts-6-solidity-vulnerabilities-and-how-to-avoid-them-part-1-c33048d4d17d)。
+有关进一步阅读，请参阅 [Stake Exchange上关于以太坊的这篇提问](https://ethereum.stackexchange.com/questions/3667/difference-between-call-callcode-and-delegatecall)，[Solidity 官方文档](http://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#delegatecall-callcode-and-libraries)以及[如何保护您的智能合约：6](https://medium.com/loom-network/how-to-secure-your-smart-contracts-6-solidity-vulnerabilities-and-how-to-avoid-them-part-1-c33048d4d17d)。
 
 ### 漏洞
 
-保护环境的性质DELEGATECALL已经证明，构建无脆弱性的定制库并不像人们想象的那么容易。库中的代码本身可以是安全的，无漏洞的，但是当在另一个应用程序的上下文中运行时，可能会出现新的漏洞。让我们看一个相当复杂的例子，使用斐波那契数字。
+ ` DELEGATECALL ` 会保持调用环境不变的属性表明，构建无漏洞的定制库并不像人们想象的那么容易。库中的代码本身可以是安全的，无漏洞的，但是当在另一个应用的环境中运行时，可能会出现新的漏洞。让我们看一个相当复杂的例子，使用斐波那契数字。
 
-考虑下面的库可以生成斐波那契数列和相似形式的序列。 FibonacciLib.sol[^ 1]
+考虑下面的可以生成斐波那契数列和相似形式序列的库：FibonacciLib.sol[^ 1]
 
 ```solidity
 // library contract - calculates fibonacci-like numbers;
@@ -565,7 +566,7 @@ contract FibonacciLib {
 }
 ```
 
-该库提供了一个函数，可以在序列中生成第n个斐波那契数。它允许用户更改第0个start数字并计算这个新序列中的第n个斐波那契数字。
+该库提供了一个函数，可以在序列中生成第 n 个斐波那契数。它允许用户更改第 0 个 ` start ` 数字并计算这个新序列中的第 n 个斐波那契数字。
 
 现在我们来考虑一个利用这个库的合约。
 
@@ -603,23 +604,23 @@ contract FibonacciBalance {
 }
 ```
 
-该合约允许参与者从合约中提取ether，ether的金额等于与参与者提款订单相对应的斐波纳契数字; 即第一个参与者获得1个ether，第二个参与者获得1，第三个获得2，第四个获得3，第五个5等等（直到合约的余额小于被撤回的斐波纳契数）。
+该合约允许参与者从合约中提取 ether，金额等于参与者提款订单对应的斐波纳契数字；即第一个参与者获得 1 ether，第二个参与者获得 1，第三个获得 2，第四个获得 3，第五个获得 5 等等（直到合约的余额小于被取出的斐波纳契数）。
 
-本合约中有许多要素可能需要一些解释。首先，有一个有趣的变量，fibSig。这包含字符串“fibonacci（uint256）”的Keccak（SHA-3）散列的前4个字节。这被称为[函数选择器](https://solidity.readthedocs.io/en/latest/abi-spec.html#function-selector)，calldata用于指定智能合约的哪个函数将被调用。它在delegatecall[21]行的函数中用来指定我们希望运行该fibonacci(uint256)函数。第二个参数delegatecall是我们传递给函数的参数。其次，我们假设FibonacciLib库的地址在构造函数中正确引用（[部署攻击向量](https://github.com/sigp/solidity-security-blog#deployment)部分 如果合约参考初始化，讨论一些与此类相关的潜在漏洞）。
+本合约中的许多要素可能需要一些解释。首先，有一个看起来很有趣的变量， ` fibSig `。这包含字符串“fibonacci（uint256）”的 Keccak（SHA-3） 哈希值的前4个字节。这被称为[函数选择器](https://solidity.readthedocs.io/en/latest/abi-spec.html#function-selector)，它被放入 ` calldata ` 中以指定调用智能合约的哪个函数。在 [21] 行的 ` delegatecall ` 函数中，它被用来指出：我们希望运行 ` fibonacci(uint256) ` 函数。 ` delegatecall ` 的第二个参数是我们传递给函数的参数。其次，我们假设 FibonacciLib 库的地址在构造函数中正确引用（[部署攻击向量](https://github.com/sigp/solidity-security-blog#deployment)部分会讨论与合约参考初始化相关的潜在漏洞）。
 
-你能在这份合约中发现任何错误吗？如果你把它改成混音，用ether填充并调用withdraw()，它可能会恢复。
+你能发现这份合约中的错误吗？如果你把它放到 Remix 里面编译，存入 Ether 并调用 ` withdraw() ` ，它可能会回滚状态。（Revert）
 
-您可能已经注意到，在start库和主调用合约中都使用了状态变量。在图书馆合约中，start用于指定斐波纳契数列的开始并设置为0，而3在FibonacciBalance合约中设置。您可能还注意到，FibonacciBalance合约中的回退功能允许将所有调用传递给库合约，这也允许调用库合约的setStart()功能。回想一下，我们保留了合约的状态，看起来这个功能可以让你改变start本地FibonnacciBalance合约中变量的状态。如果是这样，这将允许一个撤回更多的醚，因为结果calculatedFibNumber是依赖于start变量（如图书馆合约中所见）。实际上，该setStart()函数不会（也不能）修改合约中的start变量FibonacciBalance。这个合约中的潜在弱点比仅仅修改start变量要糟糕得多。
+您可能已经注意到，在库和主调用合约中都使用了状态变量 ` start `。在库合约中， ` start ` 用于指定斐波纳契数列的起点，它被设置为 0，而 FibonacciBalance 合约中它被设置为 3。你可能还注意到，FibonacciBalance 合约中的回退函数允许将所有调用传递给库合约，因此也允许调用库合约的 ` setStart() ` 函数。回想一下，我们会保留合约状态，那么看起来你就可以据此改变本地 FibonnacciBalance 合约中 ` start ` 变量的状态。如果是这样，一个用户可以取出更多的 Ether，因为最终的 ` calculatedFibNumber ` 依赖于 ` start ` 变量（如库合约中所见）。实际上，该 ` setStart() ` 函数不会（也不能）修改 FibonacciBalance 合约中的 ` start ` 变量。这个合约中的潜在弱点比仅仅修改 ` start ` 变量要糟糕得多。
 
-在讨论实际问题之前，我们先快速绕道了解状态变量（storage变量）实际上是如何存储在合约中的。状态或storage变量（持续在单个事务中的变量）slots在合约中引入时按顺序放置。（这里有一些复杂性，我鼓励读者阅读存储中状态变量的布局以便更透彻的理解）。
+在讨论实际问题之前，我们先快速绕道了解状态变量（ ` storage ` 变量）实际上是如何存储在合约中的。状态或 ` storage ` 变量（贯穿单个交易、始终都存在的变量）在合约中引入时，是按顺序放置在 ` slots ` 中的。（这里有一些复杂的东西，我鼓励读者阅读[存储中状态变量的布局](http://solidity.readthedocs.io/en/latest/miscellaneous.html#layout-of-state-variables-in-storage)以便更透彻地理解）。
 
-作为一个例子，让我们看看library 合约。它有两个状态变量，start和calculatedFibNumber。第一个变量是start，因此它被存储在合约的存储位置slot[0]（即第一个槽）。第二个变量calculatedFibNumber放在下一个可用的存储槽中slot[1]。如果我们看看这个函数setStart()，它会接受一个输入并设置start输入的内容。因此，该功能设置slot[0]为我们在该setStart()功能中提供的任何输入。同样，该setFibonacci()函数设置calculatedFibNumber为的结果fibonacci(n)。再次，这只是将存储设置slot[1]为值fibonacci(n)。
+作为一个例子，让我们看看库合约。它有两个状态变量， ` start ` 和 ` calculatedFibNumber `。第一个变量是 ` start ` ，因此它被存储在合约的存储位置 ` slot[0] ` （即第一个 slot）。第二个变量 ` calculatedFibNumber ` 放在下一个可用的存储位置中，也就是 ` slot[1] ` 。如果我们看看 ` setStart() ` 这个函数，它可以接收一个输入并依据输入来设置 ` start `。因此， ` setStart() ` 函数可以将 ` slot[0] ` 设置为我们在该函数中提供的任何输入。同样， ` setFibonacci() ` 函数也可以将 ` calculatedFibNumber ` 设置为 ` fibonacci(n) ` 的结果。再说一遍，这只是将存储位置 ` slot[1] ` 设置为 ` fibonacci(n) ` 的值。
 
-现在让我们看看FibonacciBalance合约。存储slot[0]现在对应于fibonacciLibrary地址并slot[1]对应于calculatedFibNumber。它就在这里出现漏洞。delegatecall 保留合约上下文。这意味着通过执行的代码delegatecall将作用于调用合约的状态（即存储）。
+现在让我们看看 FibonacciBalance 合约。存储位置 ` slot[0] ` 现在对应于 fibonacciLibrary 的地址， ` slot[1] ` 对应于 ` calculatedFibNumber ` 。这就是漏洞所在。 ` delegatecall ` 会保留合约环境。这意味着通过 ` delegatecall ` 执行的代码将作用于调用合约的状态（即存储）。
 
-现在请注意，我们在withdraw()[21]线上执行，fibonacciLibrary.delegatecall(fibSig,withdrawalCounter)。这就调用了setFibonacci()我们讨论的函数，修改了存储 slot[1]，在我们当前的情况下calculatedFibNumber。这是预期的（即执行后，calculatedFibNumber得到调整）。但是，请记住，合约中的start变量FibonacciLib位于存储中slot[0]，即fibonacciLibrary当前合约中的地址。这意味着该功能fibonacci()会带来意想不到的结果。这是因为它引用start（slot[0]）当前调用上下文中的fibonacciLibrary哪个地址是地址（当解释为a时，该地址通常很大uint）。因此，该withdraw()函数很可能会恢复，因为它不包含uint(fibonacciLibrary)ether的量，这是什么calcultedFibNumber会返回。
+现在，请注意在 [21] 行上的 ` withdraw() `， ` fibonacciLibrary.delegatecall(fibSig,withdrawalCounter) ` 。这会调用 ` setFibonacci() ` ，正如我们讨论的那样，会修改存储位置 ` slot[1] ` ，在我们当前的环境中就是 ` calculatedFibNumber ` 。我们预期是这样的（即执行后， ` calculatedFibNumber ` 会得到调整）。但是，请记住，FibonacciLib 合约中，位于存储位置 ` slot[0] ` 中的是 ` start ` 变量，而在当前（FibonacciBalance）合约中就是 fibonacciLibrary 的地址。这意味着 ` fibonacci() ` 函数会带来意想不到的结果。这是因为它引用 ` start ` （ ` slot[0] ` ），而该位置在当前调用环境中是 fibonacciLibrary 的地址（如果用 ` uint ` 来表达的话，该值会非常大）。因此，调用 ` withdraw() ` 函数很可能会导致状态回滚（Revert），因为 ` calcultedFibNumber ` 会返回  ` uint(fibonacciLibrary) `，而合约却没有那么多数量的 Ether。
 
-更糟糕的是，FibonacciBalance合约允许用户fibonacciLibrary通过行[26]上的后备功能调用所有功能。正如我们前面所讨论的那样，这包括该setStart()功能。我们讨论过这个功能允许任何人修改或设置存储slot[0]。在这种情况下，存储slot[0]是fibonacciLibrary地址。因此，攻击者可以创建一个恶意合约（下面是一个例子），将地址转换为uint（这可以在python中轻松使用int('<address>',16)）然后调用setStart(<attack_contract_address_as_uint>)。这将改变fibonacciLibrary为攻击合约的地址。然后，无论何时用户调用withdraw()或回退函数，恶意契约都会运行（这可以窃取合约的全部余额），因为我们修改了实际地址fibonacciLibrary。这种攻击合约的一个例子是，
+更糟糕的是，FibonacciBalance 合约允许用户通过 [26] 行上的回退（Fallback）函数调用 fibonacciLibrary 的所有函数。正如我们前面所讨论的那样，这包括 ` setStart() ` 函数。我们讨论过这个功能允许任何人修改或设置 ` slot[0] ` 的值。在当前合约中，存储位置 ` slot[0] ` 是 fibonacciLibrary 地址。因此，攻击者可以创建一个恶意合约（下面是一个例子），将恶意合约地址转换为一个 ` uint ` 数据（在 python 中可以使用 ` int('<address>',16) ` 轻松完成），然后调用 ` setStart(<attack_contract_address_as_uint>) ` ，这会将 ` fibonacciLibrary ` 转变为攻击合约的地址。然后，无论何时用户调用 ` withdraw() ` 或回退函数，恶意合约都会运行（它可以窃取合约的全部余额），因为我们修改了 ` fibonacciLibrary ` 指向的实际地址。这种攻击合约的一个例子是，
 
 ```solidity
 contract Attack {
@@ -635,22 +636,23 @@ contract Attack {
  }
 ```
 
-请注意，此攻击合约calculatedFibNumber通过更改存储来修改slot[1]。原则上，攻击者可以修改他们选择的任何其他存储槽来对本合约执行各种攻击。我鼓励所有读者将这些合约放入Remix，并通过这些delegatecall功能尝试不同的攻击合约和状态更改。
+请注意，此攻击合约可以通过更改存储位置 ` slot[1] ` 来修改 ` calculatedFibNumber ` 。原则上，攻击者可以修改他们选择的任何其他存储位置来对本合约执行各种攻击。我鼓励所有读者将这些合约放入 [Remix](https://remix.ethereum.org/)，并通过这些 ` delegatecall ` 函数尝试不同的攻击合约和状态更改。
 
-同样重要的是要注意，当我们说这delegatecall是保留状态时，我们并不是在讨论合约的变量名称，而是这些名称指向的实际存储槽位。从这个例子中可以看出，一个简单的错误，可能导致攻击者劫持整个合约及其以太网。
+同样重要的是要注意，当我们说 ` delegatecall ` 会保留状态，我们说的并不是合约中不同名称下的变量，而是这些名称指向的实际存储位置。从这个例子中可以看出，一个简单的错误，可能导致攻击者劫持整个合约及其 Ether。
 
 ### 预防技术
 
-Solidity library为实施library合约提供了关键字（参见Solidity Docs了解更多详情）。这确保了library合约是无国籍，不可自毁的。强制library成为无国籍人员可以缓解本节所述的存储上下文的复杂性。无状态库也可以防止攻击，攻击者可以直接修改库的状态，以实现依赖库代码的合约。作为一般的经验法则，在使用时DELEGATECALL要特别注意库合约和调用合约的可能调用上下文，并且尽可能构建无状态库。
+Solidity 为实现库合约提供了关键字 ` library ` （参见 [Solidity Docs](http://solidity.readthedocs.io/en/latest/contracts.html?highlight=library#libraries) 了解更多详情)。这确保了库合约是无状态（Stateless）且不可自毁的。强制让 library 成为无状态的，可以缓解本节所述的存储环境的复杂性。无状态库也可以防止攻击者直接修改库状态的攻击，以实现依赖库代码的合约。作为一般的经验法则，在使用时 ` DELEGATECALL ` 时要特别注意库合约和调用合约的可能调用上下文，并且尽可能构建无状态库。
 
 ### 真实世界示例：Parity Multisig Wallet（Second Hack）
 
-第二种Parity Multisig Wallet hack是一个例子，说明如果在非预期的上下文中运行良好的库代码的上下文可以被利用。这个黑客有很多很好的解释，比如这个概述：Parity MultiSig Hacked。再次通过Anthony Akentiev，这个堆栈交换问题和深入了解Parity Multisig Bug。
+Parity 多签名钱包第二次被黑事件是一个例子，说明了如果在非预期的环境中运行，良好的库代码也可以被利用。关于这次被黑事件，有很多很好的解释，比如这个概述：Anthony Akentiev 写的 [再一次解释 Parity 多签名钱包被黑事件](https://medium.com/chain-cloud-company-blog/parity-multisig-hack-again-b46771eaa838)，这个[stack exchange 上的问答](https://ethereum.stackexchange.com/questions/30128/explanation-of-parity-library-suicide/30130)和[深入了解Parity Multisig Bug](http://hackingdistributed.com/2017/07/22/deep-dive-parity-bug/)。
 
-要添加到这些参考资料中，我们来探索被利用的合约。library和钱包合约可以在这里的奇偶校验github上找到。
+要深入理解这些参考资料，我们要探究一下被攻击的合约。受攻击的库合约和钱包合约可以在 [Parity 的 github](https://github.com/paritytech/parity/blob/b640df8fbb964da7538eef268dffc125b081a82f/js/src/contracts/snippets/enhanced-wallet.sol) 上找到。
 
-我们来看看这个合约的相关方面。这里包含两份利益合约，library合约和钱包合约。
-library合约，
+我们来看看这个合约的相关方面。这里有两个包含利益的合约，库合约和钱包合约。
+
+先看 library 合约， 
 
 ```solidity
 contract WalletLibrary is WalletEvents {
@@ -677,7 +679,7 @@ contract WalletLibrary is WalletEvents {
 }
 ```
 
-和钱包合约，
+再看钱包合约，
 
 ```solidity
 contract Wallet is WalletEvents {
@@ -702,11 +704,11 @@ contract Wallet is WalletEvents {
 }
 ```
 
-请注意，Wallet合约基本上通过WalletLibrary委托调用将所有调用传递给合约。_walletLibrary此代码段中的常量地址充当实际部署的WalletLibrary合约（位于0x863DF6BFa4469f3ead0bE8f9F2AAE51c91A907b4）的占位符。
+请注意，Wallet 合约基本上会通过 delegate call 将所有调用传递给 WalletLibrary。此代码段中的常量地址 ` _walletLibrary `，即是实际部署的 WalletLibrary 合约的占位符（位于 ` 0x863DF6BFa4469f3ead0bE8f9F2AAE51c91A907b4 ` ）。
 
-这些合约的预期运作是制定一个简单的低成本可部署Wallet合约，其代码基础和主要功能在WalletLibrary合约中。不幸的是，WalletLibrary合约本身就是一个合约，并保持它自己的状态。你能看出为什么这可能是一个问题？
+这些合约的预期运作是生成一个简单的可低成本部署的 Wallet 合约，合约的代码基础和主要功能都在 WalletLibrary 合约中。不幸的是，WalletLibrary 合约本身就是一个合约，并保持它自己的状态。你能能不能看出为什么这会是一个问题？
 
-有可能向WalletLibrary合约本身发送调用。具体来说，WalletLibrary合约可以初始化，并成为拥有。用户通过调用契约initWallet()函数来做到这一点，WalletLibrary成为Library合约的所有者。同一个用户，随后称为kill()功能。因为用户是Library合约的所有者，所以修改者通过并且Library合约被自动化。由于所有Wallet现存的合约都提及该Library合约，并且不包含更改该参考文献的方法，因此其所有功能（包括撤回ether的功能）都会随WalletLibrary合约一起丢失。更直接地说，这种类型的所有奇偶校验多数钱包中的所有以太会立即丢失或永久不可恢复。
+因为有可能向 WalletLibrary 合约本身发送调用请求。具体来说，WalletLibrary 合约可以初始化，并被用户拥有。一个用户通过调用 WalletLibrary 中的 ` initWallet() ` 函数，成为了 Library 合约的所有者。同一个用户，随后调用 ` kill() ` 功能。因为用户是 Library 合约的所有者，所以修改传入、Library 合约自毁。因为所有现存的 Wallet 合约都引用该 Library 合约，并且不包含更改引用的方法，因此其所有功能（包括取回 Ether 的功能）都会随 WalletLibrary 合约一起丢失。更直接地说，这种类型的 Parity 多签名钱包中的所有以太都会立即丢失或者说永久不可恢复。
 
 ## 默认可见性
 
@@ -1583,13 +1585,12 @@ contract RecoverContract {
 * [SmartBillions](https://www.reddit.com/r/ethereum/comments/74d3dc/smartbillions_lottery_contract_just_got_hacked/)
 * [Exchange Didn't add "0x" to payload](https://steemit.com/cryptocurrency/@barrydutton/breaking-the-biggest-canadian-coin-exchange-quadrigacx-loses-67-000-usdeth-due-to-coding-error-funds-locked-in-an-executable)
 
-[^ 1]：此代码已从web3j修改过
-
-[^ 2]：事务随机数就像一个事务计数器。从您的账户发送交易时，它会增加您的交易时间。
-
-[^ 3]：不要部署此合约来存储任何真实的以太网。仅用于演示目的。它没有固有的特权，任何人都可以在部署和使用它时恢复以太网。
+[^ 1]: 此代码已从web3j修改过
+[^ 2]: 事务随机数就像一个事务计数器。从您的账户发送交易时，它会增加您的交易时间。
+[^ 3]: 不要部署此合约来存储任何真实的以太网。仅用于演示目的。它没有固有的特权，任何人都可以在部署和使用它时恢复以太网。
 
 ## 致谢
 
 * [yudan](https://github.com/infinityhacker)
 * [阿剑@EthFans](https://github.com/editor-Ajian)
+
