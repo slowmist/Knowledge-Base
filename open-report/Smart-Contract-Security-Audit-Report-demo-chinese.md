@@ -18,6 +18,8 @@
 * 拒绝服务审计
 * Gas 优化审计
 * 设计逻辑审计
+* “假充值”漏洞审计
+* 恶意 Event 事件日志审计
 
 [更多安全审计服务](https://www.slowmist.com/service-security-audit.html?f=github)
 
