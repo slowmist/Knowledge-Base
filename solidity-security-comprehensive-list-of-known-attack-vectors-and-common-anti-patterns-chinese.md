@@ -1070,10 +1070,11 @@ function transfer(address to, uint tokens) public returns (bool success);
 
 我尚不知道真实世界中发生的此类攻击的公开例子。
 
-## 未检查的CALL返回值
+## 不检查 CALL 返回值
 
-有很多方法可以稳固地执行外部调用。向外部账户发送ether通常通过该transfer()方法完成。但是，该send()功能也可以使用，并且对于更多功能的外部调用，CALL可以直接使用操作码。在call()和send()函数返回一个布尔值，指示如果调用成功还是失败。因此，这些功能有一个简单的警告，在执行这些功能将不会恢复交易，如果外部调用（由intialised call()或send()）失败，而不在call()或send()将简单地返回false。当没有检查返回值时，会出现一个常见的错误，而开发人员希望恢复发生。
-有关进一步阅读，请参阅DASP Top 10和扫描Live Ethereum合约中的“Unchecked-Send”错误。
+Solidity 中有很多方法可以执行外部调用。向外部账户发送 Ether 通常通过 ` transfer() ` 方法完成。不过，也可以使用 ` send() ` 功能，而且，对于更多功能的外部调用，在 Solidity 中可以直接使用 ` CALL ` 操作码。 ` call() ` 和 ` send() ` 函数会返回一个布尔值，显示调用是成功还是失败。因此，这些功能有一个简单的警告作用，如果（由 ` call() ` 或 ` send() ` 初始化的）外部调用失败，执行这些函数的交易将不会回滚，反而 ` call() ` 或 ` send() ` 将简单地返回 ` false ` 。当没有检查返回值时，会出现一个常见的错误，并不是开发人员希望的那样发生回滚。
+
+有关进一步阅读，请参阅 [DASP Top 10](http://www.dasp.co/#item-4) 和[剖析以太坊线上合约中的“Unchecked-Send”错误](http://hackingdistributed.com/2016/06/16/scanning-live-ethereum-contracts-for-bugs/)。
 
 ### 漏洞
 
@@ -1101,19 +1102,19 @@ contract Lotto {
 }
 ```
 
-这份合约代表了一个类似于大乐透的合约，在这种合约中，winner收到winAmount了ether，通常只剩下一点让任何人退出。
+这份合约代表了一个类似于大乐透的合约，在这种合约中， ` winner ` 会收到 ` winAmount ` 个 Ether，通常只剩下一点让其他人取出。
 
-该错误存在于第[11]行，其中使用a send()而不检查响应。在这个微不足道的例子中，可以将winner其事务失败（无论是通过耗尽天然气，是故意抛出回退函数还是通过调用堆栈深度攻击的合约）payedOut设置为true（无论是否发送了以太） 。在这种情况下，公众可以winner通过该withdrawLeftOver()功能撤回奖金。
+错误存在于第 [11] 行，其中使用 ` send() ` 而不检查响应值。在这个微不足道的例子中， ` winner ` 的交易失败（无论是通过耗尽 Gas、通过故意抛出回退函数的合约，还是调用[堆栈深度攻击](https://github.com/ethereum/wiki/wiki/Safety#call-depth-attack-deprecated)）可以使得 ` payedOut ` 被设置为 ` true ` （无论是否发送了 Ether） 。在这种情况下，公众可以通过 ` withdrawLeftOver() ` 函数取出属于 ` winner ` 的奖金。
 
 ### 预防技术
 
-只要有可能，使用transfer()功能，而不是send()作为transfer()意志revert，如果外部事务恢复。如果send()需要，请务必检查返回值。
+只要有可能，使用 ` transfer() ` 功能，而不是 ` send() ` ，因为，如果外部交易回滚， ` transfer() ` 会触发回滚。如果需要使用 ` send() ` ，请务必检查返回值。
 
-更强大的建议是采取撤回模式。在这个解决方案中，每个用户都承担着调用隔离功能（即撤销功能）的作用，该功能处理发送合约以外的事件，并因此独立地处理失败的发送事务的后果。这个想法是将外部发送功能与代码库的其余部分进行逻辑隔离，并将可能失败的事务负担交给正在调用撤消功能的最终用户。
+一种更强大的[推荐用法](http://solidity.readthedocs.io/en/latest/common-patterns.html#withdrawal-from-contracts)是采取 *withdrawel（取出）模式*。在这个解决方案中，每个用户都得调用相互隔离的函数（即 *withdrawel* 函数），这一函数会处理将 Ether 发送到合约以外的交易，因此，它会分别处理发送失败的交易结果。这个想法是将外部发送功能与代码库的其余部分进行逻辑隔离，并将可能失败的交易负担交给正在调用 *withdrawel* 函数的最终用户。
 
-### 真实的例子：Etherpot和以太之王
+### 真实的例子：Etherpot 和 King of Ether
 
-Etherpot是一个聪明的合约彩票，与上面提到的示例合约不太相似。etherpot的固体代码可以在这里找到：lotto.sol。这个合约的主要缺点是由于块哈希的使用不正确（只有最后的256块哈希值是可用的，请参阅Aakil Fernandes 关于Etherpot如何正确实现的帖子）。然而，这份合约也受到未经检查的通话价值的影响。注意cash()lotto.sol的行[80]上的函数：
+[Etherpot](https://github.com/etherpot) 是一个彩票智能合约，与上面提到的示例合约不太相似。Etherpot 的 Soloidity 代码可以在这里找到：[lotto.sol](https://github.com/etherpot/contract/blob/master/app/contracts/lotto.sol)。这个合约的主要缺点是对块哈希的不当使用（只有最后 256 个块的哈希值是可用的，请参阅 Aakil Fernandes 关于 Etherpot 如何正确实现的[帖子](http://aakilfernandes.github.io/blockhashes-are-only-good-for-256-blocks)。然而，这份合约也受到未经检查的 Call 返回值的影响。注意lotto.sol 的 行[80] 上的函数 ` cash() ` ：
 
 ```solidity
   function cash(uint roundIndex, uint subpotIndex){
@@ -1142,19 +1143,19 @@ Etherpot是一个聪明的合约彩票，与上面提到的示例合约不太相
 }
 ```
 
-请注意，在第[21]行，发送函数的返回值没有被选中，然后下一行设置了一个布尔值，表示赢家已经发送了他们的资金。这个错误可以允许一个状态，即赢家没有收到他们的异议，但是合约状态可以表明赢家已经支付。
+请注意，在 行[21]，发送函数的返回值没有被检查，然后下一行设置了一个布尔值，表示已经向赢家发送了属于他们的奖金。这个错误可能引发一种状态，即赢家没有收到他们的 Ether，但是合约状态表明赢家已经得到了支付。
 
-这个错误的更严重的版本发生在以太之王。一个优秀的验尸本合约已被写入详细介绍了如何一个未经检查的失败send()可能会被用来攻击的合约。
+这个错误的更严重的版本发生在 [King of the Ether](https://www.kingoftheether.com/thrones/kingoftheether/index.html)。已经有人写出一篇优秀的[事后检验报告](https://www.kingoftheether.com/postmortem.html)，详细介绍了一个未经检查的 ` send() ` 失败交易可以如何用于攻击合约。
 
-## 条件竞争/非法预先交易
+## 条件竞争/抢先提交
 
-将外部调用与其他合约以及底层区块链的多用户特性结合在一起会产生各种潜在的缺陷，用户可以通过争用代码来获取意外状态。重入是这种条件竞争的一个例子。在本节中，我们将更一般地讨论以太坊区块链上可能发生的各种竞态条件。在这个领域有很多不错的帖子，其中一些是：以太坊Wiki - 安全，DASP - 前台运行和共识 - 智能合约最佳实践。
+将对其它合约的外部调用以及底层区块链的多用户特性结合在一起，会在 Solidity 中产生各种潜在的缺陷，用户可能会 *争用（race）* 代码产生意外状态。[可重入漏洞](https://ethfans.org/posts/comprehensive-list-of-common-attacks-and-defense-part-1)是这种条件竞争（Race Conditions）的一个例子。在本节中，我们将更一般地讨论以太坊区块链上可能发生的各种竞态条件。在这个领域有很多不错的帖子，其中一些是：[以太坊Wiki - 安全](https://github.com/ethereum/wiki/wiki/Safety#race-conditions)，[DASP - 前台运行和共识](http://www.dasp.co/#item-7)以及[智能合约最佳实践](https://consensys.github.io/smart-contract-best-practices/known_attacks/#race-conditions)。
 
 ### 漏洞
 
-与大多数区块链一样，以太坊节点汇集交易并将其形成块。一旦矿工解决了共识机制（目前Ethereum的 ETHASH PoW），这些交易就被认为是有效的。解决该区块的矿工也会选择来自该矿池的哪些交易将包含在该区块中，这通常是由gasPrice交易订购的。在这里有一个潜在的攻击媒介。攻击者可以观察事务池中是否存在可能包含问题解决方案的事务，修改或撤销攻击者的权限或更改合约中的攻击者不希望的状态。然后攻击者可以从这个事务中获取数据，并创建一个更高级别的事务gasPrice 并在原始之前将其交易包含在一个区块中。
+与大多数区块链一样，以太坊节点汇集交易并将其打包成块。一旦矿工获得了共识机制（目前以太坊上实行的是 [ETHASH](https://github.com/ethereum/wiki/wiki/Ethash) 工作量证明算法）的一个解，这些交易就被认为是有效的。挖出该区块的矿工同时也选择将交易池中的哪些交易包含在该区块中，一般来说是根据交易的 ` gasPrice ` 来排序。在这里有一个潜在的攻击媒介。攻击者可以监测交易池，看看其中是否存在问题的解决方案（如下合约所示）、修改或撤销攻击者的权限、或更改合约中状态的交易；这些交易对攻击者来说都是阻碍。然后攻击者可以从该中获取数据，并创建一个 ` gasPrice ` 更高的交易，（让自己的交易）抢在原始交易之前被打包到一个区块中。
 
-让我们看看这可以如何用一个简单的例子。考虑合约FindThisHash.sol：
+让我们看看这可以如何用一个简单的例子。考虑合约 ` FindThisHash.sol ` ：
 
 ```solidity
 contract FindThisHash {
@@ -1170,30 +1171,33 @@ contract FindThisHash {
 }
 ```
 
-想象一下，这个合约包含1000个ether。可以找到sha3哈希的预映像的用户0xb5b5b97fafd9855eec9b41f74dfb6c38f5951141f9a3ecd7f44d5479b630ee0a可以提交解决方案并检索1000 ether。让我们说一个用户找出解决方案Ethereum!。他们称solve()与Ethereum!作为参数。不幸的是，攻击者非常聪明地为提交解决方案的任何人观看交易池。他们看到这个解决方案，检查它的有效性，然后提交一个远高于gasPrice原始交易的等价交易。解决该问题的矿工可能会因攻击者的偏好而给予攻击者偏好，gasPrice并在原求解器之前接受他们的交易。攻击者将获得1000ether，解决问题的用户将不会得到任何东西（合约中没有剩余ether）。
+想象一下，这个合约包含 1000 个 Ether。可以找到 sha3 哈希值为 ` 0xb5b5b97fafd9855eec9b41f74dfb6c38f5951141f9a3ecd7f44d5479b630ee0a ` 的原象（Pre-image）的用户可以提交解决方案，然后取得 1000 Ether。让我们假设，一个用户找到了答案 ` Ethereum! ` 。他们可以调用 ` solve() ` 并将 ` Ethereum! ` 作为参数。不幸的是，攻击者非常聪明，他监测交易池看看有没有人提交解决方案。他们看到这个解决方案，检查它的有效性，然后提交一个 ` gasPrice ` 远高于原始交易的相同交易。挖出当前块的矿工可能会因更高的 ` gasPrice ` 而偏爱攻击者发出的交易，并在打包原始交易之前接受他们的交易。攻击者将获得1000 Ether，解决问题的用户将不会得到任何东西（因为合约中没有剩余的 Ether）。
 
-未来卡斯珀实施的设计中会出现更现实的问题。卡斯帕证明合约涉及激励条件，在这种条件下，通知验证者双重投票或行为不当的用户被激励提交他们已经这样做的证据。验证者将受到惩罚并奖励用户。在这种情况下，预计矿工和用户将在所有这些提交的证据前面运行，并且这个问题必须在最终发布之前得到解决。
+未来 Casper 实现的设计中会出现更现实的问题。Casper 权益证明合约涉及罚没条件，在这些条件下，注意到验证者双重投票或行为不当的用户被激励提交验证者已经这样做的证据。验证者将受到惩罚、用户会得到奖励。在这种情况下，可以预期，矿工和用户会抢先提交（Front-run）所有这样的证据（以获得奖励），这个问题必须在最终发布之前解决。
 
 ### 预防技术
 
-有两类用户可以执行这些类型的前端攻击。用户（他们修改gasPrice他们的交易）和矿工自己（谁可以在一个块中重新订购他们认为合适的交易）。对于第一类（用户）而言易受攻击的合约比第二类（矿工）易受影响的合约明显更差，因为矿工只能在解决某个块时执行攻击，而对于任何单个矿工来说，块。在这里，我将列出一些与他们可能阻止的攻击者类别有关的缓解措施。
+有两类用户可以执行这种抢先提交攻击。用户（他们可以修改他们交易的 ` gasPrice ` ）和矿工自己（他可以依自己的意愿安排包含在块中的交易）。易受第一类（用户）攻击的合约比易受第二类（矿工）影响的合约明显更差，因为矿工只能在挖出某个块时执行攻击，对任何单个矿工来说都不太可能针对特定区块发动攻击（译者注：因为他们不一定能挖出特定高度的区块）。在这里，我将列出一些与他们可能阻止的攻击者类别有关的缓解措施。
 
-可以采用的一种方法是在合约中创建逻辑，以在其上设置上限gasPrice。这可以防止用户增加gasPrice并获得超出上限的优惠交易排序。这种预防措施只能缓解第一类攻击者（任意用户）。在这种情况下，矿工仍然可以攻击合约，因为无论天然气价格如何，他们都可以在他们的块中订购交易。
+可以采用的一种方法是在合约中创建逻辑，设置 ` gasPrice ` 的上限。这可以防止用户增加 ` gasPrice ` 并因超出上限而获得优先的交易排序。这种预防措施只能缓解第一类攻击者（任意用户）。在这种情况下，矿工仍然可以攻击合约，因为无论 Gas价格如何，他们都可以安排包含在他们的块中的交易。
 
-一个更强大的方法是尽可能使用commit-reveal方案。这种方案规定用户使用隐藏信息发送交易（通常是散列）。在事务已包含在块中后，用户将发送一个事务来显示已发送的数据（显示阶段）。这种方法可以防止矿工和用户从事先交易，因为他们无法确定交易的内容。然而，这种方法不能隐藏交易价值（在某些情况下，这是需要隐藏的有价值的信息）。该ENS 智能合约允许用户发送交易，其承诺数据包括他们愿意花费的金额。用户可以发送任意值的交易。在披露阶段，用户退还了交易中发送的金额与他们愿意花费的金额之间的差额。
-洛伦茨，菲尔，阿里和弗洛里安的进一步建议是使用潜艇发射。这个想法的有效实现需要CREATE2操作码，目前还没有被采用，但似乎在即将出现的硬叉上。
+一个更强大的方法是尽可能使用 [承诺-公开（commit-reveal）](https://ethereum.stackexchange.com/questions/191/how-can-i-securely-generate-a-random-number-in-my-smart-contract ) 方案。这种方案规定用户使用隐藏信息（通常是哈希值）发送交易。在交易已包含在块中后，用户将发送一个交易来显示已发送的数据（reveal 阶段）。这种方法可以防止矿工和用户从事抢先交易，因为他们无法确定交易的内容。然而，这种方法不能隐藏交易价值（在某些情况下，这是需要隐藏的有价值的信息）。[ENS](https://ens.domains/) 智能合约允许用户发送交易，其承诺数据包括他们愿意花费的金额。用户可以发送任意值的交易。在披露阶段，用户可以取出交易中发送的金额与他们愿意花费的金额之间的差额。
 
-### 真实世界的例子：ERC20和Bancor
+Lorenz、Phil、Ari 以及 Florian 的进一步建议是使用 [Submarine Sends](http://hackingdistributed.com/2017/08/28/submarine-sends/)。这个想法的有效实现需要 ` CREATE2 ` 操作码，目前还没有被采用，但可能出现在即将到来的硬分叉上。
 
-该ERC20标准是相当知名的关于Ethereum建设令牌。这个标准有一个潜在的超前漏洞，这个漏洞是由于这个approve()功能而产生的。这个漏洞的一个很好的解释可以在这里找到。
+### 真实世界的例子：ERC20 和 Bancor
 
-该标准规定的approve()功能如下：
+[ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)是相当知名的在以太坊上开发代币的标准。这个标准有一个潜在的抢先提交漏洞，这个漏洞是由于 ` approve() ` 功能而产生的。这个漏洞的一个很好的解释可以在[这里](https://docs.google.com/document/d/1YLPtQxZu1UAvO9cZ1O2RPXBbT0mooh4DYKjA_jp-RLM/edit)找到。
 
- ` function approve(address _spender, uint256 _value) returns (bool success) ` 
+该标准规定的 ` approve() ` 功能如下：
 
-该功能允许用户 允许其他用户 代表他们传送令牌。当用户Alice 批准她的朋友Bob花钱时，这种先发制人的漏洞就出现了100 tokens。爱丽丝后来决定，她想撤销Bob批准花费100 tokens，所以她创建了一个交易，设置Bob的分配50 tokens。Bob，他一直在仔细观察这个连锁店，看到这笔交易并且建立了一笔他自己花费的交易100 tokens。他gasPrice的交易比自己的交易要高，他Alice的交易优先于她的交易。一些实现approve()将允许Bob转移他的100 tokens，然后当Alice事务被提交时，重置Bob的批准50 tokens，实际上允许Bob访问150 tokens。这种攻击的缓解策略给出这里上面链接在文档中。
+``` 
+function approve(address _spender, uint256 _value) returns (bool success)
+```
 
-另一个突出的现实世界的例子是Bancor。Ivan Bogatty和他的团队记录了对Bancor最初实施的有利可图的攻击。他的博客文章和德文3讲话详细讨论了这是如何完成的。基本上，令牌的价格是根据交易价值确定的，用户可以观察Bancor交易的交易池，并从前端运行它们以从价格差异中获利。Bancor团队解决了这一攻击。
+该功能让用户可以授权其他用户代表他们转移代币。当用户Alice *批准（Approve）* 她的朋友 Bob 花费 ` 100 tokens ` 时，这种先发制人的漏洞就会出现。Alice 后来决定，她想撤销对 Bob 花费 ` 100 tokens ` 的批准，所以她创建了一个交易，设置 Bob 的份额为 ` 50 tokens ` 。Bob 一直在仔细监测链上数据，看到这笔交易之后他建立了一笔他自己的交易，花费了 ` 100 tokens ` 。他给自己的交易设置了比 Alice 交易更高的 ` gasPrice ` ，让自己的交易优先于她的交易。一些 ` approve() ` 的实现允许 Bob 转移他的 ` 100 tokens ` ，然后当 Alice 的交易被提交时，重置 Bob 的批准份额为 ` 50 tokens ` ，实际上允许 Bob 调动 ` 150 tokens ` 。上面链接到的[文档](https://docs.google.com/document/d/1YLPtQxZu1UAvO9cZ1O2RPXBbT0mooh4DYKjA_jp-RLM/edit)给出了针对这一攻击的缓解策略。
+
+另一个突出的现实世界的例子是 [Bancor](https://www.bancor.network/)。Ivan Bogatty 和他的团队记录了对 Bancor 初始实现的有利可图的攻击。他的[博客文章](https://hackernoon.com/front-running-bancor-in-150-lines-of-python-with-ethereum-api-d5e2bfd0d798)和[Devcon 3 演讲](https://www.youtube.com/watch?v=RL2nE3huNiI)详细讨论了这是如何完成的。基本上，代币的价格是根据交易价值确定的，用户可以观测 Bancor 交易的交易池，并抢先提交它们以从价格差异中获利。Bancor 团队已经解决了这种攻击。
 
 ## 拒绝服务（DOS）
 
