@@ -70,15 +70,15 @@
   * [预防技术](#预防技术-11)
   * [真实的例子：GovernMental](#真实的例子governmental)
 
-* [谨慎构建函数](#谨慎构建函数)
+* [构造函数失控](#构造函数失控)
   * [漏洞](#漏洞-12)
   * [预防技术](#预防技术-12)
   * [真实世界的例子：Rubixi](#真实世界的例子rubixi)
 
-* [虚拟化存储指针](#虚拟化存储指针)
+* [未初始化的存储指针](#未初始化的存储指针)
   * [漏洞](#漏洞-13)
   * [预防技术](#预防技术-13)
-  * [真实世界的例子：蜂蜜罐：OpenAddressLottery和CryptoRoulette](#真实世界的例子蜜罐openaddresslottery和cryptoroulette)
+  * [真实世界的例子：钓鱼：OpenAddressLottery 和 CryptoRoulette](#真实世界的例子：钓鱼：OpenAddressLottery 和 CryptoRoulette)
 
 * [浮点和数值精度](#浮点和数值精度)
   * [漏洞](#漏洞-14)
@@ -1318,14 +1318,15 @@ contract Roulette {
 
 [GovernMental](http://governmental.github.io/GovernMental/) 是一个古老的庞氏骗局，积累了相当多的 Ether。它也容易受到基于时间戳的攻击。合约会在一轮内支付给最后一个加入合约的玩家（需要加入至少一分钟）。因此，作为玩家的矿工可以调整时间戳（未来的时间，使其看起来像是一分钟过去了），以显示玩家加入已经超过一分钟（尽管现实中并非如此）。关于这方面的更多细节可以在 Tanya Bahrynovska 的 [*以太坊安全漏洞史*](https://applicature.com/blog/history-of-ethereum-security-vulnerabilities-hacks-and-their-fixes) 中找到。
 
-## 谨慎构造函数
+## 构造函数失控
 
-构造函数是特殊函数，在初始化合约时经常执行关键的特权任务。在solidity v0.4.22构造函数被定义为与包含它们的合约名称相同的函数之前。因此，如果合约名称在开发过程中发生变化，如果构造函数名称没有更改，它将变成正常的可调用函数。正如你可以想象的，这可以（并且）导致一些有趣的合约黑客。
-为了进一步阅读，我建议读者尝试Ethernaught挑战（特别是辐射水平）。
+构造函数（Constructors）是特殊函数，在初始化合约时经常执行关键的权限任务。在 solidity v0.4.22 以前，构造函数被定义为与所在合约同名的函数。因此，如果合约名称在开发过程中发生变化，而构造函数名称没有更改，它将变成正常的可调用函数。正如你可以想象的，这可以（并且已经）导致一些有趣的合约被黑。
+
+为了进一步阅读，我建议读者尝试 [Ethernaught 挑战](https://github.com/OpenZeppelin/ethernaut)（特别是 Fallout 层级）。
 
 ### 漏洞
 
-如果合约名称被修改，或者在构造函数名称中存在拼写错误以致它不再与合约名称匹配，则构造函数的行为将与普通函数类似。这可能会导致可怕的后果，特别是如果构造函数正在执行特权操作。考虑以下合约：
+如果合约名称被修改，或者在构造函数名称中存在拼写错误以致它不再与合约名称匹配，则构造函数的行为将与普通函数类似。这可能会导致可怕的后果，特别是如果构造函数正在执行有权限的操作。考虑以下合约：
 
 ```solidity
 contract OwnerWallet {
@@ -1346,26 +1347,29 @@ contract OwnerWallet {
 }
 ```
 
-该合约收集以太，并只允许所有者通过调用该withdraw()函数来撤销所有以太。这个问题是由于构造函数没有完全以合约名称命名的。具体来说，ownerWallet是不一样的OwnerWallet。因此，任何用户都可以调用该ownerWallet()函数，将自己设置为所有者，然后通过调用将合约中的所有内容都取出来withdraw()。
+该合约储存 Ether，并只允许所有者通过调用 ` withdraw() ` 函数来取出所有 Ether。但由于构造函数的名称与合约名称不完全一致，这个合约会出问题。具体来说， ` ownerWallet ` 与 ` OwnerWallet ` 不相同。因此，任何用户都可以调用 ` ownerWallet() ` 函数，将自己设置为所有者，然后通过调用 ` withdraw() ` 将合约中的所有 Ether 都取出来。
 
 ### 预防技术
 
-这个问题已经在Solidity编译器的版本中得到了主要解决0.4.22。该版本引入了一个constructor指定构造函数的关键字，而不是要求函数的名称与契约名称匹配。建议使用此关键字来指定构造函数，以防止上面突出显示的命名问题。
+这个问题在 Solidity 0.4.22 版本的编译器中已经基本得到了解决。该版本引入了一个关键词 ` constructor ` 来指定构造函数，而不是要求函数的名称与合约名称匹配。建议使用这个关键词来指定构造函数，以防止上面显示的命名问题。
 
 ### 真实世界的例子：Rubixi
 
-Rubixi（合约代码）是另一个展现这种脆弱性的传销方案。它最初被调用，DynamicPyramid但合约名称在部署之前已更改Rubixi。构造函数的名字没有改变，允许任何用户成为creator。关于这个bug的一些有趣的讨论可以在这个比特币线程中找到。最终，它允许用户争取creator地位，从金字塔计划中支付费用。关于这个特定bug的更多细节可以在这里找到。
+Rubixi（[合约代码](https://etherscan.io/address/0xe82719202e5965Cf5D9B6673B7503a3b92DE20be#code)）是另一个显现出这种漏洞的传销方案。合约中的构造函数一开始叫做 ` DynamicPyramid ` ，但合约名称在部署之前已改为 ` Rubixi ` 。构造函数的名字没有改变，因此任何用户都可以成为 ` creator ` 。这篇 [Bitcoin Thread](https://bitcointalk.org/index.php?topic=1400536.60) 中可以找到关于这个 bug 的一些有趣的讨论。总之，用户因为这个漏洞开始互相争夺 ` creator ` 身份，以从合约中获得金钱。关于这个特定 bug 的更多细节可以在[这里](https://applicature.com/blog/history-of-ethereum-security-vulnerabilities-hacks-and-their-fixes)找到。
 
-## 虚拟化存储指针
+## 未初始化的存储指针
 
-EVM将数据存储为storage或作为memory。开发合约时强烈建议如何完成这项工作，并强烈建议函数局部变量的默认类型。这是因为可能通过不恰当地初始化变量来产生易受攻击的合约。
-要了解更多关于storage和memory的EVM，看到Solidity Docs: Data Location，Solidity Docs: Layout of State Variables in Storage，Solidity Docs: Layout in Memory。
-本节以Stefan Beyer出色的文章为基础。关于这个话题的进一步阅读可以从Sefan的灵感中找到，这是这个reddit思路。
+EVM 既用 ` storage ` 来存储，也用 ` memory ` 来存储。强烈建议开发合约时弄懂存储的方式和函数局部变量的默认类型。因为不恰当地初始化变量可能产生有漏洞的合约。
+
+要了解更多关于的 EVM 中 ` storage ` 和 ` memory ` 的内容，请看 [Solidity Docs: Data Location](http://solidity.readthedocs.io/en/latest/types.html#data-location)、[Solidity Docs: Layout of State Variables in Storage](http://solidity.readthedocs.io/en/latest/miscellaneous.html#layout-of-state-variables-in-storage)、[Solidity Docs: Layout in Memory](http://solidity.readthedocs.io/en/latest/miscellaneous.html#layout-in-memory)。
+
+*本节以 [Sfan Beyer出色的文章](https://medium.com/cryptronics/storage-allocation-exploits-in-ethereum-smart-contracts-16c2aa312743)为基础。关于这个话题的进一步阅读可以从 Sefan 的启发中找到，也就是个这篇 [reddit 帖子](https://www.reddit.com/r/ethdev/comments/7wp363/how_does_this_honeypot_work_it_seems_like_a/)*。
 
 ### 漏洞
 
-函数内的局部变量默认为storage或memory取决于它们的类型。未初始化的本地storage变量可能会指向合约中的其他意外存储变量，从而导致故意（即，开发人员故意将它们放在那里进行攻击）或无意的漏洞。
-我们来考虑以下相对简单的名称注册商合约：
+函数内的局部变量根据它们的类型默认用 ` storage ` 或 ` memory ` 存储。未初始化的局部 ` storage ` 变量可能会指向合约中的其他意外存储变量，从而导致有意（即，开发人员故意将它们放在那里进行攻击）或无意的漏洞。
+
+我们来考虑以下相对简单的名称注册器合约：
 
 ```solidity
 // A Locked Name Registrar
@@ -1395,23 +1399,23 @@ contract NameRegistrar {
 }
 ```
 
-这个简单的名称注册商只有一个功能。当合约是unlocked，它允许任何人注册一个名称（作为bytes32散列）并将该名称映射到地址。不幸的是，此注册商最初被锁定，并且require在线[23]禁止register()添加姓名记录。然而，在这个合约中存在一个漏洞，它允许名称注册而不管unlocked变量。
+这个简单的名称注册器只有一个功能。当合约是 ` unlocked ` 状态时，任何用户都可以注册一个名称（以 ` bytes32 ` 哈希值的形式）并将该名称映射到地址。不幸的是，这个注册器一开始是被锁定的，并且在 [23] 行的 ` require ` 函数禁止 ` register() ` 添加姓名记录。但是，这个合约中存在一个漏洞，让用户可以不管 ` unlocked ` 运行注册器。
 
-为了讨论这个漏洞，首先我们需要了解存储在Solidity中的工作方式。作为一个高层次的概述（没有任何适当的技术细节 - 我建议阅读Solidity文档以进行适当的审查），状态变量按顺序存储在合约中出现的插槽中（它们可以组合在一起，但在本例中不可以，所以我们不用担心）。因此，unlocked存在于slot 0，registeredNameRecord在存在slot 1和resolve在slot 2等。这些槽是字节大小32（有与我们忽略现在映射添加的复杂性）。布尔unlocked将看起来像0x000...0（64 0，不包括0x）for false或0x000...1（63 0's）true。正如你所看到的，在这个特殊的例子中，存储会有很大的浪费。
+为了讨论这个漏洞，首先我们需要了解存储（Storage）在 Solidity 中的工作方式。作为一个高度抽象的概述（没有任何适当的技术细节——我建议阅读 Solidity 文档以进行适当的审查），状态变量按它们出现在合约中的顺序存储在合约的 *Slot* 中（它们可以被组合在一起，但在本例中不可以，所以我们不用担心）。因此， ` unlocked ` 存在 ` slot 0 ` 中， ` registeredNameRecord ` 存在 ` slot 1 ` 中， ` resolve ` 在 ` slot 2 ` 中，等等。这些 slot 的大小是 32 字节（映射会让事情更加复杂，但我们暂时忽略）。如果 ` unlocked ` 是 ` false ` ，其布尔值看起来会是 ` 0x000...0 ` （64 个 0，不包括 ` 0x ` ）；如果是 ` true ` ，则其布尔值会是 ` 0x000...1 ` （63 个 0）。正如你所看到的，在这个特殊的例子中，存储上存在着很大的浪费。
 
-下一个资料，我们需要的，是Solidity违约复杂数据类型，例如structs，以storage初始化它们作为局部变量时。因此，newRecord在行[16]上默认为storage。该漏洞是由newRecord未初始化的事实引起的。由于它默认为存储，因此它成为存储指针，并且由于它未初始化，它指向插槽0（即unlocked存储位置）。请注意，上线[17]和[18]我们然后设置nameRecord.name到_name和nameRecord.mappedAddress到_mappedAddress，这实际上改变了时隙0和时隙1的存储位置用于修改都unlocked和与之相关联的存储槽registeredNameRecord。
+我们需要的另一部分知识，是 Solidity 会在将复杂的数据类型，比如 ` structs ` ，初始化为局部变量时，默认使用 storage 来存储。因此，在 [16] 行中的 ` newRecord ` 默认为storage。合约的漏洞是由 ` newRecord ` 未初始化导致的。由于它默认为 storage，因此它成为指向 storage 的指针；并且由于它未初始化，它指向 slot 0（即 ` unlocked ` 的存储位置）。请注意，[17] 行和[18] 行中，我们将 ` _name ` 设为 ` nameRecord.name ` 、将  ` _mappedAddress ` 设为 ` nameRecord.mappedAddress ` 的操作，实际上改变了 slot 0 和 slot 1 的存储位置，也就是改变了 ` unlocked ` 和与 ` registeredNameRecord ` 相关联的 slot。
 
-这意味着unlocked可以直接通过函数的bytes32 _name参数进行修改register()。因此，如果最后一个字节为_name非零，它将修改存储的最后一个字节slot 0并直接转换unlocked为true。这样_name的值将通过require()线[23]，因为我们正在设置unlocked到true。在Remix中试试这个。注意如果你使用下面_name的形式，函数会通过：0x0000000000000000000000000000000000000000000000000000000000000001
+这意味着我们可以通过 ` register() ` 函数的 ` bytes32 _name ` 参数直接修改 ` unlocked ` 。因此，如果 ` _name ` 的最后一个字节为非零，它将修改 slot 0 的最后一个字节并直接将 ` unlocked ` 转为 ` true ` 。就在我们将 ` unlocked ` 设置为 ` true ` 之时，这样的 ` _name ` 值将传入 [23] 行的 ` require() ` 函数。在Remix中试试这个。注意如果你的 ` _name ` 使用下面形式，函数会通过： ` 0x0000000000000000000000000000000000000000000000000000000000000001 ` 
 
 ### 预防技术
 
-Solidity编译器会提出未经初始化的存储变量作为警告，因此开发人员在构建智能合约时应小心注意这些警告。当前版本的mist（0.10）不允许编译这些合约。在处理复杂类型时明确使用memory或storage确定它们的行为如预期一般是很好的做法。
+Solidity 编译器会在出现未经初始化的存储变量时发出警告，因此开发人员在构建智能合约时应小心注意这些警告。当前版本的 mist（0.10）不允许编译这些合约。在处理复杂类型时，明确使用 ` memory ` 或 ` storage ` 以保证合约行为符合预期一般是很好的做法。
 
-### 真实世界的例子：蜜罐：OpenAddressLottery和CryptoRoulette
+### 真实世界的例子：钓鱼：OpenAddressLottery 和 CryptoRoulette
 
-一个名为OpenAddressLottery（合约代码）的蜜罐被部署，它使用这个未初始化的存储变量querk从一些可能的黑客收集ether。合约是相当深入的，所以我会把讨论留在这个reddit思路中，这个攻击很清楚地解释了。
+有人部署了一个名为 OpenAddressLottery（[合约代码](https://etherscan.io/address/0x741f1923974464efd0aa70e77800ba5d9ed18902#code)）的钓鱼合约，它使用未初始化的存储变量以从一些可能的黑客手上吊取 ether。合约是相当深入的，所以我会把讨论留在这个 [reddit 帖子](https://www.reddit.com/r/ethdev/comments/7wp363/how_does_this_honeypot_work_it_seems_like_a/)中。我在里面很清楚地解释了这种攻击。
 
-另一个蜜罐，CryptoRoulette（合约代码）也利用这个技巧尝试并收集一些以太。如果您无法弄清楚攻击是如何进行的，请参阅对以太坊蜜罐合约的分析以获得对此合约和其他内容的概述。
+另一个钓鱼合约，CryptoRoulette（[合约代码](https://etherscan.io/address/0x8685631276cfcf17a973d92f6dc11645e5158c0c#code)）也利用这个技巧尝试获得一些 Ether。如果您无法弄清楚攻击是如何进行的，请参阅[对以太坊钓鱼合约的分析](https://medium.com/@jsanjuas/an-analysis-of-a-couple-ethereum-honeypot-contracts-5c07c95b0a8d)以获得对此合约和其他内容的概述。
 
 ## 浮点和精度
 
