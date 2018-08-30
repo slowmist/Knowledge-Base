@@ -35,7 +35,7 @@
   * [预防技术](#预防技术-4)
   * [真实世界示例：Parity MultiSig Wallet（First Hack）](#真实世界示例parity-multisig-wallet-first-hack)
 
-* [函数错误](#函数错误)
+* [随机数误区](#随机数误区)
   * [漏洞](#漏洞-5)
   * [预防技术](#预防技术-5)
   * [真实案例：PRNG合约](#真实案例prng合约)
@@ -55,7 +55,7 @@
   * [预防技术](#预防技术-8)
   * [真实的例子：Etherpot和以太之王](#真实的例子etherpot和以太之王)
 
-* [条件竞争/非法预先交易](#条件竞争非法预先交易)
+* [条件竞争/抢先提交](#条件竞争/抢先提交)
   * [漏洞](#漏洞-9)
   * [预防技术](#预防技术-9)
   * [真实世界的例子：ERC20和Bancor](#真实世界的例子erc20和bancor)
@@ -70,15 +70,15 @@
   * [预防技术](#预防技术-11)
   * [真实的例子：GovernMental](#真实的例子governmental)
 
-* [谨慎构建函数](#谨慎构建函数)
+* [构造函数失控](#构造函数失控)
   * [漏洞](#漏洞-12)
   * [预防技术](#预防技术-12)
   * [真实世界的例子：Rubixi](#真实世界的例子rubixi)
 
-* [虚拟化存储指针](#虚拟化存储指针)
+* [未初始化的存储指针](#未初始化的存储指针)
   * [漏洞](#漏洞-13)
   * [预防技术](#预防技术-13)
-  * [真实世界的例子：蜂蜜罐：OpenAddressLottery和CryptoRoulette](#真实世界的例子蜜罐openaddresslottery和cryptoroulette)
+  * [真实世界的例子：钓鱼：OpenAddressLottery 和 CryptoRoulette](#真实世界的例子：钓鱼：OpenAddressLottery 和 CryptoRoulette)
 
 * [浮点和数值精度](#浮点和数值精度)
   * [漏洞](#漏洞-14)
@@ -1062,6 +1062,7 @@ function transfer(address to, uint tokens) public returns (bool success);
 
 好的，现在让我们看看如果我们发送一个丢失 1 个字节（2 个十六进制数字）的地址会发生什么。具体而言，假设攻击者以 ` 0xdeaddeaddeaddeaddeaddeaddeaddeaddeadde ` 作为地址发送（缺少最后两位数字），并取回相同的 ` 100 ` 个代币。如果交易所没有验证这个输入，它将被编码为 ` a9059cbb000000000000000000000000deaddeaddeaddeaddeaddeaddeaddeaddeadde0000000000000000000000000000000000000000000000056bc75e2d6310000000 ` 。差别是微妙的。请注意， ` 00 ` 已被填充到编码的末尾，以补完发送的短地址。当它被发送到智能合约时， ` address ` 参数将被读为 ` 0xdeaddeaddeaddeaddeaddeaddeaddeaddeadde00 ` 并且值将被读为 ` 56bc75e2d6310000000 ` （注意两个额外的 0）。此值现在是 ` 25600 ` 个代币（值已被乘以 ` 256 ` ）。在这个例子中，如果交易所持有这么多的代币，用户会取出 25600 个代币（而交换所认为用户只是取出 100）到修改后的地址。很显然，在这个例子中攻击者不会拥有修改后的地址，但是如果攻击者产生了以 0 结尾的地址（很容易强制产生）并且使用了这个生成的地址，他们很容易从毫无防备的交易所中窃取令牌。
 
+
 ### 预防技术
 
 我想很明显，在将所有输入发送到区块链之前对其进行验证可以防止这些类型的攻击。还应该指出的是参数排序在这里起着重要的作用。由于填充只发生在字符串末尾，智能合约中参数的缜密排序可能会缓解此攻击的某些形式。
@@ -1070,10 +1071,13 @@ function transfer(address to, uint tokens) public returns (bool success);
 
 我尚不知道真实世界中发生的此类攻击的公开例子。
 
-## 未检查的CALL返回值
 
-有很多方法可以稳固地执行外部调用。向外部账户发送ether通常通过该transfer()方法完成。但是，该send()功能也可以使用，并且对于更多功能的外部调用，CALL可以直接使用操作码。在call()和send()函数返回一个布尔值，指示如果调用成功还是失败。因此，这些功能有一个简单的警告，在执行这些功能将不会恢复交易，如果外部调用（由intialised call()或send()）失败，而不在call()或send()将简单地返回false。当没有检查返回值时，会出现一个常见的错误，而开发人员希望恢复发生。
-有关进一步阅读，请参阅DASP Top 10和扫描Live Ethereum合约中的“Unchecked-Send”错误。
+## 不检查 CALL 返回值
+
+
+Solidity 中有很多方法可以执行外部调用。向外部账户发送 Ether 通常通过 ` transfer() ` 方法完成。不过，也可以使用 ` send() ` 功能，而且，对于更多功能的外部调用，在 Solidity 中可以直接使用 ` CALL ` 操作码。 ` call() ` 和 ` send() ` 函数会返回一个布尔值，显示调用是成功还是失败。因此，这些功能有一个简单的警告作用，如果（由 ` call() ` 或 ` send() ` 初始化的）外部调用失败，执行这些函数的交易将不会回滚，反而 ` call() ` 或 ` send() ` 将简单地返回 ` false ` 。当没有检查返回值时，会出现一个常见的错误，并不是开发人员希望的那样发生回滚。
+
+有关进一步阅读，请参阅 [DASP Top 10](http://www.dasp.co/#item-4) 和[剖析以太坊线上合约中的“Unchecked-Send”错误](http://hackingdistributed.com/2016/06/16/scanning-live-ethereum-contracts-for-bugs/)。
 
 ### 漏洞
 
@@ -1101,19 +1105,19 @@ contract Lotto {
 }
 ```
 
-这份合约代表了一个类似于大乐透的合约，在这种合约中，winner收到winAmount了ether，通常只剩下一点让任何人退出。
+这份合约代表了一个类似于大乐透的合约，在这种合约中， ` winner ` 会收到 ` winAmount ` 个 Ether，通常只剩下一点让其他人取出。
 
-该错误存在于第[11]行，其中使用a send()而不检查响应。在这个微不足道的例子中，可以将winner其事务失败（无论是通过耗尽天然气，是故意抛出回退函数还是通过调用堆栈深度攻击的合约）payedOut设置为true（无论是否发送了以太） 。在这种情况下，公众可以winner通过该withdrawLeftOver()功能撤回奖金。
+错误存在于第 [11] 行，其中使用 ` send() ` 而不检查响应值。在这个微不足道的例子中， ` winner ` 的交易失败（无论是通过耗尽 Gas、通过故意抛出回退函数的合约，还是调用[堆栈深度攻击](https://github.com/ethereum/wiki/wiki/Safety#call-depth-attack-deprecated)）可以使得 ` payedOut ` 被设置为 ` true ` （无论是否发送了 Ether） 。在这种情况下，公众可以通过 ` withdrawLeftOver() ` 函数取出属于 ` winner ` 的奖金。
 
 ### 预防技术
 
-只要有可能，使用transfer()功能，而不是send()作为transfer()意志revert，如果外部事务恢复。如果send()需要，请务必检查返回值。
+只要有可能，使用 ` transfer() ` 功能，而不是 ` send() ` ，因为，如果外部交易回滚， ` transfer() ` 会触发回滚。如果需要使用 ` send() ` ，请务必检查返回值。
 
-更强大的建议是采取撤回模式。在这个解决方案中，每个用户都承担着调用隔离功能（即撤销功能）的作用，该功能处理发送合约以外的事件，并因此独立地处理失败的发送事务的后果。这个想法是将外部发送功能与代码库的其余部分进行逻辑隔离，并将可能失败的事务负担交给正在调用撤消功能的最终用户。
+一种更强大的[推荐用法](http://solidity.readthedocs.io/en/latest/common-patterns.html#withdrawal-from-contracts)是采取 *withdrawel（取出）模式*。在这个解决方案中，每个用户都得调用相互隔离的函数（即 *withdrawel* 函数），这一函数会处理将 Ether 发送到合约以外的交易，因此，它会分别处理发送失败的交易结果。这个想法是将外部发送功能与代码库的其余部分进行逻辑隔离，并将可能失败的交易负担交给正在调用 *withdrawel* 函数的最终用户。
 
-### 真实的例子：Etherpot和以太之王
+### 真实的例子：Etherpot 和 King of Ether
 
-Etherpot是一个聪明的合约彩票，与上面提到的示例合约不太相似。etherpot的固体代码可以在这里找到：lotto.sol。这个合约的主要缺点是由于块哈希的使用不正确（只有最后的256块哈希值是可用的，请参阅Aakil Fernandes 关于Etherpot如何正确实现的帖子）。然而，这份合约也受到未经检查的通话价值的影响。注意cash()lotto.sol的行[80]上的函数：
+[Etherpot](https://github.com/etherpot) 是一个彩票智能合约，与上面提到的示例合约不太相似。Etherpot 的 Soloidity 代码可以在这里找到：[lotto.sol](https://github.com/etherpot/contract/blob/master/app/contracts/lotto.sol)。这个合约的主要缺点是对块哈希的不当使用（只有最后 256 个块的哈希值是可用的，请参阅 Aakil Fernandes 关于 Etherpot 如何正确实现的[帖子](http://aakilfernandes.github.io/blockhashes-are-only-good-for-256-blocks)。然而，这份合约也受到未经检查的 Call 返回值的影响。注意lotto.sol 的 行[80] 上的函数 ` cash() ` ：
 
 ```solidity
   function cash(uint roundIndex, uint subpotIndex){
@@ -1142,19 +1146,19 @@ Etherpot是一个聪明的合约彩票，与上面提到的示例合约不太相
 }
 ```
 
-请注意，在第[21]行，发送函数的返回值没有被选中，然后下一行设置了一个布尔值，表示赢家已经发送了他们的资金。这个错误可以允许一个状态，即赢家没有收到他们的异议，但是合约状态可以表明赢家已经支付。
+请注意，在 行[21]，发送函数的返回值没有被检查，然后下一行设置了一个布尔值，表示已经向赢家发送了属于他们的奖金。这个错误可能引发一种状态，即赢家没有收到他们的 Ether，但是合约状态表明赢家已经得到了支付。
 
-这个错误的更严重的版本发生在以太之王。一个优秀的验尸本合约已被写入详细介绍了如何一个未经检查的失败send()可能会被用来攻击的合约。
+这个错误的更严重的版本发生在 [King of the Ether](https://www.kingoftheether.com/thrones/kingoftheether/index.html)。已经有人写出一篇优秀的[事后检验报告](https://www.kingoftheether.com/postmortem.html)，详细介绍了一个未经检查的 ` send() ` 失败交易可以如何用于攻击合约。
 
-## 条件竞争/非法预先交易
+## 条件竞争/抢先提交
 
-将外部调用与其他合约以及底层区块链的多用户特性结合在一起会产生各种潜在的缺陷，用户可以通过争用代码来获取意外状态。重入是这种条件竞争的一个例子。在本节中，我们将更一般地讨论以太坊区块链上可能发生的各种竞态条件。在这个领域有很多不错的帖子，其中一些是：以太坊Wiki - 安全，DASP - 前台运行和共识 - 智能合约最佳实践。
+将对其它合约的外部调用以及底层区块链的多用户特性结合在一起，会在 Solidity 中产生各种潜在的缺陷，用户可能会 *争用（race）* 代码产生意外状态。[可重入漏洞](https://ethfans.org/posts/comprehensive-list-of-common-attacks-and-defense-part-1)是这种条件竞争（Race Conditions）的一个例子。在本节中，我们将更一般地讨论以太坊区块链上可能发生的各种竞态条件。在这个领域有很多不错的帖子，其中一些是：[以太坊Wiki - 安全](https://github.com/ethereum/wiki/wiki/Safety#race-conditions)，[DASP - 前台运行和共识](http://www.dasp.co/#item-7)以及[智能合约最佳实践](https://consensys.github.io/smart-contract-best-practices/known_attacks/#race-conditions)。
 
 ### 漏洞
 
-与大多数区块链一样，以太坊节点汇集交易并将其形成块。一旦矿工解决了共识机制（目前Ethereum的 ETHASH PoW），这些交易就被认为是有效的。解决该区块的矿工也会选择来自该矿池的哪些交易将包含在该区块中，这通常是由gasPrice交易订购的。在这里有一个潜在的攻击媒介。攻击者可以观察事务池中是否存在可能包含问题解决方案的事务，修改或撤销攻击者的权限或更改合约中的攻击者不希望的状态。然后攻击者可以从这个事务中获取数据，并创建一个更高级别的事务gasPrice 并在原始之前将其交易包含在一个区块中。
+与大多数区块链一样，以太坊节点汇集交易并将其打包成块。一旦矿工获得了共识机制（目前以太坊上实行的是 [ETHASH](https://github.com/ethereum/wiki/wiki/Ethash) 工作量证明算法）的一个解，这些交易就被认为是有效的。挖出该区块的矿工同时也选择将交易池中的哪些交易包含在该区块中，一般来说是根据交易的 ` gasPrice ` 来排序。在这里有一个潜在的攻击媒介。攻击者可以监测交易池，看看其中是否存在问题的解决方案（如下合约所示）、修改或撤销攻击者的权限、或更改合约中状态的交易；这些交易对攻击者来说都是阻碍。然后攻击者可以从该中获取数据，并创建一个 ` gasPrice ` 更高的交易，（让自己的交易）抢在原始交易之前被打包到一个区块中。
 
-让我们看看这可以如何用一个简单的例子。考虑合约FindThisHash.sol：
+让我们看看这可以如何用一个简单的例子。考虑合约 ` FindThisHash.sol ` ：
 
 ```solidity
 contract FindThisHash {
@@ -1170,40 +1174,43 @@ contract FindThisHash {
 }
 ```
 
-想象一下，这个合约包含1000个ether。可以找到sha3哈希的预映像的用户0xb5b5b97fafd9855eec9b41f74dfb6c38f5951141f9a3ecd7f44d5479b630ee0a可以提交解决方案并检索1000 ether。让我们说一个用户找出解决方案Ethereum!。他们称solve()与Ethereum!作为参数。不幸的是，攻击者非常聪明地为提交解决方案的任何人观看交易池。他们看到这个解决方案，检查它的有效性，然后提交一个远高于gasPrice原始交易的等价交易。解决该问题的矿工可能会因攻击者的偏好而给予攻击者偏好，gasPrice并在原求解器之前接受他们的交易。攻击者将获得1000ether，解决问题的用户将不会得到任何东西（合约中没有剩余ether）。
+想象一下，这个合约包含 1000 个 Ether。可以找到 sha3 哈希值为 ` 0xb5b5b97fafd9855eec9b41f74dfb6c38f5951141f9a3ecd7f44d5479b630ee0a ` 的原象（Pre-image）的用户可以提交解决方案，然后取得 1000 Ether。让我们假设，一个用户找到了答案 ` Ethereum! ` 。他们可以调用 ` solve() ` 并将 ` Ethereum! ` 作为参数。不幸的是，攻击者非常聪明，他监测交易池看看有没有人提交解决方案。他们看到这个解决方案，检查它的有效性，然后提交一个 ` gasPrice ` 远高于原始交易的相同交易。挖出当前块的矿工可能会因更高的 ` gasPrice ` 而偏爱攻击者发出的交易，并在打包原始交易之前接受他们的交易。攻击者将获得1000 Ether，解决问题的用户将不会得到任何东西（因为合约中没有剩余的 Ether）。
 
-未来卡斯珀实施的设计中会出现更现实的问题。卡斯帕证明合约涉及激励条件，在这种条件下，通知验证者双重投票或行为不当的用户被激励提交他们已经这样做的证据。验证者将受到惩罚并奖励用户。在这种情况下，预计矿工和用户将在所有这些提交的证据前面运行，并且这个问题必须在最终发布之前得到解决。
+未来 Casper 实现的设计中会出现更现实的问题。Casper 权益证明合约涉及罚没条件，在这些条件下，注意到验证者双重投票或行为不当的用户被激励提交验证者已经这样做的证据。验证者将受到惩罚、用户会得到奖励。在这种情况下，可以预期，矿工和用户会抢先提交（Front-run）所有这样的证据（以获得奖励），这个问题必须在最终发布之前解决。
 
 ### 预防技术
 
-有两类用户可以执行这些类型的前端攻击。用户（他们修改gasPrice他们的交易）和矿工自己（谁可以在一个块中重新订购他们认为合适的交易）。对于第一类（用户）而言易受攻击的合约比第二类（矿工）易受影响的合约明显更差，因为矿工只能在解决某个块时执行攻击，而对于任何单个矿工来说，块。在这里，我将列出一些与他们可能阻止的攻击者类别有关的缓解措施。
+有两类用户可以执行这种抢先提交攻击。用户（他们可以修改他们交易的 ` gasPrice ` ）和矿工自己（他可以依自己的意愿安排包含在块中的交易）。易受第一类（用户）攻击的合约比易受第二类（矿工）影响的合约明显更差，因为矿工只能在挖出某个块时执行攻击，对任何单个矿工来说都不太可能针对特定区块发动攻击（译者注：因为他们不一定能挖出特定高度的区块）。在这里，我将列出一些与他们可能阻止的攻击者类别有关的缓解措施。
 
-可以采用的一种方法是在合约中创建逻辑，以在其上设置上限gasPrice。这可以防止用户增加gasPrice并获得超出上限的优惠交易排序。这种预防措施只能缓解第一类攻击者（任意用户）。在这种情况下，矿工仍然可以攻击合约，因为无论天然气价格如何，他们都可以在他们的块中订购交易。
+可以采用的一种方法是在合约中创建逻辑，设置 ` gasPrice ` 的上限。这可以防止用户增加 ` gasPrice ` 并因超出上限而获得优先的交易排序。这种预防措施只能缓解第一类攻击者（任意用户）。在这种情况下，矿工仍然可以攻击合约，因为无论 Gas价格如何，他们都可以安排包含在他们的块中的交易。
 
-一个更强大的方法是尽可能使用commit-reveal方案。这种方案规定用户使用隐藏信息发送交易（通常是散列）。在事务已包含在块中后，用户将发送一个事务来显示已发送的数据（显示阶段）。这种方法可以防止矿工和用户从事先交易，因为他们无法确定交易的内容。然而，这种方法不能隐藏交易价值（在某些情况下，这是需要隐藏的有价值的信息）。该ENS 智能合约允许用户发送交易，其承诺数据包括他们愿意花费的金额。用户可以发送任意值的交易。在披露阶段，用户退还了交易中发送的金额与他们愿意花费的金额之间的差额。
-洛伦茨，菲尔，阿里和弗洛里安的进一步建议是使用潜艇发射。这个想法的有效实现需要CREATE2操作码，目前还没有被采用，但似乎在即将出现的硬叉上。
+一个更强大的方法是尽可能使用 [承诺-公开（commit-reveal）](https://ethereum.stackexchange.com/questions/191/how-can-i-securely-generate-a-random-number-in-my-smart-contract ) 方案。这种方案规定用户使用隐藏信息（通常是哈希值）发送交易。在交易已包含在块中后，用户将发送一个交易来显示已发送的数据（reveal 阶段）。这种方法可以防止矿工和用户从事抢先交易，因为他们无法确定交易的内容。然而，这种方法不能隐藏交易价值（在某些情况下，这是需要隐藏的有价值的信息）。[ENS](https://ens.domains/) 智能合约允许用户发送交易，其承诺数据包括他们愿意花费的金额。用户可以发送任意值的交易。在披露阶段，用户可以取出交易中发送的金额与他们愿意花费的金额之间的差额。
 
-### 真实世界的例子：ERC20和Bancor
+Lorenz、Phil、Ari 以及 Florian 的进一步建议是使用 [Submarine Sends](http://hackingdistributed.com/2017/08/28/submarine-sends/)。这个想法的有效实现需要 ` CREATE2 ` 操作码，目前还没有被采用，但可能出现在即将到来的硬分叉上。
 
-该ERC20标准是相当知名的关于Ethereum建设令牌。这个标准有一个潜在的超前漏洞，这个漏洞是由于这个approve()功能而产生的。这个漏洞的一个很好的解释可以在这里找到。
+### 真实世界的例子：ERC20 和 Bancor
 
-该标准规定的approve()功能如下：
+[ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)是相当知名的在以太坊上开发代币的标准。这个标准有一个潜在的抢先提交漏洞，这个漏洞是由于 ` approve() ` 功能而产生的。这个漏洞的一个很好的解释可以在[这里](https://docs.google.com/document/d/1YLPtQxZu1UAvO9cZ1O2RPXBbT0mooh4DYKjA_jp-RLM/edit)找到。
 
- ` function approve(address _spender, uint256 _value) returns (bool success) ` 
+该标准规定的 ` approve() ` 功能如下：
 
-该功能允许用户 允许其他用户 代表他们传送令牌。当用户Alice 批准她的朋友Bob花钱时，这种先发制人的漏洞就出现了100 tokens。爱丽丝后来决定，她想撤销Bob批准花费100 tokens，所以她创建了一个交易，设置Bob的分配50 tokens。Bob，他一直在仔细观察这个连锁店，看到这笔交易并且建立了一笔他自己花费的交易100 tokens。他gasPrice的交易比自己的交易要高，他Alice的交易优先于她的交易。一些实现approve()将允许Bob转移他的100 tokens，然后当Alice事务被提交时，重置Bob的批准50 tokens，实际上允许Bob访问150 tokens。这种攻击的缓解策略给出这里上面链接在文档中。
+``` 
+function approve(address _spender, uint256 _value) returns (bool success)
+```
 
-另一个突出的现实世界的例子是Bancor。Ivan Bogatty和他的团队记录了对Bancor最初实施的有利可图的攻击。他的博客文章和德文3讲话详细讨论了这是如何完成的。基本上，令牌的价格是根据交易价值确定的，用户可以观察Bancor交易的交易池，并从前端运行它们以从价格差异中获利。Bancor团队解决了这一攻击。
+该功能让用户可以授权其他用户代表他们转移代币。当用户Alice *批准（Approve）* 她的朋友 Bob 花费 ` 100 tokens ` 时，这种先发制人的漏洞就会出现。Alice 后来决定，她想撤销对 Bob 花费 ` 100 tokens ` 的批准，所以她创建了一个交易，设置 Bob 的份额为 ` 50 tokens ` 。Bob 一直在仔细监测链上数据，看到这笔交易之后他建立了一笔他自己的交易，花费了 ` 100 tokens ` 。他给自己的交易设置了比 Alice 交易更高的 ` gasPrice ` ，让自己的交易优先于她的交易。一些 ` approve() ` 的实现允许 Bob 转移他的 ` 100 tokens ` ，然后当 Alice 的交易被提交时，重置 Bob 的批准份额为 ` 50 tokens ` ，实际上允许 Bob 调动 ` 150 tokens ` 。上面链接到的[文档](https://docs.google.com/document/d/1YLPtQxZu1UAvO9cZ1O2RPXBbT0mooh4DYKjA_jp-RLM/edit)给出了针对这一攻击的缓解策略。
+
+另一个突出的现实世界的例子是 [Bancor](https://www.bancor.network/)。Ivan Bogatty 和他的团队记录了对 Bancor 初始实现的有利可图的攻击。他的[博客文章](https://hackernoon.com/front-running-bancor-in-150-lines-of-python-with-ethereum-api-d5e2bfd0d798)和[Devcon 3 演讲](https://www.youtube.com/watch?v=RL2nE3huNiI)详细讨论了这是如何完成的。基本上，代币的价格是根据交易价值确定的，用户可以观测 Bancor 交易的交易池，并抢先提交它们以从价格差异中获利。Bancor 团队已经解决了这种攻击。
 
 ## 拒绝服务（DOS）
 
-这个类别非常广泛，但基本上用户可以在一段时间内（或在某些情况下，永久）使合约无法运行的攻击组成。这可以永远陷入这些契约中的以太，就像第二次奇偶MultiSig攻击一样
+这个类别非常广泛，但其基本攻击形式都是让用户短暂地（在某些情形下，是永久）推出不可操作的合约。这种攻击可以把 Ether 永远锁在被攻击的合约中，正如 [Parity 多签名钱包第二次被黑](#真实世界示例parity-multisig-walletsecond-hack)中的情形一样。
 
 ### 漏洞
 
-合约可能有多种不可操作的方式。这里我只强调一些潜在的不太明显的区块链细微的Solidity编码模式，可能导致攻击者执行DOS攻击。
+有很多办法可以让合约变得不可操作。这里我只强调一些微妙的区块链 Solidity 编码模式，虽然看不太出来，但可能留下让攻击者执行 DOS 攻击的空间。
 
-1.通过外部操纵映射或数组循环 - 在我的冒险中，我看到了这种模式的各种形式。通常情况下，它出现在owner希望在其投资者之间分配代币的情况下，并且distribute()可以在示例合约中看到类似功能的情况：
+**1.通过外部操纵映射或数组（Array）循环** ——在我的经历中，我看过此种模式的各种形式。通常情况下，它出现在 ` owner ` 希望在其投资者之间分配代币的情况下，以及，在合约中可以看到类似于 ` distribute() ` 函数的情况下：
 
 ```solidity
 contract DistributeTokens {
@@ -1228,9 +1235,9 @@ contract DistributeTokens {
 }
 ```
 
-请注意，此合约中的循环遍历可能被人为夸大的数组。攻击者可以创建许多用户帐户，使investor阵列变大。原则上，可以这样做，即执行for循环所需的gas超过块gas极限，基本上使distribute()功能无法操作。
+请注意，此合约中的循环遍历的数组可以被人为扩充。攻击者可以创建许多用户帐户，让 ` investor ` 数据变得更大。原则上来说，可以让执行 for 循环所需的 Gas 超过区块 Gas 上限，这会使 ` distribute() ` 函数变得无法操作。
 
-2.所有者操作 - 另一种常见模式是所有者在合约中具有特定权限，并且必须执行一些任务才能使合约进入下一个状态。例如，ICO合约要求所有者finalize()签订合约，然后允许令牌可以转让，即
+**2.所有者操作**——另一种常见模式是所有者在合约中具有特定权限，并且必须执行一些任务才能使合约进入下一个状态。例如，ICO 合约要求所有者 ` finalize() ` 签订合约，然后才可以转让代币，即
 
 ```solidity
 bool public isFinalized = false;
@@ -1250,34 +1257,35 @@ function transfer(address _to, uint _value) returns (bool) {
 }
 ```
 
-在这种情况下，如果特权用户丢失其私钥 或变为非活动状态，则整个令牌合约变得无法操作。在这种情况下，如果owner无法调用finalize()不可以转让代币，即令牌生态系统的整个操作取决于一个地址。
+在这种情况下，如果权限用户丢失其私钥或变为非活动状态，则整个代币合约就变得无法操作。在这种情况下，如果 ` owner ` 无法调用 ` finalize() ` 则代币不可转让；即代币系统的全部运作都取决于一个地址。
 
-3.基于外部调用的进展状态 - 合约有时被编写成为了进入新的状态需要将以太网发送到某个地址，或者等待来自外部来源的某些输入。这些模式可能导致DOS攻击，当外部调用失败时，或由于外部原因而被阻止。在发送ether的例子中，用户可以创建一个不接受ether的契约。如果合约需要将ether送到这个地址才能进入新的状态，那么合约将永远不会达到新的状态，因为乙ether永远不会被送到合约。
+**3.基于外部调用的进展状态**——有时候，合约被编写成为了进入新的状态需要将 Ether 发送到某个地址，或者等待来自外部来源的某些输入。这些模式也可能导致 DOS 攻击：当外部调用失败时，或由于外部原因而被阻止时。在发送 Ether 的例子中，用户可以创建一个不接受 Ether 的合约。如果合约需要将 Ether 发送到这个地址才能进入新的状态，那么合约将永远不会达到新的状态，因为 Ether 永远不会被发送到合约。
 
 ### 预防技术
 
-在第一个例子中，合约不应该循环通过可以被外部用户人为操纵的数据结构。建议撤销模式，每个投资者都会调用撤销函数来独立声明令牌。
+在第一个例子中，合约不应该遍历可以被外部用户人为操纵的数据结构。建议使用 withdrawal 模式，每个投资者都会调用取出函数独立取出代币。
 
-在第二个例子中，要求特权用户改变合约的状态。在这样的例子中（只要有可能），如果无法使用故障安全装置，则可以使用故障安全装置owner。一种解决方案可能是建立owner一个多合约。另一种解决方案是使用一个时间段，其中线路[13]上的需求可以包括基于时间的机制，例如require(msg.sender == owner || now > unlockTime)允许任何用户在一段时间后完成，由指定unlockTime。这种缓解技术也可以在第三个例子中使用。如果需要进行外部呼叫才能进入新状态，请考虑其可能的失败情况，并且可能会添加基于时间的状态进度，以防止所需的呼叫不会到来。
+在第二个例子中，改变合约的状态需要权限用户参与。在这样的例子中（只要有可能），如果 ` owner ` 已经瘫痪，可以使用自动防故障模式。一种解决方案是将 ` owner ` 设为一个多签名合约。另一种解决方案是使用一个时间锁，其中 [13]行 上的需求可以包括在基于时间的机制中，例如 ` require(msg.sender == owner || now > unlockTime) ` ，那么在由 ` unlockTime ` 指定的一段时间后，任何用户都可以调用函数，完成合约。这种缓解技术也可以在第三个例子中使用。如果需要进行外部调用才能进入新状态，请考虑其可能的失败情况；并添加基于时间的状态进度，防止所需外部调用迟迟不到来。
 
-注意：当然，这些建议可以集中替代，maintenanceUser如果需要的话，可以添加一个谁可以来解决基于DOS攻击向量的问题。通常，这类合约包含对这种实体的权力的信任问题，但这不是本节的对话。
+*注意：当然，这些建议都有中心化的替代方案，比如，可以添加 ` maintenanceUser ` ，它可以在有需要时出来解决基于 DOS 攻击向量的问题。通常，这类合约包含对这类权力实体的信任问题；不过这不是本节要探讨的内容*。
 
 ### 真实的例子：GovernMental
 
-GovernMental是一个古老的庞氏骗局，积累了相当多的以太。实际上，它曾经积累过一百一十万个以太。不幸的是，它很容易受到本节提到的DOS漏洞的影响。这个Reddit Post描述了合约如何删除一个大的映射以撤销以太。这个映射的删除有一个gas成本超过了当时的gas阻塞限制，因此不可能撤回1100ether。合约地址为0xF45717552f12Ef7cb65e95476F217Ea008167Ae3，您可以从交易0x0d80d67202bd9cb6773df8dd2020e7190a1b0793e8ec4fc105257e8128f0506b中看到1100ether最终通过使用2.5Mgas的交易获得。
+[GovernMental](http://governmental.github.io/GovernMental/)是一个古老的庞氏骗局，积累了相当多的 Ether。实际上，它曾经积累起 1100 个以太。不幸的是，它很容易受到本节提到的 DOS 漏洞的影响。[这篇 Reddit  帖子](https://www.reddit.com/r/ethereum/comments/4ghzhv/governmentals_1100_eth_jackpot_payout_is_stuck/)描述了合约需要删除一个大的映射来取出以太。删除映射的 Gas 消耗量超过了当时的区块 Gas 上限，因此不可能撤回那 1100 个 Ether。合约地址为 [` 0xF45717552f12Ef7cb65e95476F217Ea008167Ae3 `](https://etherscan.io/address/0xf45717552f12ef7cb65e95476f217ea008167ae3)，您可以从交易[` 0x0d80d67202bd9cb6773df8dd2020e7190a1b0793e8ec4fc105257e8128f0506b `](https://etherscan.io/tx/0x0d80d67202bd9cb6773df8dd2020e7190a1b0793e8ec4fc105257e8128f0506b)中看到，最后有人通过使用 250 万 Gas的交易取出了 1100 Ether 。
 
-## 阻止时间戳操作
+## 操纵区块时间戳
 
-数据块时间戳历来被用于各种应用，例如随机数的函数（请参阅函数部分以获取更多详细信息），锁定一段时间的资金以及时间相关的各种状态变化的条件语句。矿工有能力稍微调整时间戳，如果在智能合约中使用错误的块时间戳，这可能会证明是相当危险的。
+区块时间戳历来被用于各种应用，例如随机数的函数（请参阅[随机数误区](#随机数误区)以获取更多详细信息）、锁定一段时间的资金、以及各种基于时间变更状态的条件语句。矿工有能力稍微调整时间戳，如果在智能合约中错误地使用区块时间戳，可以证明这是相当危险的。
 
-一些有用的参考资料是：Solidity Docs，这个堆栈交换问题，
+一些有用的参考资料是：[Solidity Docs](http://solidity.readthedocs.io/en/latest/units-and-global-variables.html#block-and-transaction-properties)，以及这个 [Stack Exchange 上的问题](https://ethereum.stackexchange.com/questions/413/can-a-contract-safely-rely-on-block-timestamp?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)。
 
 ### 漏洞
 
-block.timestamp或者别名now可以由矿工操纵，如果他们有这样做的动机。让我们构建一个简单的游戏，这将容易受到矿工的剥削，
+ ` block.timestamp ` 或者别名 ` now ` 可以由矿工操纵，如果他们有这样做的激励的话。让我们构建一个简单的、容易受到矿工的剥削的游戏，
+
+ ` roulette.sol ` ：
 
 ```solidity
-roulette.sol：
 contract Roulette {
     uint public pastBlockTime; // Forces one bet per block
     
@@ -1295,31 +1303,33 @@ contract Roulette {
 }
 ```
 
-这份合约表现得像一个简单的彩票。每块一笔交易可以打赌10 ether赢得合约余额的机会。这里的假设是，block.timestamp关于最后两位数字是均匀分布的。如果是这样，那么将有1/15的机会赢得这个彩票。
-但是，正如我们所知，矿工可以根据需要调整时间戳。在这种特殊情况下，如果合约中有足够的ether，解决某个区块的矿工将被激励选择一个15 block.timestamp或now15 的时间戳0。在这样做的时候，他们可能会赢得这个合约以及块奖励。由于每个区块只允许一个人下注，所以这也容易受到前线攻击。
+这份合约是一个简单的彩票。每个区块都有一笔交易可以下注 10 Ether，获得机会赢取合约中的全部余额。这里的假设是， ` block.timestamp ` 的最后两位数字是均匀分布的。如果是这样，那么将有 1/15 的机会赢得这个彩票。
 
-在实践中，块时间戳是单调递增的，所以矿工不能选择任意块时间戳（它们必须大于其前辈）。它们也限制在将来设置不太远的块时间，因为这些块可能会被网络拒绝（节点不会验证其时间戳未来的块）。
+但是，正如我们所知，矿工可以根据自己的意愿调整时间戳。在这种特殊情况下，如果合约中有足够的 Ether，挖出某个区块的矿工将被激励选择一个 ` block.timestamp ` 或 ` now ` 对 15 取余为 ` 0 ` 的时间戳。在这样做的时候，他们可能会赢得这个合约中的 Ether 以及区块奖励。由于每个区块只允许一个人下注，所以这也容易受到[抢先提交攻击](#条件竞争/抢先提交)。
+
+在实践中，区块时间戳是单调递增的，所以矿工不能选择任意块时间戳（它们必须大于其祖先块）。区块时间也不能是未来值，因为这些块可能会被网络拒绝（节点不会验证其时间戳指向未来的块）。
 
 ### 预防技术
 
-块时间戳不应该用于函数或产生随机数 - 也就是说，它们不应该是决定性因素（直接或通过某些推导）获得游戏或改变重要状态（如果假定为随机）。
+区块时间戳不应该用于熵源或产生随机数——也就是说，它们不应该是游戏判定胜负或改变重要状态（如果假定为随机）的决定性因素（无论是直接还是通过某些推导）。
 
-时间敏感的逻辑有时是必需的; 即解锁合约（时间锁定），几周后完成ICO或强制执行到期日期。有时建议使用block.number（参见Solidity文档）和平均块时间来估计时间; .ie 1 week与10 second块时间相等，约等于，60480 blocks。因此，指定更改合约状态的块编号可能更安全，因为矿工无法轻松操作块编号。该BAT ICO合约采用这种策略。
+时效性强的逻辑有时是必需的；即解锁合约（时间锁定），几周后完成 ICO 或到期强制执行。有时建议使用 ` block.number `（参见 [Solidity 文档](http://solidity.readthedocs.io/en/latest/units-and-global-variables.html#block-and-transaction-properties)）和平均区块时间来估计时间；即，10 秒的区块时间运行 1 周，约等于，60480 个区块。因此，指定区块编号来更改合约状态可能更安全，因为矿工无法轻松操纵区块编号。[BAT ICO合约](https://etherscan.io/address/0x0d8775f648430679a709e98d2b0cb6250d2887ef#code)就采用这种策略。
 
-如果合约不是特别关心矿工对块时间戳的操作，这可能是不必要的，但是在开发约同时应该注意这一点。
+如果合约不是特别关心矿工对区块时间戳的操纵，这可能是不必要的，但是在开发合约时应该注意这一点。
 
 ### 真实的例子：GovernMental
 
-GovernMental是一个古老的庞氏骗局，积累了相当多的以太。它也容易受到基于时间戳的攻击。该合约在最后一轮加入球员（至少一分钟）内完成。因此，作为玩家的矿工可以调整时间戳（未来的时间，使其看起来像是一分钟过去了），以显示玩家是最后一分钟加入的时间（尽管这是现实中并非如此）。关于这方面的更多细节可以在Tanya Bahrynovska 的“以太坊安全漏洞史”中找到。
+[GovernMental](http://governmental.github.io/GovernMental/) 是一个古老的庞氏骗局，积累了相当多的 Ether。它也容易受到基于时间戳的攻击。合约会在一轮内支付给最后一个加入合约的玩家（需要加入至少一分钟）。因此，作为玩家的矿工可以调整时间戳（未来的时间，使其看起来像是一分钟过去了），以显示玩家加入已经超过一分钟（尽管现实中并非如此）。关于这方面的更多细节可以在 Tanya Bahrynovska 的 [*以太坊安全漏洞史*](https://applicature.com/blog/history-of-ethereum-security-vulnerabilities-hacks-and-their-fixes) 中找到。
 
-## 谨慎构造函数
+## 构造函数失控
 
-构造函数是特殊函数，在初始化合约时经常执行关键的特权任务。在solidity v0.4.22构造函数被定义为与包含它们的合约名称相同的函数之前。因此，如果合约名称在开发过程中发生变化，如果构造函数名称没有更改，它将变成正常的可调用函数。正如你可以想象的，这可以（并且）导致一些有趣的合约黑客。
-为了进一步阅读，我建议读者尝试Ethernaught挑战（特别是辐射水平）。
+构造函数（Constructors）是特殊函数，在初始化合约时经常执行关键的权限任务。在 solidity v0.4.22 以前，构造函数被定义为与所在合约同名的函数。因此，如果合约名称在开发过程中发生变化，而构造函数名称没有更改，它将变成正常的可调用函数。正如你可以想象的，这可以（并且已经）导致一些有趣的合约被黑。
+
+为了进一步阅读，我建议读者尝试 [Ethernaught 挑战](https://github.com/OpenZeppelin/ethernaut)（特别是 Fallout 层级）。
 
 ### 漏洞
 
-如果合约名称被修改，或者在构造函数名称中存在拼写错误以致它不再与合约名称匹配，则构造函数的行为将与普通函数类似。这可能会导致可怕的后果，特别是如果构造函数正在执行特权操作。考虑以下合约：
+如果合约名称被修改，或者在构造函数名称中存在拼写错误以致它不再与合约名称匹配，则构造函数的行为将与普通函数类似。这可能会导致可怕的后果，特别是如果构造函数正在执行有权限的操作。考虑以下合约：
 
 ```solidity
 contract OwnerWallet {
@@ -1340,26 +1350,29 @@ contract OwnerWallet {
 }
 ```
 
-该合约收集以太，并只允许所有者通过调用该withdraw()函数来撤销所有以太。这个问题是由于构造函数没有完全以合约名称命名的。具体来说，ownerWallet是不一样的OwnerWallet。因此，任何用户都可以调用该ownerWallet()函数，将自己设置为所有者，然后通过调用将合约中的所有内容都取出来withdraw()。
+该合约储存 Ether，并只允许所有者通过调用 ` withdraw() ` 函数来取出所有 Ether。但由于构造函数的名称与合约名称不完全一致，这个合约会出问题。具体来说， ` ownerWallet ` 与 ` OwnerWallet ` 不相同。因此，任何用户都可以调用 ` ownerWallet() ` 函数，将自己设置为所有者，然后通过调用 ` withdraw() ` 将合约中的所有 Ether 都取出来。
 
 ### 预防技术
 
-这个问题已经在Solidity编译器的版本中得到了主要解决0.4.22。该版本引入了一个constructor指定构造函数的关键字，而不是要求函数的名称与契约名称匹配。建议使用此关键字来指定构造函数，以防止上面突出显示的命名问题。
+这个问题在 Solidity 0.4.22 版本的编译器中已经基本得到了解决。该版本引入了一个关键词 ` constructor ` 来指定构造函数，而不是要求函数的名称与合约名称匹配。建议使用这个关键词来指定构造函数，以防止上面显示的命名问题。
 
 ### 真实世界的例子：Rubixi
 
-Rubixi（合约代码）是另一个展现这种脆弱性的传销方案。它最初被调用，DynamicPyramid但合约名称在部署之前已更改Rubixi。构造函数的名字没有改变，允许任何用户成为creator。关于这个bug的一些有趣的讨论可以在这个比特币线程中找到。最终，它允许用户争取creator地位，从金字塔计划中支付费用。关于这个特定bug的更多细节可以在这里找到。
+Rubixi（[合约代码](https://etherscan.io/address/0xe82719202e5965Cf5D9B6673B7503a3b92DE20be#code)）是另一个显现出这种漏洞的传销方案。合约中的构造函数一开始叫做 ` DynamicPyramid ` ，但合约名称在部署之前已改为 ` Rubixi ` 。构造函数的名字没有改变，因此任何用户都可以成为 ` creator ` 。这篇 [Bitcoin Thread](https://bitcointalk.org/index.php?topic=1400536.60) 中可以找到关于这个 bug 的一些有趣的讨论。总之，用户因为这个漏洞开始互相争夺 ` creator ` 身份，以从合约中获得金钱。关于这个特定 bug 的更多细节可以在[这里](https://applicature.com/blog/history-of-ethereum-security-vulnerabilities-hacks-and-their-fixes)找到。
 
-## 虚拟化存储指针
+## 未初始化的存储指针
 
-EVM将数据存储为storage或作为memory。开发合约时强烈建议如何完成这项工作，并强烈建议函数局部变量的默认类型。这是因为可能通过不恰当地初始化变量来产生易受攻击的合约。
-要了解更多关于storage和memory的EVM，看到Solidity Docs: Data Location，Solidity Docs: Layout of State Variables in Storage，Solidity Docs: Layout in Memory。
-本节以Stefan Beyer出色的文章为基础。关于这个话题的进一步阅读可以从Sefan的灵感中找到，这是这个reddit思路。
+EVM 既用 ` storage ` 来存储，也用 ` memory ` 来存储。强烈建议开发合约时弄懂存储的方式和函数局部变量的默认类型。因为不恰当地初始化变量可能产生有漏洞的合约。
+
+要了解更多关于的 EVM 中 ` storage ` 和 ` memory ` 的内容，请看 [Solidity Docs: Data Location](http://solidity.readthedocs.io/en/latest/types.html#data-location)、[Solidity Docs: Layout of State Variables in Storage](http://solidity.readthedocs.io/en/latest/miscellaneous.html#layout-of-state-variables-in-storage)、[Solidity Docs: Layout in Memory](http://solidity.readthedocs.io/en/latest/miscellaneous.html#layout-in-memory)。
+
+*本节以 [Sfan Beyer出色的文章](https://medium.com/cryptronics/storage-allocation-exploits-in-ethereum-smart-contracts-16c2aa312743)为基础。关于这个话题的进一步阅读可以从 Sefan 的启发中找到，也就是个这篇 [reddit 帖子](https://www.reddit.com/r/ethdev/comments/7wp363/how_does_this_honeypot_work_it_seems_like_a/)*。
 
 ### 漏洞
 
-函数内的局部变量默认为storage或memory取决于它们的类型。未初始化的本地storage变量可能会指向合约中的其他意外存储变量，从而导致故意（即，开发人员故意将它们放在那里进行攻击）或无意的漏洞。
-我们来考虑以下相对简单的名称注册商合约：
+函数内的局部变量根据它们的类型默认用 ` storage ` 或 ` memory ` 存储。未初始化的局部 ` storage ` 变量可能会指向合约中的其他意外存储变量，从而导致有意（即，开发人员故意将它们放在那里进行攻击）或无意的漏洞。
+
+我们来考虑以下相对简单的名称注册器合约：
 
 ```solidity
 // A Locked Name Registrar
@@ -1389,23 +1402,23 @@ contract NameRegistrar {
 }
 ```
 
-这个简单的名称注册商只有一个功能。当合约是unlocked，它允许任何人注册一个名称（作为bytes32散列）并将该名称映射到地址。不幸的是，此注册商最初被锁定，并且require在线[23]禁止register()添加姓名记录。然而，在这个合约中存在一个漏洞，它允许名称注册而不管unlocked变量。
+这个简单的名称注册器只有一个功能。当合约是 ` unlocked ` 状态时，任何用户都可以注册一个名称（以 ` bytes32 ` 哈希值的形式）并将该名称映射到地址。不幸的是，这个注册器一开始是被锁定的，并且在 [23] 行的 ` require ` 函数禁止 ` register() ` 添加姓名记录。但是，这个合约中存在一个漏洞，让用户可以不管 ` unlocked ` 运行注册器。
 
-为了讨论这个漏洞，首先我们需要了解存储在Solidity中的工作方式。作为一个高层次的概述（没有任何适当的技术细节 - 我建议阅读Solidity文档以进行适当的审查），状态变量按顺序存储在合约中出现的插槽中（它们可以组合在一起，但在本例中不可以，所以我们不用担心）。因此，unlocked存在于slot 0，registeredNameRecord在存在slot 1和resolve在slot 2等。这些槽是字节大小32（有与我们忽略现在映射添加的复杂性）。布尔unlocked将看起来像0x000...0（64 0，不包括0x）for false或0x000...1（63 0's）true。正如你所看到的，在这个特殊的例子中，存储会有很大的浪费。
+为了讨论这个漏洞，首先我们需要了解存储（Storage）在 Solidity 中的工作方式。作为一个高度抽象的概述（没有任何适当的技术细节——我建议阅读 Solidity 文档以进行适当的审查），状态变量按它们出现在合约中的顺序存储在合约的 *Slot* 中（它们可以被组合在一起，但在本例中不可以，所以我们不用担心）。因此， ` unlocked ` 存在 ` slot 0 ` 中， ` registeredNameRecord ` 存在 ` slot 1 ` 中， ` resolve ` 在 ` slot 2 ` 中，等等。这些 slot 的大小是 32 字节（映射会让事情更加复杂，但我们暂时忽略）。如果 ` unlocked ` 是 ` false ` ，其布尔值看起来会是 ` 0x000...0 ` （64 个 0，不包括 ` 0x ` ）；如果是 ` true ` ，则其布尔值会是 ` 0x000...1 ` （63 个 0）。正如你所看到的，在这个特殊的例子中，存储上存在着很大的浪费。
 
-下一个资料，我们需要的，是Solidity违约复杂数据类型，例如structs，以storage初始化它们作为局部变量时。因此，newRecord在行[16]上默认为storage。该漏洞是由newRecord未初始化的事实引起的。由于它默认为存储，因此它成为存储指针，并且由于它未初始化，它指向插槽0（即unlocked存储位置）。请注意，上线[17]和[18]我们然后设置nameRecord.name到_name和nameRecord.mappedAddress到_mappedAddress，这实际上改变了时隙0和时隙1的存储位置用于修改都unlocked和与之相关联的存储槽registeredNameRecord。
+我们需要的另一部分知识，是 Solidity 会在将复杂的数据类型，比如 ` structs ` ，初始化为局部变量时，默认使用 storage 来存储。因此，在 [16] 行中的 ` newRecord ` 默认为storage。合约的漏洞是由 ` newRecord ` 未初始化导致的。由于它默认为 storage，因此它成为指向 storage 的指针；并且由于它未初始化，它指向 slot 0（即 ` unlocked ` 的存储位置）。请注意，[17] 行和[18] 行中，我们将 ` _name ` 设为 ` nameRecord.name ` 、将  ` _mappedAddress ` 设为 ` nameRecord.mappedAddress ` 的操作，实际上改变了 slot 0 和 slot 1 的存储位置，也就是改变了 ` unlocked ` 和与 ` registeredNameRecord ` 相关联的 slot。
 
-这意味着unlocked可以直接通过函数的bytes32 _name参数进行修改register()。因此，如果最后一个字节为_name非零，它将修改存储的最后一个字节slot 0并直接转换unlocked为true。这样_name的值将通过require()线[23]，因为我们正在设置unlocked到true。在Remix中试试这个。注意如果你使用下面_name的形式，函数会通过：0x0000000000000000000000000000000000000000000000000000000000000001
+这意味着我们可以通过 ` register() ` 函数的 ` bytes32 _name ` 参数直接修改 ` unlocked ` 。因此，如果 ` _name ` 的最后一个字节为非零，它将修改 slot 0 的最后一个字节并直接将 ` unlocked ` 转为 ` true ` 。就在我们将 ` unlocked ` 设置为 ` true ` 之时，这样的 ` _name ` 值将传入 [23] 行的 ` require() ` 函数。在Remix中试试这个。注意如果你的 ` _name ` 使用下面形式，函数会通过： ` 0x0000000000000000000000000000000000000000000000000000000000000001 ` 
 
 ### 预防技术
 
-Solidity编译器会提出未经初始化的存储变量作为警告，因此开发人员在构建智能合约时应小心注意这些警告。当前版本的mist（0.10）不允许编译这些合约。在处理复杂类型时明确使用memory或storage确定它们的行为如预期一般是很好的做法。
+Solidity 编译器会在出现未经初始化的存储变量时发出警告，因此开发人员在构建智能合约时应小心注意这些警告。当前版本的 mist（0.10）不允许编译这些合约。在处理复杂类型时，明确使用 ` memory ` 或 ` storage ` 以保证合约行为符合预期一般是很好的做法。
 
-### 真实世界的例子：蜜罐：OpenAddressLottery和CryptoRoulette
+### 真实世界的例子：钓鱼：OpenAddressLottery 和 CryptoRoulette
 
-一个名为OpenAddressLottery（合约代码）的蜜罐被部署，它使用这个未初始化的存储变量querk从一些可能的黑客收集ether。合约是相当深入的，所以我会把讨论留在这个reddit思路中，这个攻击很清楚地解释了。
+有人部署了一个名为 OpenAddressLottery（[合约代码](https://etherscan.io/address/0x741f1923974464efd0aa70e77800ba5d9ed18902#code)）的钓鱼合约，它使用未初始化的存储变量以从一些可能的黑客手上吊取 ether。合约是相当深入的，所以我会把讨论留在这个 [reddit 帖子](https://www.reddit.com/r/ethdev/comments/7wp363/how_does_this_honeypot_work_it_seems_like_a/)中。我在里面很清楚地解释了这种攻击。
 
-另一个蜜罐，CryptoRoulette（合约代码）也利用这个技巧尝试并收集一些以太。如果您无法弄清楚攻击是如何进行的，请参阅对以太坊蜜罐合约的分析以获得对此合约和其他内容的概述。
+另一个钓鱼合约，CryptoRoulette（[合约代码](https://etherscan.io/address/0x8685631276cfcf17a973d92f6dc11645e5158c0c#code)）也利用这个技巧尝试获得一些 Ether。如果您无法弄清楚攻击是如何进行的，请参阅[对以太坊钓鱼合约的分析](https://medium.com/@jsanjuas/an-analysis-of-a-couple-ethereum-honeypot-contracts-5c07c95b0a8d)以获得对此合约和其他内容的概述。
 
 ## 浮点和精度
 
