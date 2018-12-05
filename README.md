@@ -10,3 +10,4 @@
 * [TrueUSD Smart Contract Security Audit Report](./open-report/TrueUSD-Smart-Contract-Security-Audit-Report.md)
 * [智能合约安全审计报告 demo](./open-report/Smart-Contract-Security-Audit-Report-demo-chinese.md)
 * [OceanONE 安全审计报告](./open-report/OceanONE-Security-Audit-Report.md)
+* [VeChainThorNodeToken Smart Contract Security Audit Report](./open-report/VeChainThorNodeToken-Smart-Contract-Security-Audit-Report.md)
