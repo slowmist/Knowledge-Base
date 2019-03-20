@@ -7,9 +7,17 @@
 
 ## 基础研究
 
-* Paper of SlowMist（https://github.com/slowmist/papers)
-* Threat Intelligence of SlowMist（https://slowmist.io/disclosure/)
-* Open of SlowMist（https://github.com/slowmist/)
+* Paper of SlowMist(https://github.com/slowmist/papers)
+* Threat Intelligence of SlowMist(https://slowmist.io/disclosure/)
+* Open of SlowMist(https://github.com/slowmist/) 
+
+### EOS Security of SlowMist
+
+* EOS 超级节点安全执行指南(https://github.com/slowmist/eos-bp-nodes-security-checklist)
+* EOS 超级节点安全审计方案(https://github.com/slowmist/eos-bp-nodes-security-checklist/blob/master/audit.md)
+* EOS 智能合约最佳安全开发指南(https://github.com/slowmist/eos-smart-contract-security-best-practices)
+* EOS 天眼(EOS MonKit)(https://eos.slowmist.io/)
+* EOS DApp 防火墙(FireWall.X)(https://firewallx.io/, https://github.com/firewall-x)
 
 ## 翻译资料
 
