@@ -7,18 +7,20 @@
 
 ## 目录
 * [基础研究](#基础研究)
-    * [EOS Security of SlowMist](#eos-security)
+    * [EOS Security of SlowMist](#eos-security-of-slowmist)
 * [翻译资料](#翻译资料)
 * [开放报告](#开放报告)
 * [思维导图](#思维导图)
 
 ## 基础研究
 
+Basic research of blockchain security, include: `Bitcoin`, `Monero`, `Ethereum`, `EOS` and other top blockchains.
+
 * Paper of SlowMist(https://github.com/slowmist/papers)
 * Threat Intelligence of SlowMist(https://slowmist.io/disclosure/)
 * Open of SlowMist(https://github.com/slowmist/) 
 
-### [EOS Security of SlowMist](#eos-security)
+### EOS Security of SlowMist
 
 * [EOS 超级节点安全执行指南](https://github.com/slowmist/eos-bp-nodes-security-checklist)
 * [EOS 超级节点安全审计方案](https://github.com/slowmist/eos-bp-nodes-security-checklist/blob/master/audit.md)
@@ -28,10 +30,14 @@
 
 ## 翻译资料
 
+Some translated blockchain security documents.
+
 * [DASP Top10 中文版](./DASP-top10-chinese.pdf)
 * [Solidity 安全：已知攻击方法和常见防御模式综合列表](./solidity-security-comprehensive-list-of-known-attack-vectors-and-common-anti-patterns-chinese.md)
 
 ## 开放报告
+
+Some open security audit reports of SlowMist.
 
 * [TrueUSD Smart Contract Security Audit Report](./open-report/TrueUSD-Smart-Contract-Security-Audit-Report.md)
 * [智能合约安全审计报告 demo](./open-report/Smart-Contract-Security-Audit-Report-demo-chinese.md)
@@ -39,6 +45,8 @@
 * [VeChainThorNodeToken Smart Contract Security Audit Report](./open-report/VeChainThorNodeToken-Smart-Contract-Security-Audit-Report.md)
 
 ## 思维导图
+
+Some mind maps of blockchain security.
 
 * [DApp Attack & Defense](https://github.com/slowmist/Knowledge-Base/blob/master/dapp_attack_defense.png)
 * [Exchange or Wallet Attack & Defense](https://github.com/slowmist/Knowledge-Base/blob/master/exchange_wallet_attack_defense.png)
