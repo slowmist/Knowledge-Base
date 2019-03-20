@@ -7,9 +7,9 @@
 
 ## 基础研究
 
-* Paper of SlowMist（https://github.com/slowmist/papers）
-* Threat Intelligence of SlowMist（https://slowmist.io/disclosure/）
-* Open of SlowMist（https://github.com/slowmist/）
+* Paper of SlowMist（https://github.com/slowmist/papers)
+* Threat Intelligence of SlowMist（https://slowmist.io/disclosure/)
+* Open of SlowMist（https://github.com/slowmist/)
 
 ## 翻译资料
 
