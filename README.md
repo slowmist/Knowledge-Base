@@ -5,13 +5,20 @@
 
 `我们在努力成为区块链世界的“安全基础设施”。未知的才是有趣的，已知的如果不分享将会变得索然无味。`
 
+## 目录
+* [基础研究](#基础研究)
+    * [EOS Security of SlowMist](#eos-security)
+* [翻译资料](#翻译资料)
+* [开放报告](#开放报告)
+* [思维导图](#思维导图)
+
 ## 基础研究
 
 * Paper of SlowMist(https://github.com/slowmist/papers)
 * Threat Intelligence of SlowMist(https://slowmist.io/disclosure/)
 * Open of SlowMist(https://github.com/slowmist/) 
 
-### EOS Security of SlowMist
+### EOS Security of SlowMist(#eos-security)
 
 * [EOS 超级节点安全执行指南](https://github.com/slowmist/eos-bp-nodes-security-checklist)
 * [EOS 超级节点安全审计方案](https://github.com/slowmist/eos-bp-nodes-security-checklist/blob/master/audit.md)
