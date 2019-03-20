@@ -18,7 +18,7 @@
 * Threat Intelligence of SlowMist(https://slowmist.io/disclosure/)
 * Open of SlowMist(https://github.com/slowmist/) 
 
-### EOS Security of SlowMist(#eos-security)
+### [EOS Security of SlowMist](#eos-security)
 
 * [EOS 超级节点安全执行指南](https://github.com/slowmist/eos-bp-nodes-security-checklist)
 * [EOS 超级节点安全审计方案](https://github.com/slowmist/eos-bp-nodes-security-checklist/blob/master/audit.md)
