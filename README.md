@@ -1,7 +1,7 @@
 # Knowledge Base 慢雾安全团队知识库
 
-慢雾科技：https://www.slowmist.com
-慢雾区：https://www.slowmist.io
+`慢雾科技`：https://www.slowmist.com
+`慢雾区`：https://www.slowmist.io
 
 `我们在努力成为区块链世界的“安全基础设施”。未知的才是有趣的，已知的如果不分享将会变得索然无味。`
 
