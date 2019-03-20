@@ -13,11 +13,11 @@
 
 ### EOS Security of SlowMist
 
-* EOS 超级节点安全执行指南(https://github.com/slowmist/eos-bp-nodes-security-checklist)
-* EOS 超级节点安全审计方案(https://github.com/slowmist/eos-bp-nodes-security-checklist/blob/master/audit.md)
-* EOS 智能合约最佳安全开发指南(https://github.com/slowmist/eos-smart-contract-security-best-practices)
-* EOS 天眼(EOS MonKit)(https://eos.slowmist.io/)
-* EOS DApp 防火墙(FireWall.X)(https://firewallx.io/, https://github.com/firewall-x)
+* [EOS 超级节点安全执行指南](https://github.com/slowmist/eos-bp-nodes-security-checklist)
+* [EOS 超级节点安全审计方案](https://github.com/slowmist/eos-bp-nodes-security-checklist/blob/master/audit.md)
+* [EOS 智能合约最佳安全开发指南](https://github.com/slowmist/eos-smart-contract-security-best-practices)
+* [EOS 天眼(EOS MonKit)](https://eos.slowmist.io/)
+* [FireWall.X — 强大的 EOS 智能合约防火墙](https://firewallx.io/) & [FireWall.X GitHub](https://github.com/firewall-x)
 
 ## 翻译资料
 
@@ -33,6 +33,6 @@
 
 ## 思维导图
 
-* DApp Attack & Defense(https://github.com/slowmist/Knowledge-Base/blob/master/dapp_attack_defense.png)
-* Exchange or Wallet Attack & Defense(https://github.com/slowmist/Knowledge-Base/blob/master/exchange_wallet_attack_defense.png)
-* Evil Blockchain & how to be evil(https://github.com/slowmist/Knowledge-Base/blob/master/evil_blockchain.png)
+* [DApp Attack & Defense](https://github.com/slowmist/Knowledge-Base/blob/master/dapp_attack_defense.png)
+* [Exchange or Wallet Attack & Defense](https://github.com/slowmist/Knowledge-Base/blob/master/exchange_wallet_attack_defense.png)
+* [Evil Blockchain & how to be evil](https://github.com/slowmist/Knowledge-Base/blob/master/evil_blockchain.png)
