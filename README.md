@@ -44,6 +44,7 @@ Some open security audit reports of SlowMist.
 * [智能合约安全审计报告 demo](./open-report/Smart-Contract-Security-Audit-Report-demo-chinese.md)
 * [OceanONE 安全审计报告](./open-report/OceanONE-Security-Audit-Report.md)
 * [VeChainThorNodeToken Smart Contract Security Audit Report](./open-report/VeChainThorNodeToken-Smart-Contract-Security-Audit-Report.md)
+* [IoTeX Smart Contract Security Audit Report](./open-report/IoTeX-Smart-Contract-Security-Audit-Report.md)
 
 ## 思维导图
 
