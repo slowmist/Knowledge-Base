@@ -48,6 +48,7 @@ Some open security audit reports of SlowMist.
 * [QuarkChain 安全审计报告](./open-report/QuarkChain-Security-Audit-Report.md)
 * [MEET.ONE Smart Contract Security Audit Report](https://github.com/meet-one/contracts/blob/master/eosiomeetone/open-report/Security-Audit-Report.md)
 * [YOLO Smart Contract Security Audit Report](https://github.com/KyberNetwork/eos_smart_contracts/blob/master/docs/YOLO_Smart_Contract_Security_Audit_Report.pdf)
+* [IoTeX-Vitality Smart Contract Security Audit Report](./open-report/IoTeX-Vitality-Smart-Contract-Security-Audit-Report.md)
 
 ## 思维导图
 
