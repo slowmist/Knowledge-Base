@@ -35,6 +35,7 @@ Some translated blockchain security documents.
 
 * [DASP Top10 中文版](./DASP-top10-chinese.pdf)
 * [Solidity 安全：已知攻击方法和常见防御模式综合列表](./solidity-security-comprehensive-list-of-known-attack-vectors-and-common-anti-patterns-chinese.md)
+* [全面解析公共区块链系统攻击面](./Exploring-the-Attack-Surface-of-Blockchain-A-Systematic-Overview-zh_CN.md)
 
 ## 开放报告
 
