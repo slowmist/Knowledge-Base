@@ -11,3 +11,5 @@ Some open security audit reports of SlowMist.
 * [MEET.ONE Smart Contract Security Audit Report](https://github.com/meet-one/contracts/blob/master/eosiomeetone/open-report/Security-Audit-Report.md)
 * [YOLO Smart Contract Security Audit Report](https://github.com/KyberNetwork/eos_smart_contracts/blob/master/docs/YOLO_Smart_Contract_Security_Audit_Report.pdf)
 * [IoTeX-Vitality Smart Contract Security Audit Report](./IoTeX-Vitality-Smart-Contract-Security-Audit-Report.md)
+* [ABCWallet Security Audit Report](./ABCWallet_Security_Audit_Report_EN.pdf)
+* [HyperPay APP Security Audit Report](./HyperPay_APP_Security_Audit_Report.pdf)
