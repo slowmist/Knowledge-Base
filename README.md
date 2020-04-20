@@ -50,6 +50,8 @@ Some open security audit reports of SlowMist.
 * [MEET.ONE Smart Contract Security Audit Report](https://github.com/meet-one/contracts/blob/master/eosiomeetone/open-report/Security-Audit-Report.md)
 * [YOLO Smart Contract Security Audit Report](https://github.com/KyberNetwork/eos_smart_contracts/blob/master/docs/YOLO_Smart_Contract_Security_Audit_Report.pdf)
 * [IoTeX-Vitality Smart Contract Security Audit Report](./open-report/IoTeX-Vitality-Smart-Contract-Security-Audit-Report.md)
+* [EOSIO-WPS审计报告(中文版)](https://github.com/slowmist/Knowledge-Base/blob/master/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%A1%E8%AE%A1%E6%8A%A5%E5%91%8A%20-%20EOSIO.WPS.pdf)
+* [EOSIO-WPS Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/Smart%20Contract%20Security%20Audit%20Report%20-%20EOSIO.WPS.pdf)
 
 ## 思维导图
 
