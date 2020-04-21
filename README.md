@@ -19,7 +19,7 @@ Basic research of blockchain security, include: `Bitcoin`, `Monero`, `Ethereum`,
 
 * Paper of SlowMist(https://github.com/slowmist/papers)
 * Threat Intelligence of SlowMist(https://slowmist.io/disclosure/)
-* Open of SlowMist(https://github.com/slowmist/) 
+* Open of SlowMist(https://github.com/slowmist/)
 
 ### EOS Security of SlowMist
 
@@ -50,8 +50,11 @@ Some open security audit reports of SlowMist.
 * [MEET.ONE Smart Contract Security Audit Report](https://github.com/meet-one/contracts/blob/master/eosiomeetone/open-report/Security-Audit-Report.md)
 * [YOLO Smart Contract Security Audit Report](https://github.com/KyberNetwork/eos_smart_contracts/blob/master/docs/YOLO_Smart_Contract_Security_Audit_Report.pdf)
 * [IoTeX-Vitality Smart Contract Security Audit Report](./open-report/IoTeX-Vitality-Smart-Contract-Security-Audit-Report.md)
-* [EOSIO-WPS审计报告(中文版)](https://github.com/slowmist/Knowledge-Base/blob/master/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%A1%E8%AE%A1%E6%8A%A5%E5%91%8A%20-%20EOSIO.WPS.pdf)
-* [EOSIO-WPS Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/Smart%20Contract%20Security%20Audit%20Report%20-%20EOSIO.WPS.pdf)
+* [ABCWallet Security Audit Report](./open-report/ABCWallet_Security_Audit_Report_EN.pdf)
+* [HyperPay APP Security Audit Report](./open-report/HyperPay_APP_Security_Audit_Report.pdf)
+* [EOSIO.WPS 智能合约安全审计报告](./open-report/EOSIO.WPS_Smart_Contract_Security_Audit_Report_zh.pdf)
+* [EOSIO.WPS Smart Contract Security Audit Report](./open-report/EOSIO.WPS_Smart_Contract_Security_Audit_Report_en.pdf)
+
 
 ## 思维导图
 
