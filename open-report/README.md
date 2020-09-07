@@ -15,3 +15,4 @@ Some open security audit reports of SlowMist.
 * [HyperPay APP Security Audit Report](./HyperPay_APP_Security_Audit_Report.pdf)
 * [EOSIO.WPS 智能合约安全审计报告](./EOSIO.WPS_Smart_Contract_Security_Audit_Report_zh.pdf)
 * [EOSIO.WPS Smart Contract Security Audit Report](./EOSIO.WPS_Smart_Contract_Security_Audit_Report_en.pdf)
+* [OneSwap Smart Contract Security Audit Report](./OneSwap_Smart_Contract_Security_Audit_Report.pdf)
