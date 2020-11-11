@@ -16,3 +16,4 @@ Some open security audit reports of SlowMist.
 * [EOSIO.WPS 智能合约安全审计报告](./EOSIO.WPS_Smart_Contract_Security_Audit_Report_zh.pdf)
 * [EOSIO.WPS Smart Contract Security Audit Report](./EOSIO.WPS_Smart_Contract_Security_Audit_Report_en.pdf)
 * [OneSwap Smart Contract Security Audit Report](./OneSwap_Smart_Contract_Security_Audit_Report.pdf)
+* [WaykiChain Security Audit Report](./WaykiChain%20Security%20Audit%20Report.pdf)
