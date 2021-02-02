@@ -18,3 +18,4 @@ Some open security audit reports of SlowMist.
 * [OneSwap Smart Contract Security Audit Report](./OneSwap_Smart_Contract_Security_Audit_Report.pdf)
 * [WaykiChain Security Audit Report](./WaykiChain%20Security%20Audit%20Report.pdf)
 * [Litentry-node Module Security Audit Report](./Litentry-node%20Module%20Security%20Audit%20Report.pdf)
+* [ZKSwap Security Audit Report](./ZKSwap-Security-Audit-Report.pdf)
