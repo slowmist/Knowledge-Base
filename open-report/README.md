@@ -20,3 +20,5 @@ Some open security audit reports of SlowMist.
 * [Litentry-node Module Security Audit Report](./Litentry-node%20Module%20Security%20Audit%20Report.pdf)
 * [ZKSwap Security Audit Report](./ZKSwap-Security-Audit-Report.pdf)
 * [PlatON安全审计报告](./PlatON安全审计报告.pdf)
+* [Vexanium Chain Security Audit Report](./Vexanium-chain-Security-Audit-Report.pdf)
+* 
