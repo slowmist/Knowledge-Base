@@ -59,6 +59,7 @@ Some open security audit reports of SlowMist.
 * [ZKSwap Security Audit Report](./open-report/ZKSwap-Security-Audit-Report.pdf)
 * [PlatON安全审计报告](./open-report/PlatON安全审计报告.pdf)
 * [Vexanium Chain Security Audit Report](./open-report/Vexanium-chain-Security-Audit-Report.pdf)
+* [HALO Network Security Audit Report](./open-report/HALO-Network-Security-Audit-Report.pdf)
 
 ## 思维导图
 
