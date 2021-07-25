@@ -22,3 +22,4 @@ Some open security audit reports of SlowMist.
 * [PlatON安全审计报告](./PlatON安全审计报告.pdf)
 * [Vexanium Chain Security Audit Report](./Vexanium-chain-Security-Audit-Report.pdf)
 * [HALO Network Security Audit Report](./HALO-Network-Security-Audit-Report.pdf)
+* [SX Curve Smart Contract Security Audit Report](./Smart%20Contract%20Security%20Audit%20Report%20-%20sx.curve.pdf)
