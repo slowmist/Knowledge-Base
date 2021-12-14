@@ -23,3 +23,5 @@ Some open security audit reports of SlowMist.
 * [Vexanium Chain Security Audit Report](./Vexanium-chain-Security-Audit-Report.pdf)
 * [HALO Network Security Audit Report](./HALO-Network-Security-Audit-Report.pdf)
 * [SX Curve Smart Contract Security Audit Report](./Smart%20Contract%20Security%20Audit%20Report%20-%20sx.curve.pdf)
+* [Solyard Security Audit Report](https://github.com/SolyardFinance/Audit/blob/master/SlowMistAuditReport-SolYard.pdf)
+* [Acala Security Audit Report](https://github.com/AcalaNetwork/Acala/blob/master/audit/SlowMist%20-%20Acala%20Security%20Audit%20Report%20-%202021.pdf)
