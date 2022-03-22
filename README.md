@@ -51,7 +51,7 @@ Some open security audit reports of SlowMist.
 
 Some mind maps of blockchain security.
 
-* [DApp Attack & Defense](./roadmap/dapp_attack_defense.png)
+* [DApp Attack & Defense](./mindmaps/dapp_attack_defense.png)
 * [Exchange or Wallet Attack & Defense](./mindmaps/exchange_wallet_attack_defense.png)
 * [Evil Blockchain & how to be evil](./mindmaps/evil_blockchain.png)
 
