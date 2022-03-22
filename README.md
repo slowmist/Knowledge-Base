@@ -43,9 +43,9 @@ Some translated blockchain security documents.
 
 Some open security audit reports of SlowMist.
 
-* [Blockchain Security Audit Report](./open-report-V2/blockchain-security-audit-report/)
-* [Blockchain Application Security Audit Report](./open-report-V2/blockchain-application-security-audit-report/)
-* [Smart Contract Security Audit Report](./open-report-V2/smart-contract-security-audit-report/)
+* [Blockchain Security Audit Report](./open-report-V2/blockchain/)
+* [Blockchain Application Security Audit Report](./open-report-V2/blockchain-application/)
+* [Smart Contract Security Audit Report](./open-report-V2/smart-contract/)
 
 ## 思维导图
 
