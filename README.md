@@ -36,8 +36,8 @@ Basic research of blockchain security, include: `Bitcoin`, `Monero`, `Ethereum`,
 Some translated blockchain security documents.
 
 * [DASP Top10 中文版](./translations/DASP-top10-chinese.pdf)
-* [Solidity 安全：已知攻击方法和常见防御模式综合列表](./translations/solidity-security-comprehensive-list-of-known-attack-vectors-and-common-anti-patterns-chinese.md)
-* [全面解析公共区块链系统攻击面](./translations/Exploring-the-Attack-Surface-of-Blockchain-A-Systematic-Overview/Exploring-the-Attack-Surface-of-Blockchain-A-Systematic-Overview-zh_CN.md)
+* [Solidity 安全：已知攻击方法和常见防御模式综合列表](./translations/solidity-security-comprehensive-list-of-known-attack-vectors-and-common-anti-patterns_zh-cn.md)
+* [全面解析公共区块链系统攻击面](./translations/Exploring-the-Attack-Surface-of-Blockchain-A-Systematic-Overview/Exploring-the-Attack-Surface-of-Blockchain-A-Systematic-Overview_zh-cn.md)
 
 ## 开放报告
 
