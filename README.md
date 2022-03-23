@@ -14,12 +14,12 @@
   - [翻译资料](#翻译资料)
   - [开放报告](#开放报告)
   - [思维导图](#思维导图)
-  - [其他资料](#其他资料)
   - [技术分析](#技术分析)
     - [DeFi 攻击手法分析](#defi-攻击手法分析)
     - [链上追踪技术分析](#链上追踪技术分析)
     - [其他区块链技术分析](#其他区块链技术分析)
     - [:fire: 针对数字货币交易平台充值入账的攻击手法](#fire-针对数字货币交易平台充值入账的攻击手法)
+  - [其他资料](#其他资料)
 
 ## 基础研究
 
@@ -69,14 +69,6 @@ Some mind maps of blockchain security.
 * [DApp Attack & Defense](./mindmaps/dapp_attack_defense.png)
 * [Exchange or Wallet Attack & Defense](./mindmaps/exchange_wallet_attack_defense.png)
 * [Evil Blockchain & how to be evil](./mindmaps/evil_blockchain.png)
-
-## 其他资料
-
-Other awesome collections.
-
-* [Hacked](https://hacked.slowmist.io)
-* [Awesome Blockchain Bug Bounty](https://github.com/slowmist/awesome-blockchain-bug-bounty)
-* [慢雾科普：区块链安全入门笔记](./blockchain_security_study_notes/README.md)
 
 ## 技术分析
 ### DeFi 攻击手法分析
@@ -184,3 +176,11 @@ Other awesome collections.
 * [Solana 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [波场代币 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [terra 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+
+## 其他资料
+
+Other awesome collections.
+
+* [Hacked](https://hacked.slowmist.io)
+* [Awesome Blockchain Bug Bounty](https://github.com/slowmist/awesome-blockchain-bug-bounty)
+* [慢雾科普：区块链安全入门笔记](./blockchain_security_study_notes/README.md)
