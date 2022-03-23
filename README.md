@@ -19,7 +19,7 @@
     - [DeFi 攻击手法分析](#defi-攻击手法分析)
     - [链上追踪技术分析](#链上追踪技术分析)
     - [其他区块链技术分析](#其他区块链技术分析)
-    - [针对数字货币交易平台充值入账的攻击手法](#针对数字货币交易平台充值入账的攻击手法)
+    - [:fire: 针对数字货币交易平台充值入账的攻击手法](#fire-针对数字货币交易平台充值入账的攻击手法)
 
 ## 基础研究
 
@@ -169,7 +169,7 @@ Other awesome collections.
 * [价值两百万的以太坊钱包陷阱](https://mp.weixin.qq.com/s/YPS7ZY6KGDYWZypjQrMpAw)
 * [区块链诈骗手法之假币骗局揭秘](https://mp.weixin.qq.com/s/W4On3uKDLAi8xGctZGYTXA)
 
-### 针对数字货币交易平台充值入账的攻击手法
+### :fire: 针对数字货币交易平台充值入账的攻击手法
 慢雾安全团队依靠多年的区块链安全行业经验，首发了各类假充值的攻击手法，为交易平台提供安全检查服务，保障交易平台的充值入账安全。
 * [USDT 假充值手法](https://mp.weixin.qq.com/s/CtAKLNe0MOKDyUFaod4_hw)
 * [EOS 假充值手法](https://mp.weixin.qq.com/s/fKINfZLW65LYaD4qO-21nA)
