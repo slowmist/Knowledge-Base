@@ -27,6 +27,10 @@ Basic research of blockchain security, include: `Bitcoin`, `Monero`, `Ethereum`,
 
 * Paper of SlowMist(https://github.com/slowmist/papers)
 * Threat Intelligence of SlowMist(https://slowmist.io/disclosure/)
+* Public topic of SlowMist HackingTime (https://github.com/slowmist/HackingTime_Public)
+* Ontology Triones Service Node security checklist(https://github.com/slowmist/Ontology-Triones-Service-Node-security-checklist)
+* vechain core nodes security checklist(https://github.com/slowmist/vechain-core-nodes-security-checklist)
+* cryptocurrency security(https://github.com/slowmist/cryptocurrency-security)
 * Open of SlowMist(https://github.com/slowmist/)
 
 ### EOS Security of SlowMist
@@ -116,15 +120,19 @@ Some mind maps of blockchain security.
 * [（更新）老调重弹 —— “通缩型代币” 兼容性问题](https://mp.weixin.qq.com/s/rdh3DyKG5peJvPBgriA8bg)
 * :pushpin: [千万美元被盗 —— DeFi 平台 MonoX Finance 被黑分析](https://mp.weixin.qq.com/s/s0tO1aqOKGlRcXjyZFU_3Q)
 * [环环相扣 —— Gnosis Safe Multisig 用户被黑分析](https://mp.weixin.qq.com/s/3KHnPNap7hMBbhkENUOAMg)
-* [智能合约安全审计入门篇 —— 重入漏洞](https://mp.weixin.qq.com/s/4j5_CirSySE1GLd3BP9CZQ)
-* [智能合约安全审计入门篇 —— 溢出漏洞](https://mp.weixin.qq.com/s/7lqM7MlKqvQBKBRCX-Nxgg)
-* [智能合约安全审计入门篇 —— 自毁函数](https://mp.weixin.qq.com/s/exO9RCeUvysFQkBdMo3RgA)
 * :pushpin: [8000 万美元不翼而飞 —— QBridge 被黑简析](https://mp.weixin.qq.com/s/PLbuI9JFxyFRlDlj9rPvmQ)
 * [重建世界：The Sandbox 任意燃烧漏洞回顾](https://mp.weixin.qq.com/s/UECwAt_p8rXn-3kZ4kC2VQ)
 * [“零元购” —— TreasureDAO NFT 交易市场漏洞分析](https://mp.weixin.qq.com/s/SEbXWmugJBz0C00vyzYcCw)
 * [大意失荆州 —— Paraluni 被黑分析](https://mp.weixin.qq.com/s/a5fFI5sFNAyuDxGqTFmC2A)
 * [故技重施 —— Hundred Finance 被黑分析](https://mp.weixin.qq.com/s/tlXn3IDSbeoxXQfNe_dH3A)
 * [慢雾：OneRing Finance 被黑分析](https://mp.weixin.qq.com/s/MyR_O8wuZJUT1S6eIMH9TA)
+* [Jet Protocol 任意提款漏洞](https://mp.weixin.qq.com/s/Hxvaz8u21p94ChxCshIftA)
+* [损失超 6.1 亿美元 —— Ronin Network 被黑分析](https://mp.weixin.qq.com/s/0U58Chw970X2GWcj2fvLPg)
+* [Revest Finance 被黑分析](https://mp.weixin.qq.com/s/OnHZITW-VTl7qNJkLHaVgA)
+* [智能合约安全审计入门篇 —— 重入漏洞](https://mp.weixin.qq.com/s/4j5_CirSySE1GLd3BP9CZQ)
+* [智能合约安全审计入门篇 —— 溢出漏洞](https://mp.weixin.qq.com/s/7lqM7MlKqvQBKBRCX-Nxgg)
+* [智能合约安全审计入门篇 —— 自毁函数](https://mp.weixin.qq.com/s/exO9RCeUvysFQkBdMo3RgA)
+* [智能合约安全审计入门篇 —— 访问私有数据](https://mp.weixin.qq.com/s/_DV6UaRdA_6pUFXt-EnTtA)
 
 ### 链上追踪技术分析
 慢雾安全团队对 DeFi 被黑事件保持跟进，协助被黑的项目方进行链上追踪，并深入研究各类混币平台，寻找突破混币进行追踪的可能。
@@ -176,6 +184,7 @@ Some mind maps of blockchain security.
 * [Solana 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [波场代币 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [terra 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+* [BTC/dogcoin/LTC 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 
 ## 其他资料
 
