@@ -22,16 +22,16 @@
   - [其他资料](#其他资料)
 
 ## 基础研究
-
 Basic research of blockchain security, include: `Bitcoin`, `Monero`, `Ethereum`, `EOS` and other top blockchains.
 
-* Paper of SlowMist(https://github.com/slowmist/papers)
-* Threat Intelligence of SlowMist(https://slowmist.io/disclosure/)
-* Public topic of SlowMist HackingTime (https://github.com/slowmist/HackingTime_Public)
-* Ontology Triones Service Node security checklist(https://github.com/slowmist/Ontology-Triones-Service-Node-security-checklist)
-* vechain core nodes security checklist(https://github.com/slowmist/vechain-core-nodes-security-checklist)
-* cryptocurrency security(https://github.com/slowmist/cryptocurrency-security)
-* Open of SlowMist(https://github.com/slowmist/)
+* [Paper of SlowMist](https://github.com/slowmist/papers)
+* [Threat Intelligence of SlowMist](https://slowmist.io/disclosure/)
+* [Public topic of SlowMist HackingTime](https://github.com/slowmist/HackingTime_Public)
+* [Ontology Triones Service Node security checklist](https://github.com/slowmist/Ontology-Triones-Service-Node-security-checklist)
+* [vechain core nodes security checklist](https://github.com/slowmist/vechain-core-nodes-security-checklist)
+* [:fire: cryptocurrency security](https://github.com/slowmist/cryptocurrency-security)
+* [:fire: Blockchain-dark-forest-selfguard-handbook](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)
+* [Open of SlowMist](https://github.com/slowmist/)
 
 ### EOS Security of SlowMist
 
