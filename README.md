@@ -8,50 +8,38 @@
 ## 目录
 - [Knowledge Base 慢雾安全团队知识库](#knowledge-base-慢雾安全团队知识库)
   - [目录](#目录)
-  - [基础研究](#基础研究)
-    - [EOS Security of SlowMist](#eos-security-of-slowmist)
-      - [EOS 攻击手法分析](#eos-攻击手法分析)
+  - [生态安全研究](#区块链生态安全研究)
   - [翻译资料](#翻译资料)
   - [开放报告](#开放报告)
   - [思维导图](#思维导图)
   - [技术分析](#技术分析)
     - [DeFi 攻击手法分析](#defi-攻击手法分析)
+    - [EOS 攻击手法分析](#eos-攻击手法分析)
     - [链上追踪技术分析](#链上追踪技术分析)
     - [其他区块链技术分析](#其他区块链技术分析)
     - [:fire: 针对数字货币交易平台充值入账的攻击手法](#fire-针对数字货币交易平台充值入账的攻击手法)
   - [其他资料](#其他资料)
 
-## 基础研究
-Basic research of blockchain security, include: `Bitcoin`, `Monero`, `Ethereum`, `EOS` and other top blockchains.
+## 区块链生态安全研究
+Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum`, `EOS` and other top blockchains.
 
+* [:fire: cryptocurrency security](https://github.com/slowmist/cryptocurrency-security)
+* [:fire: Blockchain-dark-forest-selfguard-handbook](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)
 * [Paper of SlowMist](https://github.com/slowmist/papers)
 * [Threat Intelligence of SlowMist](https://slowmist.io/disclosure/)
 * [Public topic of SlowMist HackingTime](https://github.com/slowmist/HackingTime_Public)
 * [Ontology Triones Service Node security checklist](https://github.com/slowmist/Ontology-Triones-Service-Node-security-checklist)
 * [vechain core nodes security checklist](https://github.com/slowmist/vechain-core-nodes-security-checklist)
-* [:fire: cryptocurrency security](https://github.com/slowmist/cryptocurrency-security)
-* [:fire: Blockchain-dark-forest-selfguard-handbook](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)
+* [EOS BP nodes security checklist](https://github.com/slowmist/eos-bp-nodes-security-checklist)
+* [EOS BP nodes security audit](https://github.com/slowmist/eos-bp-nodes-security-checklist/blob/master/audit.md)
+* [EOS smart contract security best practices](https://github.com/slowmist/eos-smart-contract-security-best-practices)
+* [EOS 天眼(EOS MonKit)](https://eos.slowmist.io/)
+* [FireWall.X — 强大的 EOS 智能合约防火墙](https://firewallx.io/)
+* [FireWall.X GitHub](https://github.com/firewall-x)
 * [Open of SlowMist](https://github.com/slowmist/)
 
-### EOS Security of SlowMist
-
-* [EOS 超级节点安全执行指南](https://github.com/slowmist/eos-bp-nodes-security-checklist)
-* [EOS 超级节点安全审计方案](https://github.com/slowmist/eos-bp-nodes-security-checklist/blob/master/audit.md)
-* [EOS 智能合约最佳安全开发指南](https://github.com/slowmist/eos-smart-contract-security-best-practices)
-* [EOS 天眼(EOS MonKit)](https://eos.slowmist.io/)
-* [FireWall.X — 强大的 EOS 智能合约防火墙](https://firewallx.io/) & [FireWall.X GitHub](https://github.com/firewall-x)
-
-#### EOS 攻击手法分析
-慢雾安全团队对 EOSIO 生态的各类新型攻击手法进行分析，如下是分析文章。
-* :pushpin: [EOS 回滚攻击手法分析之黑名单篇](https://mp.weixin.qq.com/s/WyZ4j3O68qfN5IOvjx3MOg)
-* [EOS 回滚攻击手法之重放篇](https://mp.weixin.qq.com/s/gqzkBTxKf7kwL5OgCtMgvQ)
-* [EOS 新型攻击手法之 hard_fail 状态攻击](https://mp.weixin.qq.com/s/qsqqPB24fEjBgnq3Xr3xjQ)
-* [EOS 假充值\(hard_fail 状态攻击\)红色预警细节披露与修复方案](https://mp.weixin.qq.com/s/fKINfZLW65LYaD4qO-21nA)
-* [随机数之殇 — EOS 新型随机数攻击手法技术分析](https://mp.weixin.qq.com/s/6qb6nYLIUeUJViaFgHVX_A)
-* :pushpin: [EOS DApp 现新型交易排挤攻击及通用防御建议](https://mp.weixin.qq.com/s/1-SvoY-kNhH2YllNZdKyOA)
 
 ## 翻译资料
-
 Some translated blockchain security documents.
 
 * [DASP Top10 中文版](./translations/DASP-top10-chinese.pdf)
@@ -59,15 +47,14 @@ Some translated blockchain security documents.
 * [全面解析公共区块链系统攻击面](./translations/Exploring-the-Attack-Surface-of-Blockchain-A-Systematic-Overview/Exploring-the-Attack-Surface-of-Blockchain-A-Systematic-Overview_zh-cn.md)
 
 ## 开放报告
-
 Some open security audit reports of SlowMist.
+
 - [Open Security Audit Report](./open-report-V2/README.md)
   * [Blockchain Security Audit Report](./open-report-V2/blockchain/)
   * [Blockchain Application Security Audit Report](./open-report-V2/blockchain-application/)
   * [Smart Contract Security Audit Report](./open-report-V2/smart-contract/)
 
 ## 思维导图
-
 Some mind maps of blockchain security.
 
 * [DApp Attack & Defense](./mindmaps/dapp_attack_defense.png)
@@ -134,6 +121,15 @@ Some mind maps of blockchain security.
 * [智能合约安全审计入门篇 —— 自毁函数](https://mp.weixin.qq.com/s/exO9RCeUvysFQkBdMo3RgA)
 * [智能合约安全审计入门篇 —— 访问私有数据](https://mp.weixin.qq.com/s/_DV6UaRdA_6pUFXt-EnTtA)
 
+### EOS 攻击手法分析
+慢雾安全团队对 EOSIO 生态的各类新型攻击手法进行分析，如下是分析文章。
+* :pushpin: [EOS 回滚攻击手法分析之黑名单篇](https://mp.weixin.qq.com/s/WyZ4j3O68qfN5IOvjx3MOg)
+* [EOS 回滚攻击手法之重放篇](https://mp.weixin.qq.com/s/gqzkBTxKf7kwL5OgCtMgvQ)
+* [EOS 新型攻击手法之 hard_fail 状态攻击](https://mp.weixin.qq.com/s/qsqqPB24fEjBgnq3Xr3xjQ)
+* [EOS 假充值\(hard_fail 状态攻击\)红色预警细节披露与修复方案](https://mp.weixin.qq.com/s/fKINfZLW65LYaD4qO-21nA)
+* [随机数之殇 — EOS 新型随机数攻击手法技术分析](https://mp.weixin.qq.com/s/6qb6nYLIUeUJViaFgHVX_A)
+* :pushpin: [EOS DApp 现新型交易排挤攻击及通用防御建议](https://mp.weixin.qq.com/s/1-SvoY-kNhH2YllNZdKyOA)
+
 ### 链上追踪技术分析
 慢雾安全团队对 DeFi 被黑事件保持跟进，协助被黑的项目方进行链上追踪，并深入研究各类混币平台，寻找突破混币进行追踪的可能。
 * [慢雾：复盘 Liquid 交易平台被盗 9000 多万美元事件](https://mp.weixin.qq.com/s/GIDGDsMo3nkkmS8yuhDOhg)
@@ -186,8 +182,8 @@ Some mind maps of blockchain security.
 * [terra 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [BTC/dogcoin/LTC 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 
-## 其他资料
 
+## 其他资料
 Other awesome collections.
 
 * [Hacked](https://hacked.slowmist.io)
