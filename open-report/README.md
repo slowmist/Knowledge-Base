@@ -73,6 +73,7 @@ Some open security audit reports of SlowMist.
 - [PancakeSwap Lottery Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20PancakeSwap%20Lottery_en-us.pdf)
 - [PancakeSwap Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20PancakeSwap_en-us.pdf)
 - [Pancake CakePool Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Pancakeswap-CakePool_en-us.pdf)
+- [Pancake MasterChef v2 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20MasterChef%20v2_en-us.pdf)
 - [Shield Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Shield_en-us.pdf)
 - [SmoothyV1 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20SmoothyV1_en-us.pdf)
 - [sx.curve Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20sx.curve_en-us.pdf)
