@@ -1,7 +1,7 @@
-# Open Security Audit Reports
+# Open security audit reports
 Some open security audit reports of SlowMist.
 
-### Blockchain Security Audit Open Reports
+### Blockchain security audit open reports
 - [DDAM Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20DDAM_en-us.pdf)
 - [HALO Network Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20HALO%20Network_en-us.pdf)
 - [Litentry-node Module Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Litentry-node%20Module_en-us.pdf)
@@ -10,7 +10,7 @@ Some open security audit reports of SlowMist.
 - [Vexanium Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Vexanium_en-us.pdf)
 - [WaykiChain Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20WaykiChain_en-us.pdf)
 
-### Blockchain Application Security Audit Open Reports
+### Blockchain application security audit open reports
 - [ABCWallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20ABCWallet_en-us.pdf)
 - [ABCWallet 安全审计报告](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20ABCWallet_zh-cn.pdf)
 - [AnySwap CrossChain-Bridge Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20AnySwap%20CrossChain-Bridge_en-us.pdf)
@@ -24,7 +24,7 @@ Some open security audit reports of SlowMist.
 - [TronLink-wallet(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20TronLink-wallet(iOS)_en-us.pdf)
 - [zecrey-chrome-extension-wallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
-### Smart Contract Security Audit Open Reports
+### Smart contract security audit open reports
 - [Alpaca Finance Oracle Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Alpaca%20Finance%20Oracle_en-us.pdf)
 - [Anyswap Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Anyswap_en-us.pdf)
 - [autofarm Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20autofarm_en-us.pdf)
@@ -72,6 +72,7 @@ Some open security audit reports of SlowMist.
 - [OneSwap Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20OneSwap_en-us.pdf)
 - [PancakeSwap Lottery Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20PancakeSwap%20Lottery_en-us.pdf)
 - [PancakeSwap Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20PancakeSwap_en-us.pdf)
+- [Pancake CakePool Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Pancakeswap-CakePool_en-us.pdf)
 - [Shield Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Shield_en-us.pdf)
 - [SmoothyV1 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20SmoothyV1_en-us.pdf)
 - [sx.curve Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20sx.curve_en-us.pdf)
