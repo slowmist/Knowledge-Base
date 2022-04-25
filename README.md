@@ -8,7 +8,7 @@
 ## 目录
 - [Knowledge Base 慢雾安全团队知识库](#knowledge-base-慢雾安全团队知识库)
   - [目录](#目录)
-  - [生态安全研究](#区块链生态安全研究)
+  - [区块链生态安全研究](#区块链生态安全研究)
   - [翻译资料](#翻译资料)
   - [开放报告](#开放报告)
   - [思维导图](#思维导图)
@@ -116,6 +116,7 @@ Some mind maps of blockchain security.
 * [Jet Protocol 任意提款漏洞](https://mp.weixin.qq.com/s/Hxvaz8u21p94ChxCshIftA)
 * [损失超 6.1 亿美元 —— Ronin Network 被黑分析](https://mp.weixin.qq.com/s/0U58Chw970X2GWcj2fvLPg)
 * [Revest Finance 被黑分析](https://mp.weixin.qq.com/s/OnHZITW-VTl7qNJkLHaVgA)
+* [慢雾：Rikkei Finance 被黑复现分析](https://mp.weixin.qq.com/s/W4fn5tVOUGmX_brGLFXgeQ)
 * [智能合约安全审计入门篇 —— 重入漏洞](https://mp.weixin.qq.com/s/4j5_CirSySE1GLd3BP9CZQ)
 * [智能合约安全审计入门篇 —— 溢出漏洞](https://mp.weixin.qq.com/s/7lqM7MlKqvQBKBRCX-Nxgg)
 * [智能合约安全审计入门篇 —— 自毁函数](https://mp.weixin.qq.com/s/exO9RCeUvysFQkBdMo3RgA)
@@ -164,6 +165,7 @@ Some mind maps of blockchain security.
 * [慢雾：伪 Electrum 鱼叉钓鱼攻击分析](https://mp.weixin.qq.com/s/7MMXj8Lll4YkssOXoxdm4A)
 * [价值两百万的以太坊钱包陷阱](https://mp.weixin.qq.com/s/YPS7ZY6KGDYWZypjQrMpAw)
 * [区块链诈骗手法之假币骗局揭秘](https://mp.weixin.qq.com/s/W4On3uKDLAi8xGctZGYTXA)
+* [慢雾：揭露浏览器恶意书签如何盗取你的 Discord Token](https://mp.weixin.qq.com/s/2RjEgv9lp6e01ah2t6DX4w)
 
 ### :fire: 针对数字货币交易平台充值入账的攻击手法
 慢雾安全团队依靠多年的区块链安全行业经验，首发了各类假充值的攻击手法，为交易平台提供安全检查服务，保障交易平台的充值入账安全。

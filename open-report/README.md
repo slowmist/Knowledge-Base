@@ -86,3 +86,4 @@ Some open security audit reports of SlowMist.
 - [wault.finance(WUSD) Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20wault.finance(WUSD)_en-us.pdf)
 - [Zild Finance Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Zild%20Finance_en-us.pdf)
 - [ZKSwap Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20ZKSwap_en-us.pdf)
+- [Starcrazy Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Starcrazy_en-us.pdf)
