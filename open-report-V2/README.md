@@ -2,6 +2,7 @@
 Some open security audit reports of SlowMist.
 
 ### Blockchain security audit open reports
+- [Fusotao Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Fusotao_en-us.pdf.pdf)
 - [DDAM Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20DDAM_en-us.pdf)
 - [HALO Network Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20HALO%20Network_en-us.pdf)
 - [Litentry-node Module Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Litentry-node%20Module_en-us.pdf)
