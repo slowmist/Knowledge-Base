@@ -26,6 +26,7 @@ Some open security audit reports of SlowMist.
 - [zecrey-chrome-extension-wallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
+- [ioTube Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20ioTube_en-us.pdf)
 - [Alpaca Finance Oracle Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Alpaca%20Finance%20Oracle_en-us.pdf)
 - [Anyswap Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Anyswap_en-us.pdf)
 - [autofarm Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20autofarm_en-us.pdf)
