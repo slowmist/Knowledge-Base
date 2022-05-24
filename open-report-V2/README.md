@@ -91,3 +91,4 @@ Some open security audit reports of SlowMist.
 - [ZKSwap Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20ZKSwap_en-us.pdf)
 - [Starcrazy Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Starcrazy_en-us.pdf)
 - [Arowana Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Arowana_en-us.pdf)
+- [ENF Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20earning.farm_en-us.pdf)
