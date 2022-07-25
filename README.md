@@ -167,8 +167,8 @@ Some mind maps of blockchain security.
 * [区块链诈骗手法之假币骗局揭秘](https://mp.weixin.qq.com/s/W4On3uKDLAi8xGctZGYTXA)
 * [慢雾：揭露浏览器恶意书签如何盗取你的 Discord Token](https://mp.weixin.qq.com/s/2RjEgv9lp6e01ah2t6DX4w)
 
-### :fire: 针对数字货币交易平台充值入账的攻击手法
-慢雾安全团队依靠多年的区块链安全行业经验，首发了各类假充值的攻击手法，为交易平台提供安全检查服务，保障交易平台的充值入账安全。
+### :fire: False Top-up
+慢雾安全团队依靠多年的区块链安全行业经验，深入研究了各种针对数字货币交易平台充值入账的攻击手法(假充值)，并对各类假充值的攻击手法进行披露，为交易平台提供安全检查服务，保障交易平台的充值入账安全。
 * [USDT 假充值手法](https://mp.weixin.qq.com/s/CtAKLNe0MOKDyUFaod4_hw)
 * [EOS 假充值手法](https://mp.weixin.qq.com/s/fKINfZLW65LYaD4qO-21nA)
 * [XRP 假充值手法](https://developers.ripple.com/partial-payments.html)
