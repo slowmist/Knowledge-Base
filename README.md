@@ -139,6 +139,7 @@ Some mind maps of blockchain security.
 * [慢雾 AML：“揭开” Tornado.Cash 的匿名面纱](https://mp.weihttps://mp.weixin.qq.com/s/LDdCb-7p4ojrzVd3tLk28wxin.qq.com/s/ht5g10nIEyWc_3HSvh0auw)
 * [THORChain 连遭三击，黑客会是同一个吗？](https://mp.weixin.qq.com/s/6DBtGGXtUs9Gcy4v0IxU1A)
 * :pushpin: [被黑 6.1 亿美金的 Poly Network 事件分析与疑难问答](https://mp.weixin.qq.com/s/5ogP1v7fJsJnlLuUs6lzlg)
+* :pushpin: [2022 上半年区块链安全及反洗钱分析报告](./first-half-of-the-2022-report.pdf)
 
 
 ### 其他区块链技术分析
