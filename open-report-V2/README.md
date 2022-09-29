@@ -29,7 +29,8 @@ Some open security audit reports of SlowMist.
 - [zecrey-chrome-extension-wallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
-- [Coin98 Dollar (CUSD) Smart Contract Securit Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Coin98%20Dollar%20(CUSD)_en-us.pdf)
+- [Earning.Farm V3 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Earning.Farm V3_en-us.pdf)
+- [Coin98 Dollar (CUSD) Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Coin98%20Dollar%20(CUSD)_en-us.pdf)
 - [SubDao Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20SubDao_en-us.pdf)
 - [Coordinape protocol Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Coordinape%20protocol_en-us.pdf)
 - [ROTL Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20ROTL_en-us.pdf)
