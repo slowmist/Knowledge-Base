@@ -192,3 +192,4 @@ Other awesome collections.
 * [Hacked](https://hacked.slowmist.io)
 * [Awesome Blockchain Bug Bounty](https://github.com/slowmist/awesome-blockchain-bug-bounty)
 * [慢雾科普：区块链安全入门笔记](./blockchain_security_study_notes/README.md)
+* [登链社区](https://learnblockchain.cn/)
