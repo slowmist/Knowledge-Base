@@ -21,7 +21,7 @@
 * “假充值”漏洞审计
 * 恶意 Event 事件日志审计
 
-[更多安全审计服务](https://www.slowmist.com/service-security-audit.html?f=github)
+[更多安全审计服务](https://www.slowmist.com/?f=github)
 
 ## 审计报告
 
