@@ -11,13 +11,16 @@ Some open security audit reports of SlowMist.
 - [Vexanium Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Vexanium_en-us.pdf)
 - [WaykiChain Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20WaykiChain_en-us.pdf)
 - [Bifrost Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Bifrost.pdf)
+- [TON Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20TON_en-us.pdf)
 
 ### Blockchain application security audit open reports
+- [Sender Wallet MultiChain(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20MultiChain(Android)_en-us.pdf)
+- [Sender Wallet MultiChain(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20MultiChain(iOS)_en-us.pdf)
 - [Bitizen Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Bitizen%20Wallet(Android)_en-us.pdf)
 - [Bitizen Wallet(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Bitizen%20Wallet(iOS)_en-us.pdf)
 - [BTCSnap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20BTCSnap_en-us.pdf)
-- [Sender Wallet Android Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20Android_en-us.pdf)
-- [Sender Wallet iOS Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20iOS_en-us.pdf)
+- [Sender Wallet(Android)Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20Android_en-us.pdf)
+- [Sender Wallet(iOS)Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20iOS_en-us.pdf)
 - [ABCWallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20ABCWallet_en-us.pdf)
 - [ABCWallet 安全审计报告](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20ABCWallet_zh-cn.pdf)
 - [AnySwap CrossChain-Bridge Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20AnySwap%20CrossChain-Bridge_en-us.pdf)
@@ -32,7 +35,12 @@ Some open security audit reports of SlowMist.
 - [zecrey-chrome-extension-wallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
+- [PancakeSwap V3 Phase2 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20PancakeSwap_v3_Phase2_en-us.pdf)
+- [PancakeSwap V3 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20PancakeSwap_v3_en-us.pdf)
+- [PancakeSwap Pottery Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20PancakeSwap_Pottery_en-us.pdf)
+- [Earning Farm - ENF Phase6 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Earning.Farm_Phase6_en-us.pdf)
 - [Cell Core Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Cell%20Core_en-us.pdf)
+- [Earning Farm - ENF Phase5 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Earning.Farm_Phase5_en-us.pdf)
 - [Earning Farm - ENF_ETH_Lowrisk Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20ENF_ETH_Lowrisk_en-us.pdf)
 - [Earning Farm - ENF_WBTC_Borrow_ETH Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20ENF_WBTC_Borrow_ETH_en-us.pdf)
 - [Earning Farm - ETH Leverage Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Earning%20Farm%20-%20ETH%20Leverage_en-us.pdf)

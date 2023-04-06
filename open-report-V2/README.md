@@ -14,11 +14,13 @@ Some open security audit reports of SlowMist.
 - [TON Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20TON_en-us.pdf)
 
 ### Blockchain application security audit open reports
+- [Sender Wallet MultiChain(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20MultiChain(Android)_en-us.pdf)
+- [Sender Wallet MultiChain(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20MultiChain(iOS)_en-us.pdf)
 - [Bitizen Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Bitizen%20Wallet(Android)_en-us.pdf)
 - [Bitizen Wallet(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Bitizen%20Wallet(iOS)_en-us.pdf)
 - [BTCSnap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20BTCSnap_en-us.pdf)
-- [Sender Wallet Android Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20Android_en-us.pdf)
-- [Sender Wallet iOS Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20iOS_en-us.pdf)
+- [Sender Wallet(Android)Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20Android_en-us.pdf)
+- [Sender Wallet(iOS)Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20iOS_en-us.pdf)
 - [ABCWallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20ABCWallet_en-us.pdf)
 - [ABCWallet 安全审计报告](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20ABCWallet_zh-cn.pdf)
 - [AnySwap CrossChain-Bridge Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20AnySwap%20CrossChain-Bridge_en-us.pdf)
