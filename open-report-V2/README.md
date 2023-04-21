@@ -35,6 +35,8 @@ Some open security audit reports of SlowMist.
 - [zecrey-chrome-extension-wallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
+- [LightDAO Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20LightDAO_en-us.pdf)
+- [LightDAO Phase2 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20LightDAO%20Phase2_en-us.pdf)
 - [PancakeSwap V3 Phase2 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20PancakeSwap_v3_Phase2_en-us.pdf)
 - [PancakeSwap V3 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20PancakeSwap_v3_en-us.pdf)
 - [PancakeSwap Pottery Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20PancakeSwap_Pottery_en-us.pdf)
