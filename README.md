@@ -42,16 +42,16 @@ Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum
 * [EOS 假充值手法](https://mp.weixin.qq.com/s/fKINfZLW65LYaD4qO-21nA)
 * [XRP 假充值手法](https://developers.ripple.com/partial-payments.html)
 * [以太坊代币假充值手法](https://mp.weixin.qq.com/s/3cMbE6p_4qCdVLa4FNA5-A)
-* [比特币RBF假充值手法](https://mp.weixin.qq.com/s/OYi2JDbAoLEdg8VDouqbIg)
-* [XMR锁定转账手法](https://mp.weixin.qq.com/s/Kt-G_bYbuUMIbSGSnyYXLA)
+* [比特币 RBF 假充值手法](https://mp.weixin.qq.com/s/OYi2JDbAoLEdg8VDouqbIg)
+* [XMR 锁定转账手法](https://mp.weixin.qq.com/s/Kt-G_bYbuUMIbSGSnyYXLA)
 * [以太坊假充值手法](https://t.zsxq.com/YNbMFIa)
 * [IOST 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [FileCoin 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+* [Filecoin 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [NEM 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [Solana 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [波场代币 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [terra 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [BTC/dogcoin/LTC 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+* [波场代币假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+* [Terra 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+* [BTC/Dogcoin/LTC 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 
 ## 翻译资料
 Some translated blockchain security documents.
