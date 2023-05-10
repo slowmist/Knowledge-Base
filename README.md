@@ -25,6 +25,7 @@ Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum
 
 * [:fire: cryptocurrency security](https://github.com/slowmist/cryptocurrency-security)
 * [:fire: Blockchain-dark-forest-selfguard-handbook](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)
+* [:fire: Collection of Security Research in English](./security-research/README.md)
 * [Paper of SlowMist](https://github.com/slowmist/papers)
 * [Threat Intelligence of SlowMist](https://slowmist.io/disclosure/)
 * [Public topic of SlowMist HackingTime](https://github.com/slowmist/HackingTime_Public)
