@@ -18,6 +18,7 @@ Some open security audit reports of SlowMist.
 - [UniPass ID Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20UniPass%20ID%20Snap_en-us.pdf)
 
 ### Blockchain application security audit open reports
+- [MoreLogin Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20MoreLogin_en-us.pdf)
 - [DappAuto Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20DappAuto_en-us.pdf)
 - [Frontier Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Frontier%20Wallet(Browser-Extension)_en-us.pdf)
 - [Assure Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Assure(Android)_en-us.pdf)
