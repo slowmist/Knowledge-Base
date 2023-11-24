@@ -16,6 +16,7 @@ Some open security audit reports of SlowMist.
 ### MetaMask Snaps security audit open reports
 - [BTCSnap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20BTCSnap_en-us.pdf)
 - [UniPass ID Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20UniPass%20ID%20Snap_en-us.pdf)
+- [Chainsafer Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Chainsafer%20Snap.pdf)
 
 ### Blockchain application security audit open reports
 - [MoreLogin Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20MoreLogin_en-us.pdf)
