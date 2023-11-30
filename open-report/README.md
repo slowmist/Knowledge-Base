@@ -16,9 +16,10 @@ Some open security audit reports of SlowMist.
 ### MetaMask Snaps security audit open reports
 - [BTCSnap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20BTCSnap_en-us.pdf)
 - [UniPass ID Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20UniPass%20ID%20Snap_en-us.pdf)
-- [Chainsafer Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Chainsafer%20Snap.pdf)
+- [Chainsafer Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Chainsafer%20Snap_en-us.pdf)
 
 ### Blockchain application security audit open reports
+- [Chainsafer Web front-end Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Chainsafer%20Web%20front-end_en-us.pdf)
 - [MoreLogin Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20MoreLogin_en-us.pdf)
 - [DappAuto Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20DappAuto_en-us.pdf)
 - [Frontier Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Frontier%20Wallet(Browser-Extension)_en-us.pdf)
@@ -140,3 +141,5 @@ Some open security audit reports of SlowMist.
 - [Arowana Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Arowana_en-us.pdf)
 - [ENF Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20earning.farm_en-us.pdf)
 - [Helio Money Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Helio%20Money_en-us.pdf)
+- [IoTeX SystemStaking Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20IoTeX%20-%20SystemStaking_en-us.pdf)
+- [DappOS Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20DappOS%20Contracts%20Core.pdf)
