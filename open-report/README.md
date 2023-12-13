@@ -20,6 +20,7 @@ Some open security audit reports of SlowMist.
 - [RSS3-Social-Notifier Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20RSS3-Social-Notifier-Snap_en-us.pdf)
 
 ### Blockchain application security audit open reports
+- [Keystone3 Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Keystone3_en-us.pdf)
 - [Chainsafer Web front-end Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Chainsafer%20Web%20front-end_en-us.pdf)
 - [MoreLogin Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20MoreLogin_en-us.pdf)
 - [DappAuto Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20DappAuto_en-us.pdf)
