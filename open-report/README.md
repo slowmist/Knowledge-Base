@@ -18,6 +18,7 @@ Some open security audit reports of SlowMist.
 - [UniPass ID Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20UniPass%20ID%20Snap_en-us.pdf)
 - [Chainsafer Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Chainsafer%20Snap_en-us.pdf)
 - [RSS3-Social-Notifier Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20RSS3-Social-Notifier-Snap_en-us.pdf)
+- [EAS Snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20EAS%20Snap_en-us.pdf)
 
 ### Blockchain application security audit open reports
 - [Xstro.io Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Xstro.io_en-us.pdf)
