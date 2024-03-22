@@ -68,6 +68,9 @@ Some open security audit reports of SlowMist.
   * [Blockchain Application Security Audit Report](./open-report-V2/blockchain-application/)
   * [Smart Contract Security Audit Report](./open-report-V2/smart-contract/)
 
+Some open MistTrack investigation reports of SlowMist.
+- [Open MistTrack Investigation Report](./open-misttrack-report/README.md)
+
 ## 思维导图
 Some mind maps of blockchain security.
 
