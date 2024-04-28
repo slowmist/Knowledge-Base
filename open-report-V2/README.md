@@ -23,7 +23,6 @@ Some open security audit reports of SlowMist.
 
 
 ### Blockchain application security audit open reports
-- [Ultiverse Chips Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Ultiverse%20-%20Chips%20Contract_en-us.pdf)
 - [Xstro.io Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Xstro.io_en-us.pdf)
 - [Keystone3 Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Keystone3_en-us.pdf)
 - [Chainsafer Web front-end Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Chainsafer%20Web%20front-end_en-us.pdf)
@@ -52,6 +51,7 @@ Some open security audit reports of SlowMist.
 - [Zecrey Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
+- [Ultiverse Chips Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Ultiverse%20-%20Chips%20Contract_en-us.pdf)
 - [Trustin Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Trustin_en_us.pdf)
 - [Particle Vault Contract Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Particle%20Vault%20Contract_en_us.pdf)
 - [TaprootChain BTCLayer2Bridge Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20TaprootChain%20-%20BTCLayer2Bridge_en-us.pdf)
