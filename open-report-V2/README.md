@@ -164,3 +164,5 @@ Some open security audit reports of SlowMist.
 - [Helio Money Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Helio%20Money_en-us.pdf)
 - [IoTeX SystemStaking Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20IoTeX%20-%20SystemStaking_en-us.pdf)
 - [DappOS Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20DappOS%20Contracts%20Core.pdf)
+- [Bitlayer Bridge Phase 1](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Bitlayer%20Bridge.pdf)
+- [Bitlayer Bridge Phase 2](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Bitlayer%20Bridge%20Phase%202.pdf)
