@@ -12,6 +12,8 @@ Some open security audit reports of SlowMist.
 - [WaykiChain Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20WaykiChain_en-us.pdf)
 - [Bifrost Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Bifrost.pdf)
 - [TON Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20TON_en-us.pdf)
+- [Bitlayer L2](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Bitlayer-l2.pdf)
+- [Bitlayer L2 System Contracts](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Bitlayer-system-contracts.pdf)
 
 ### MetaMask Snaps security audit open reports
 - [fintax-snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20fintax-snap.pdf)
