@@ -170,4 +170,4 @@ Some open security audit reports of SlowMist.
 - [Bitlayer Bridge Phase 2 Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Bitlayer%20Bridge%20Phase%202.pdf)
 - [Bitlayer getBTC Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20getBTC.pdf)
 - [Bitlayer pegToken Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20peg-Token.pdf)
-- 
+- [ccToken Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20ccToken.pdf)
