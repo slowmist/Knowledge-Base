@@ -2,6 +2,7 @@
 Some open security audit reports of SlowMist.
 
 ### Blockchain security audit open reports
+- [OKX ORD Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20ord_en-us.pdf)
 - [Fusotao Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Fusotao_en-us.pdf)
 - [DDAM Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20DDAM_en-us.pdf)
 - [HALO Network Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20HALO%20Network_en-us.pdf)
@@ -26,6 +27,8 @@ Some open security audit reports of SlowMist.
 
 
 ### Blockchain application security audit open reports
+- [OKX MPC Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20MPC%20Wallet(Android)_en-us.pdf)
+- [OKX Web3 Wallet iOS Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20Web3%20Wallet%20iOS_en-us.pdf)
 - [Xstro.io Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Xstro.io_en-us.pdf)
 - [Keystone3 Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Keystone3_en-us.pdf)
 - [Chainsafer Web front-end Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Chainsafer%20Web%20front-end_en-us.pdf)
@@ -54,7 +57,7 @@ Some open security audit reports of SlowMist.
 - [Zecrey Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
-- [OKX Account Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20OKX%20Account%20on%20StarkNet_en-us.pdf)
+- [OKX Account Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20Account%20on%20StarkNet_en-us.pdf)
 - [Stake Mask Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Stake%20Mask_en-us.pdf)
 - [Uniswap (UNI) Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Uniswap%20(UNI)_en-us.pdf)
 - [BNB (BNB) Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20BNB%20(BNB)_en-us.pdf)
