@@ -27,6 +27,7 @@ Some open security audit reports of SlowMist.
 
 
 ### Blockchain application security audit open reports
+- [OKX Web3 Wallet Statement Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20Web3%20Wallet%20Statement_en-us.pdf)
 - [OKX MPC Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20MPC%20Wallet(Android)_en-us.pdf)
 - [OKX Web3 Wallet iOS Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20Web3%20Wallet%20iOS_en-us.pdf)
 - [Xstro.io Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Xstro.io_en-us.pdf)
