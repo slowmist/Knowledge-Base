@@ -61,7 +61,7 @@ Some open security audit reports of SlowMist.
 ### Smart contract security audit open reports
 - [StakeStone SymbioticDepositWBETHStrategy Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist_Audit_Report_StakeStone_SymbioticDepositWBETHStrategy_en-us.pdf)
 - [DeSyn Phase5 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20DeSyn%20Phase5_en-us.pdf)
-- [DeSyn ETH Flashloan Leverage Staking Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20DeSyn%20ETH%20Flashloan%20Leverage%20Staking_en-us.pdf)
+- [DeSyn Phase3 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20DeSyn%20Phase3_en-us.pdf)
 - [StakeStone NativeLendingETHStrategy&Symbi Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist_Audit_Report_StakeStone_NativeLendingETHStrategy%26Symbi_en-us.pdf)
 - [EVG Open Social Core Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Open%20Social%20Core_en-us.pdf)
 - [EVG Open Social Abstract Account Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Open%20Social%20-%20Abstract%20Account_en-us.pdf)
