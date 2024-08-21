@@ -189,3 +189,4 @@ Some open security audit reports of SlowMist.
 - [Bitlayer pegToken Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20peg-Token.pdf)
 - [ccToken Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20ccToken.pdf)
 - [Doubler Lite Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Doubler%20Lite.pdf)
+- [Kayak-UniswapV3-Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Kayak-UniswapV3-Contract.pdf)
