@@ -28,6 +28,8 @@ Some open security audit reports of SlowMist.
 
 
 ### Blockchain application security audit open reports
+- [KuCoin_Web3_Wallet(Android) SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20KuCoin_Web3_Wallet(Android)_en-us.pdf)
+- [KuCoin_Web3_Wallet(iOS) SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20KuCoin_Web3_Wallet(iOS)_en-us.pdf)
 - [OKX Web3 Wallet Statement Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20Web3%20Wallet%20Statement_en-us.pdf)
 - [OKX MPC Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20MPC%20Wallet(Android)_en-us.pdf)
 - [OKX Web3 Wallet iOS Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20Web3%20Wallet%20iOS_en-us.pdf)
@@ -38,7 +40,7 @@ Some open security audit reports of SlowMist.
 - [DappAuto Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20DappAuto_en-us.pdf)
 - [Frontier Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Frontier%20Wallet(Browser-Extension)_en-us.pdf)
 - [Assure Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Assure(Android)_en-us.pdf)
-- [Assure Wallet(IOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Assure(IOS)_en-us.pdf)
+- [Assure Wallet(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Assure(iOS)_en-us.pdf)
 - [Sender Wallet MultiChain(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20MultiChain(Android)_en-us.pdf)
 - [Sender Wallet MultiChain(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20MultiChain(iOS)_en-us.pdf)
 - [Bitizen Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Bitizen%20Wallet(Android)_en-us.pdf)

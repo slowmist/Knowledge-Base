@@ -28,6 +28,8 @@ Some open security audit reports of SlowMist.
 
 
 ### Blockchain application security audit open reports
+- [KuCoin_Web3_Wallet(Android) SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20KuCoin_Web3_Wallet(Android)_en-us.pdf)
+- [KuCoin_Web3_Wallet(iOS) SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20KuCoin_Web3_Wallet(iOS)_en-us.pdf)
 - [OKX Web3 Wallet Statement Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20Web3%20Wallet%20Statement_en-us.pdf)
 - [OKX MPC Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20MPC%20Wallet(Android)_en-us.pdf)
 - [OKX Web3 Wallet iOS Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20Web3%20Wallet%20iOS_en-us.pdf)
@@ -38,7 +40,7 @@ Some open security audit reports of SlowMist.
 - [DappAuto Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20DappAuto_en-us.pdf)
 - [Frontier Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Frontier%20Wallet(Browser-Extension)_en-us.pdf)
 - [Assure Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Assure(Android)_en-us.pdf)
-- [Assure Wallet(IOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Assure(IOS)_en-us.pdf)
+- [Assure Wallet(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Assure(iOS)_en-us.pdf)
 - [Sender Wallet MultiChain(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20MultiChain(Android)_en-us.pdf)
 - [Sender Wallet MultiChain(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Sender%20Wallet%20MultiChain(iOS)_en-us.pdf)
 - [Bitizen Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Bitizen%20Wallet(Android)_en-us.pdf)
@@ -59,6 +61,24 @@ Some open security audit reports of SlowMist.
 - [Zecrey Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
+- [Penpie Contracts Exploit Fixes Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Penpie%20Contracts%20Exploit%20Fixes%20-%20SlowMist%20Audit%20Report_en-us.pdf)
+- [STONE BTC Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/STONE%20BTC%20-%20SlowMist%20Audit%20Report_en-us.pdf)
+- [Unemeta Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Unemeta_en-us.pdf)
+- [Match Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Match_en-us.pdf)
+- [Owlto Depositor Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Owlto%20Depositor_en-us.pdf)
+- [StakeStone MellowDepositWstETHStrategy Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist_Audit_Report_StakeStone_MellowDepositWstETHStrategy_en-us.pdf)
+- [StakeStone SymbioticDepositWBETHStrategy Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist_Audit_Report_StakeStone_SymbioticDepositWBETHStrategy_en-us.pdf)
+- [DeSyn Protocol Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/DeSyn%20Protocol%20-%20SlowMist%20Audit%20Report.pdf)
+- [DeSyn Iterative Audit Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/DeSyn%20Iterative%20Audit%20-%20SlowMist%20Audit%20Report.pdf)
+- [Desyn Phase3 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Desyn%20Phase3%20-%20SlowMist%20Audit%20Report.pdf)
+- [DeSyn LeverageStaking Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/DeSyn%20LeverageStaking%20-%20SlowMist%20Audit%20Report.pdf)
+- [DeSyn Phase4 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/DeSyn%20Phase4%20-%20SlowMist%20Audit%20Report.pdf)
+- [DeSyn Phase5 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/DeSyn%20Phase5%20-%20SlowMist%20Audit%20Report.pdf)
+- [DeSyn ETH Flashloan Leverage Staking Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/DeSyn%20ETH%20Flashloan%20Leverage%20Staking%20-%20SlowMist%20Audit%20Report.pdf)
+- [DeSyn Phase6 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/DeSyn%20Phase6%20-%20SlowMist%20Audit%20Report.pdf)
+- [DeSyn Phase7 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/DeSyn%20Phase7%20-%20SlowMist%20Audit%20Report.pdf)
+- [DeSyn Restaking Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/DeSyn%20-%20Restaking%20-%20SlowMist%20Audit%20Report.pdf)
+- [DeSyn Phase8 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/DeSyn%20Phase8%20-%20SlowMist%20Audit%20Report.pdf)
 - [StakeStone NativeLendingETHStrategy&Symbi Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist_Audit_Report_StakeStone_NativeLendingETHStrategy%26Symbi_en-us.pdf)
 - [EVG Open Social Core Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Open%20Social%20Core_en-us.pdf)
 - [EVG Open Social Abstract Account Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Open%20Social%20-%20Abstract%20Account_en-us.pdf)
@@ -181,3 +201,5 @@ Some open security audit reports of SlowMist.
 - [Bitlayer getBTC Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20getBTC.pdf)
 - [Bitlayer pegToken Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20peg-Token.pdf)
 - [ccToken Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20ccToken.pdf)
+- [Doubler Lite Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Doubler%20Lite.pdf)
+- [Kayak-UniswapV3-Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Kayak-UniswapV3-Contract.pdf)
