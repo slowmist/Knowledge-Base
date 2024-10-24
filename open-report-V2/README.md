@@ -28,6 +28,9 @@ Some open security audit reports of SlowMist.
 
 
 ### Blockchain application security audit open reports
+- [Rabby Extension Wallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Rabby%20Extension%20Wallet_en-us.pdf)
+- [Rabby Mobile Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Rabby%20Mobile%20Wallet(Android)_en-us.pdf)
+- [Rabby Mobile Wallet(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Rabby%20Mobile%20Wallet(iOS)_en-us.pdf)
 - [KuCoin_Web3_Wallet(Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20KuCoin_Web3_Wallet(Android)_en-us.pdf)
 - [KuCoin_Web3_Wallet(iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20KuCoin_Web3_Wallet(iOS)_en-us.pdf)
 - [OKX Web3 Wallet Statement Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20OKX%20Web3%20Wallet%20Statement_en-us.pdf)
