@@ -15,6 +15,8 @@ Some open security audit reports of SlowMist.
 - [TON Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20TON_en-us.pdf)
 - [Bitlayer L2 Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Bitlayer-l2.pdf)
 - [Bitlayer L2 System Contracts Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Bitlayer-system-contracts.pdf)
+- [morph-l2_go-ethereum - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/morph-l2_go-ethereum%20-%20SlowMist%20Audit%20Report.pdf)
+- [morph-l2_tendermint - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/morph-l2_tendermint%20-%20SlowMist%20Audit%20Report.pdf)
 
 ### MetaMask Snaps security audit open reports
 - [web3-name-snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20web3-name-snap_en-us.pdf)
@@ -208,3 +210,4 @@ Some open security audit reports of SlowMist.
 - [Doubler Lite Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Doubler%20Lite.pdf)
 - [Kayak-UniswapV3-Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Kayak-UniswapV3-Contract.pdf)
 - [Partyicons NFT Assets Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Partyicons%20-%20NFT%20Assets%20-%20SlowMist%20Audit%20Report.pdf)
+- [Morphl2 - LRTDepositV1 - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Morphl2%20-%20LRTDepositV1%20-%20SlowMist%20Audit%20Report.pdf)
