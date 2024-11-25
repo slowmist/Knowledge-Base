@@ -216,3 +216,4 @@ Some open security audit reports of SlowMist.
 - [Partyicons NFT Assets Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Partyicons%20-%20NFT%20Assets%20-%20SlowMist%20Audit%20Report.pdf)
 - [Morphl2 - LRTDepositV1 Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Morphl2%20-%20LRTDepositV1%20-%20SlowMist%20Audit%20Report.pdf)
 - [OB ReturnCabin Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/OB%20ReturnCabin%20-%20SlowMist%20Audit%20Report.pdf)
+- [Iloop-contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Iloop-contract%20-%20SlowMist%20Audit%20Report.pdf)
