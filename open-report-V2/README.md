@@ -17,6 +17,7 @@ Some open security audit reports of SlowMist.
 - [Bitlayer L2 System Contracts Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Bitlayer-system-contracts.pdf)
 - [morph-l2_go-ethereum - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/morph-l2_go-ethereum%20-%20SlowMist%20Audit%20Report.pdf)
 - [morph-l2_tendermint - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/morph-l2_tendermint%20-%20SlowMist%20Audit%20Report.pdf)
+- [U2U Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/go-u2u%20-%20SlowMist%20Audit%20Report.pdf)
 
 ### MetaMask Snaps security audit open reports
 - [web3-name-snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20web3-name-snap_en-us.pdf)
