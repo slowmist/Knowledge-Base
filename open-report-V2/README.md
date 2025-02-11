@@ -2,6 +2,7 @@
 Some open security audit reports of SlowMist.
 
 ### Blockchain security audit open reports
+- [Flock FL Alliance Client Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/Flock%20-%20FL%20Alliance%20Client%20-%20SlowMist%20Audit%20Report.pdf)
 - [OKX ORD Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20ord_en-us.pdf)
 - [Fusotao Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Fusotao_en-us.pdf)
 - [DDAM Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20DDAM_en-us.pdf)
@@ -70,6 +71,7 @@ Some open security audit reports of SlowMist.
 - [Zecrey Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
+- [FLock Phase2 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Flock%20Phase2%20-%20SlowMist%20Audit%20Report.pdf)
 - [FLock Phase1 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/FLock%20Phase1%20-%20SlowMist%20Audit%20Report.pdf)
 - [Story Pre Deposit Vault Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Story%20Pre%20Deposit%20Vault%20-%20SlowMist%20Audit%20Report.pdf)
 - [Prosper Upgraded Token Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Prosper%20Upgraded%20Token%20-%20SlowMist%20Audit%20Report.pdf)
