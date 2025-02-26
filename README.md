@@ -26,15 +26,6 @@ Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum
 * [慢雾区块链安全科普](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU4ODQ3NTM2OA==&action=getalbum&album_id=1378673890158936067)
 * [Papers of SlowMist](https://github.com/slowmist/papers)
 * [Public topic of SlowMist HackingTime](https://github.com/slowmist/HackingTime_Public)
-* [Ontology Triones Service Node security checklist](https://github.com/slowmist/Ontology-Triones-Service-Node-security-checklist)
-* [vechain core nodes security checklist](https://github.com/slowmist/vechain-core-nodes-security-checklist)
-* [EOS BP nodes security checklist](https://github.com/slowmist/eos-bp-nodes-security-checklist)
-* [EOS BP nodes security audit](https://github.com/slowmist/eos-bp-nodes-security-checklist/blob/master/audit.md)
-* [EOS smart contract security best practices](https://github.com/slowmist/eos-smart-contract-security-best-practices)
-* [EOS 天眼(EOS MonKit)](https://eos.slowmist.io/)
-* [FireWall.X — 强大的 EOS 智能合约防火墙](https://firewallx.io/)
-* [FireWall.X GitHub](https://github.com/firewall-x)
-* [Open of SlowMist](https://github.com/slowmist/)
 
 ### :fire: False Top-up
 慢雾安全团队依靠多年的区块链安全行业经验，深入研究了各种针对数字货币交易平台充值入账的攻击手法（假充值），并对各类假充值的攻击手法进行披露，为交易平台提供安全检查服务，保障交易平台的充值入账安全。
@@ -71,7 +62,25 @@ Some open security audit reports of SlowMist.
 Some open MistTrack investigation reports of SlowMist.
 - [Open MistTrack Investigation Report](./open-misttrack-report/README.md)
 
-## 思维导图
+## 安全实践指南
+实践永远最踏实/Practice is always the most reliable.
+
+* [Web3 项目安全实践要求/Web3 Project Security Practice Requirements](https://github.com/slowmist/Web3-Project-Security-Practice-Requirements)
+* [慢雾(SlowMist)智能合约审计技能树/SlowMist Learning Roadmap for Becoming a Smart Contract Auditor](https://github.com/slowmist/SlowMist-Learning-Roadmap-for-Becoming-a-Smart-Contract-Auditor)
+* [Solana Smart Contract Security Best Practices](https://github.com/slowmist/solana-smart-contract-security-best-practices)
+* [Account Abstraction Security Audit Checklist](https://github.com/slowmist/Account-Abstraction-Security-Audit-Checklist)
+* [APTOS MOVE 智能合约审计入门](https://github.com/slowmist/APTOS-MOVE-Smart-Contract-Auditing-Primer)
+* [Toncoin 智能合约安全最佳实践/Toncoin Smart Contract Security Best Practices](https://github.com/slowmist/Toncoin-Smart-Contract-Security-Best-Practices)
+* [SUI Move 合约审计方法/SUI Move Contract Audit Method](https://github.com/slowmist/Sui-MOVE-Smart-Contract-Auditing-Primer)
+* [基于区块链的加密货币安全审计指南/Blockchain-Based Cryptocurrency Security Audit Guide](https://github.com/slowmist/Cryptocurrency-Security-Audit-Guide)
+* [AAVE V2 安全审计手册](https://github.com/slowmist/AAVE-V2-Security-Audit-Checklist)
+* [Ontology Triones Service Node security checklist](https://github.com/slowmist/Ontology-Triones-Service-Node-security-checklist)
+* [vechain core nodes security checklist](https://github.com/slowmist/vechain-core-nodes-security-checklist)
+* [EOS BP nodes security checklist](https://github.com/slowmist/eos-bp-nodes-security-checklist)
+* [EOS BP nodes security audit](https://github.com/slowmist/eos-bp-nodes-security-checklist/blob/master/audit.md)
+* [EOS smart contract security best practices](https://github.com/slowmist/eos-smart-contract-security-best-practices)
+
+## 一些思维导图
 Some mind maps of blockchain security.
 
 * [DApp Attack & Defense](./mindmaps/dapp_attack_defense.png)
@@ -84,3 +93,7 @@ Other awesome collections.
 * [Hacked](https://hacked.slowmist.io)
 * [Awesome Blockchain Bug Bounty](https://github.com/slowmist/awesome-blockchain-bug-bounty)
 * [慢雾科普：区块链安全入门笔记](./blockchain_security_study_notes/README.md)
+* [EOS 天眼(EOS MonKit)](https://eos.slowmist.io/)
+* [FireWall.X — 强大的 EOS 智能合约防火墙](https://firewallx.io/)
+* [FireWall.X GitHub](https://github.com/firewall-x)
+* [Open of SlowMist](https://github.com/slowmist/)
