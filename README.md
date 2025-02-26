@@ -40,9 +40,22 @@ Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum
 * [Filecoin 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [NEM 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [Solana 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [波场代币假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+* [Tron 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [Terra 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 * [BTC/Dogcoin/LTC 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+* [Toncoin 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+* [Avax 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+
+### 零知识证明与密码学漏洞研究
+* [zk-SNARK Groth16 详解](https://github.com/slowmist/zkSnark-Groth16-Getting-Started)
+* [Cairo 0 安全审计实践指南](https://github.com/slowmist/Cairo0-Security-Audit-Practice-Guide)
+* [探讨 Poseidon 延展性攻击](https://mp.weixin.qq.com/s/tdJ_noFvkPvCFpMNh84_Kg)
+* [Fiat-Shamir 冰心漏洞解析](https://mp.weixin.qq.com/s/NjYUPlKu3givhlPip20R4g)
+* [Ed25519 实现原理与可延展性问题](https://mp.weixin.qq.com/s/m5VWfPT-5gfXiUqBeOF_aQ)
+* [扭曲攻击漏洞解析](https://mp.weixin.qq.com/s/Ivraz1ejoe9UiYYbeQSRoA)
+* [Groth16 证明延展性攻击原理及实现](https://mp.weixin.qq.com/s/ge3QJOdIqrDiRMBgh6BBeg)
+* [Circom 验证合约输入假名漏洞](https://mp.weixin.qq.com/s/gzgBxlwBhEsRBAbOuKUY_w)
+* [盘点 ZKP 主流实现方案技术特点](https://mp.weixin.qq.com/s/vEf0rpGRqiJYGxpV6mtIMA)
 
 ## 翻译资料
 Some translated blockchain security documents.
