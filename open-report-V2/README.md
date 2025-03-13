@@ -233,3 +233,4 @@ Some open security audit reports of SlowMist.
 - [Stone Bera Vault Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Stone%20Bera%20Vault%20-%20SlowMist%20Audit%20Report.pdf)
 - [SBTC Bera Vault Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SBTC%20Bera%20Vault%20-%20SlowMist%20Audit%20Report.pdf)
 - [Webera Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Webera%20-%20SlowMist%20Audit%20Report.pdf)
+- [EureXa Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/EureXa%20-%20SlowMist%20Audit%20Report.pdf)
