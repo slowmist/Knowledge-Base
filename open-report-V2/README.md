@@ -71,6 +71,7 @@ Some open security audit reports of SlowMist.
 - [Zecrey Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
+- [Prosper Staking Pool Phase2 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Prosper%20Staking%20Pool%20Phase2%20-%20SlowMist%20Audit%20Report.pdf)
 - [FLock Phase2 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Flock%20Phase2%20-%20SlowMist%20Audit%20Report.pdf)
 - [FLock Phase1 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/FLock%20Phase1%20-%20SlowMist%20Audit%20Report.pdf)
 - [Story Pre Deposit Vault Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Story%20Pre%20Deposit%20Vault%20-%20SlowMist%20Audit%20Report.pdf)
