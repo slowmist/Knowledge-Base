@@ -237,3 +237,6 @@ Some open security audit reports of SlowMist.
 - [SBTC Bera Vault Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SBTC%20Bera%20Vault%20-%20SlowMist%20Audit%20Report.pdf)
 - [Webera Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Webera%20-%20SlowMist%20Audit%20Report.pdf)
 - [EureXa Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/EureXa%20-%20SlowMist%20Audit%20Report.pdf)
+- [particle-solana-mpl-bank Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/particle-solana-mpl-bank%20-%20SlowMist%20Audit%20Report.pdf)
+- [particle-universal-account-solana Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/particle-universal-account-solana%20-%20SlowMist%20Audit%20Report.pdf)
+- [ParticleOFT Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/ParticleOFT%20-%20SlowMist%20Audit%20Report.pdf)
