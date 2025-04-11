@@ -49,6 +49,7 @@ Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum
 * [Avax 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 
 ### 零知识证明与密码学漏洞研究
+* [揭秘以太坊 Vanity 生成器 Profanity 私钥破解漏洞](https://mp.weixin.qq.com/s/jMNWv2YsU9Y1oU1NWXVlMQ)
 * [zk-SNARK Groth16 详解](https://github.com/slowmist/zkSnark-Groth16-Getting-Started)
 * [Cairo 0 安全审计实践指南](https://github.com/slowmist/Cairo0-Security-Audit-Practice-Guide)
 * [探讨 Poseidon 延展性攻击](https://mp.weixin.qq.com/s/tdJ_noFvkPvCFpMNh84_Kg)
@@ -58,6 +59,7 @@ Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum
 * [Groth16 证明延展性攻击原理及实现](https://mp.weixin.qq.com/s/ge3QJOdIqrDiRMBgh6BBeg)
 * [Circom 验证合约输入假名漏洞](https://mp.weixin.qq.com/s/gzgBxlwBhEsRBAbOuKUY_w)
 * [盘点 ZKP 主流实现方案技术特点](https://mp.weixin.qq.com/s/vEf0rpGRqiJYGxpV6mtIMA)
+* [ECDSA 签名中的私钥泄露：elliptic 库畸形输入漏洞分析](https://mp.weixin.qq.com/s/-JpS5Qg7NYYPgeic-7Y5VQ)
 
 ## 翻译资料
 Some translated blockchain security documents.
