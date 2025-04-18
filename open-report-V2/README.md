@@ -19,6 +19,7 @@ Some open security audit reports of SlowMist.
 - [morph-l2_go-ethereum - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/morph-l2_go-ethereum%20-%20SlowMist%20Audit%20Report.pdf)
 - [morph-l2_tendermint - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/morph-l2_tendermint%20-%20SlowMist%20Audit%20Report.pdf)
 - [U2U Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/go-u2u%20-%20SlowMist%20Audit%20Report.pdf)
+- [BFC Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/bfc%20node%20(Rust)%20-%20SlowMist%20Audit%20Report.pdf)
 
 ### MetaMask Snaps security audit open reports
 - [web3-name-snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20web3-name-snap_en-us.pdf)
@@ -242,3 +243,4 @@ Some open security audit reports of SlowMist.
 - [particle-solana-mpl-bank Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/particle-solana-mpl-bank%20-%20SlowMist%20Audit%20Report.pdf)
 - [particle-universal-account-solana Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/particle-universal-account-solana%20-%20SlowMist%20Audit%20Report.pdf)
 - [ParticleOFT Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/ParticleOFT%20-%20SlowMist%20Audit%20Report.pdf)
+- [BFC Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/bfc%20smart%20contracts%20-%20SlowMist%20Audit%20Report.pdf)
