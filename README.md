@@ -3,7 +3,9 @@
 `慢雾科技`：https://www.slowmist.com
 `慢雾区`：https://www.slowmist.io
 
-`我们在努力成为区块链世界的“安全基础设施”。未知的才是有趣的，已知的如果不分享将会变得索然无味。`
+`我们在努力成为区块链世界的“安全基础设施”。未知的才是有趣的，已知的如果不分享将会变得索然无味。`<br>
+`We strive to become the "security infrastructure" of the blockchain world.
+The unknown is what makes things exciting — what’s already known becomes dull if not shared.`
 
 ## 目录
 - [Knowledge Base 慢雾安全团队知识库](#knowledge-base-慢雾安全团队知识库)
@@ -30,7 +32,8 @@ Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum
 * [Public topic of SlowMist HackingTime](https://github.com/slowmist/HackingTime_Public)
 
 ### :fire: False Top-up
-慢雾安全团队依靠多年的区块链安全行业经验，深入研究了各种针对数字货币交易平台充值入账的攻击手法（假充值），并对各类假充值的攻击手法进行披露，为交易平台提供安全检查服务，保障交易平台的充值入账安全。
+慢雾安全团队依靠多年的区块链安全行业经验，深入研究了各种针对数字货币交易平台充值入账的攻击手法（假充值），并对各类假充值的攻击手法进行披露，为交易平台提供安全检查服务，保障交易平台的充值入账安全。<br>
+Backed by years of experience in blockchain security, the SlowMist security team has conducted in-depth research into various attack methods targeting digital asset exchanges — particularly "false Top-up" exploits. We have systematically disclosed these techniques and provide security auditing services to help exchanges safeguard their deposit systems.
 * [USDT 假充值手法](https://mp.weixin.qq.com/s/CtAKLNe0MOKDyUFaod4_hw)
 * [EOS 假充值手法](https://mp.weixin.qq.com/s/fKINfZLW65LYaD4qO-21nA)
 * [XRP 假充值手法](https://developers.ripple.com/partial-payments.html)
@@ -49,6 +52,7 @@ Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum
 * [Avax 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 
 ### 零知识证明与密码学漏洞研究
+Zero-knowledge proofs and cryptographic vulnerability research.
 * [揭秘以太坊 Vanity 生成器 Profanity 私钥破解漏洞](https://mp.weixin.qq.com/s/jMNWv2YsU9Y1oU1NWXVlMQ)
 * [zk-SNARK Groth16 详解](https://github.com/slowmist/zkSnark-Groth16-Getting-Started)
 * [Cairo 0 安全审计实践指南](https://github.com/slowmist/Cairo0-Security-Audit-Practice-Guide)
