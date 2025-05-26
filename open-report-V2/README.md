@@ -33,6 +33,7 @@ Some open security audit reports of SlowMist.
 
 
 ### Blockchain application security audit open reports
+- [Haust Wallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20Haust%20Wallet_en_us.pdf)
 - [77wallet (Android) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/77wallet%20(Android)%20-%20SlowMist%20Audit%20Report_en-us.pdf)
 - [77wallet (iOS) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/77wallet%20(iOS)%20-%20SlowMist%20Audit%20Report_en-us.pdf)
 - [OneKey Classic 1s Hardware Wallet Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20OneKey%20Classic%201s_en-us.pdf)
