@@ -253,3 +253,5 @@ Some open security audit reports of SlowMist.
 - [ParticleOFT Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/ParticleOFT%20-%20SlowMist%20Audit%20Report.pdf)
 - [BFC Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/bfc%20smart%20contracts%20-%20SlowMist%20Audit%20Report.pdf)
 - [Sigma Money - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SigmaMoney%20-%20SlowMist%20Audit%20Report.pdf)
+- [Trusta AI OFT - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Trusta%20AI%20OFT%20-%20SlowMist%20Audit%20Report.pdf)
+- [TrustaOFT TA token - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/TrustaOFT%20TA%20token%20-%20SlowMist%20Audit%20Report.pdf)
