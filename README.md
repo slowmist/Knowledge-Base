@@ -22,8 +22,9 @@ The unknown is what makes things exciting — what’s already known becomes dul
 ## 区块链生态安全研究
 Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum`, `EOS` and other top blockchains.
 
-* [:fire: Cryptocurrency Security Solution](https://github.com/slowmist/cryptocurrency-security)
+* [:fire: 加密资产追踪手册（Crypto Asset Tracing Handbook）](https://github.com/slowmist/Crypto-Asset-Tracing-Handbook)
 * [:fire: Blockchain dark forest selfguard handbook(黑手册)](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)
+* [:fire: Cryptocurrency Security Solution](https://github.com/slowmist/cryptocurrency-security)
 * [:fire: Collection of Security Research in English](./security-research/README.md)
 * [慢雾安全技术研究合集](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU4ODQ3NTM2OA==&action=getalbum&album_id=1378653641065857025)
 * [慢雾 AML 分析报告](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU4ODQ3NTM2OA==&action=getalbum&album_id=1983440310995156993)
