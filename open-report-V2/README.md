@@ -257,3 +257,4 @@ Some open security audit reports of SlowMist.
 - [Trusta AI OFT Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Trusta%20AI%20OFT%20-%20SlowMist%20Audit%20Report.pdf)
 - [TrustaOFT TA token Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/TrustaOFT%20TA%20token%20-%20SlowMist%20Audit%20Report.pdf)
 - [Cicada Protocol rMner Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Cicada%20Protocol%20rMner%20-%20SlowMist%20Audit%20Report.pdf)
+- [Yeap Finance Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/aptos-smart-contract/yeap-finance%20-%20SlowMist%20Audit%20Report.pdf)
