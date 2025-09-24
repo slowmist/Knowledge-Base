@@ -2,6 +2,7 @@
 Some open security audit reports of SlowMist.
 
 ### Blockchain security audit open reports
+- [Jovay Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/Jovay%20-%20SlowMist%20Audit%20Report.pdf)
 - [Flock FL Alliance Client Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/Flock%20-%20FL%20Alliance%20Client%20-%20SlowMist%20Audit%20Report.pdf)
 - [OKX ORD Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20OKX/SlowMist%20Audit%20Report%20-%20ord_en-us.pdf)
 - [Fusotao Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain/SlowMist%20Audit%20Report%20-%20Fusotao_en-us.pdf)
@@ -76,6 +77,7 @@ Some open security audit reports of SlowMist.
 - [Zecrey Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
+- [Jovay Contracts Phase2 Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Jovay%20Contracts%20Phase2%20-%20SlowMist%20Audit%20Report.pdf)
 - [Sunperp Dex Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Sunperp%20Dex%20-%20SlowMist%20Audit%20Report.pdf)
 - [BitFi BFBTC Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/BitFi%20-%20BFBTC%20-%20SlowMist%20Audit%20Report.pdf)
 - [Bosera USD Money Market ETF Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20Bosera%20USD%20Money%20Market%20ETF.pdf)
