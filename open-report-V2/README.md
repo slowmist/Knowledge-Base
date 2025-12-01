@@ -77,6 +77,7 @@ Some open security audit reports of SlowMist.
 - [Zecrey Wallet(Browser-Extension) Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20zecrey-chrome-extension-wallet_en-us.pdf)
 
 ### Smart contract security audit open reports
+- [Monster Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Monster(MON)%20-%20SlowMist%20Audit%20Report.pdf)
 - [USiC Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/USiC%20-%20SlowMist%20Audit%20Report.pdf)
 - [Mu Protocol Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Mu%20Protocol%20-%20SlowMist%20Audit%20Report.pdf)
 - [Haust Token Vesting Smart Contract Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/Haust%20Token%20Vesting%20-%20SlowMist%20Audit%20Report.pdf)
