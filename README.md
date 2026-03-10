@@ -3,16 +3,16 @@
 `慢雾科技`：https://www.slowmist.com
 `慢雾区`：https://www.slowmist.io
 
-`我们在努力成为区块链世界的“安全基础设施”。未知的才是有趣的，已知的如果不分享将会变得索然无味。`<br>
-`We strive to become the "security infrastructure" of the blockchain world.
-The unknown is what makes things exciting — what’s already known becomes dull if not shared.`
+> 我们在努力成为区块链世界的“安全基础设施”。未知的才是有趣的，已知的如果不分享将会变得索然无味。<br>
+> We strive to become the "security infrastructure" of the blockchain world. The unknown is what makes things exciting — what's already known becomes dull if not shared.
 
 ## 目录
 - [Knowledge Base 慢雾安全团队知识库](#knowledge-base-慢雾安全团队知识库)
   - [目录](#目录)
   - [区块链生态安全研究](#区块链生态安全研究)
-    - [假充值系列](#fire-false-top-up)
+    - [假充值系列](#false-top-up)
     - [零知识证明与密码学漏洞研究](#零知识证明与密码学漏洞研究)
+  - [AI 安全研究](ai-安全研究)
   - [翻译资料](#翻译资料)
   - [开放报告](#开放报告)
   - [安全实践指南](#安全实践指南)
@@ -32,7 +32,7 @@ Blockchain ecological security research, include: `Bitcoin`, `Monero`, `Ethereum
 * [Papers of SlowMist](https://github.com/slowmist/papers)
 * [Public topic of SlowMist HackingTime](https://github.com/slowmist/HackingTime_Public)
 
-### :fire: False Top-up
+### False Top-up
 慢雾安全团队依靠多年的区块链安全行业经验，深入研究了各种针对数字货币交易平台充值入账的攻击手法（假充值），并对各类假充值的攻击手法进行披露，为交易平台提供安全检查服务，保障交易平台的充值入账安全。<br>
 Backed by years of experience in blockchain security, the SlowMist security team has conducted in-depth research into various attack methods targeting digital asset exchanges — particularly "false Top-up" exploits. We have systematically disclosed these techniques and provide security auditing services to help exchanges safeguard their deposit systems.
 * [USDT 假充值手法](https://mp.weixin.qq.com/s/CtAKLNe0MOKDyUFaod4_hw)
@@ -42,15 +42,7 @@ Backed by years of experience in blockchain security, the SlowMist security team
 * [比特币 RBF 假充值手法](https://mp.weixin.qq.com/s/OYi2JDbAoLEdg8VDouqbIg)
 * [XMR 锁定转账手法](https://mp.weixin.qq.com/s/Kt-G_bYbuUMIbSGSnyYXLA)
 * [以太坊假充值手法](https://t.zsxq.com/YNbMFIa)
-* [IOST 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [Filecoin 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [NEM 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [Solana 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [Tron 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [Terra 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [BTC/Dogcoin/LTC 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [Toncoin 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
-* [Avax 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
+* [Solana/Tron/Terra/BTC/Dogcoin/LTC/Toncoin/Avax/IOST/Filecoin/NEM 假充值手法-未公开](https://www.slowmist.com/?lang=zh#products)
 
 ### 零知识证明与密码学漏洞研究
 Zero-knowledge proofs and cryptographic vulnerability research.
@@ -65,6 +57,14 @@ Zero-knowledge proofs and cryptographic vulnerability research.
 * [Circom 验证合约输入假名漏洞](https://mp.weixin.qq.com/s/gzgBxlwBhEsRBAbOuKUY_w)
 * [盘点 ZKP 主流实现方案技术特点](https://mp.weixin.qq.com/s/vEf0rpGRqiJYGxpV6mtIMA)
 * [ECDSA 签名中的私钥泄露：elliptic 库畸形输入漏洞分析](https://mp.weixin.qq.com/s/-JpS5Qg7NYYPgeic-7Y5VQ)
+
+## AI 安全研究
+Security research related to AI: AI for Security and Security for AI.
+* :fire:[OpenClaw 极简安全实践指南 (Security Practice Guide)](https://github.com/slowmist/openclaw-security-practice-guide)
+* :fire:[MistTrack Skills](https://github.com/slowmist/misttrack-skills)
+* [MCP 安全检查清单](https://github.com/slowmist/MCP-Security-Checklist)
+* [MasterMCP: showcase various potential security attack vectors against MCP](https://github.com/slowmist/MasterMCP)
+* [MistTrack MCP Server](https://github.com/slowmist/MistTrackMCP)
 
 ## 翻译资料
 Some translated blockchain security documents.
