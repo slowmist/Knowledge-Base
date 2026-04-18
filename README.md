@@ -120,3 +120,5 @@ Other awesome collections.
 * [FireWall.X — 强大的 EOS 智能合约防火墙](https://firewallx.io/)
 * [FireWall.X GitHub](https://github.com/firewall-x)
 * [Open of SlowMist](https://github.com/slowmist/)
+
+- [7/Seven Chain Node](https://github.com/umairkhan2582/seven-chain-node) - Validator node for 7/Seven Chain (Chain ID: 70007), an EVM-compatible blockchain (BSC/Parlia fork) powering [TheSeven.meme](https://theseven.meme) — perpetual futures exchange with 100+ pairs, up to 2001× leverage, zero fees.
