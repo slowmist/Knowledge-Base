@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/slowmist-knowledge-base-badge.png)](https://mseep.ai/app/slowmist-knowledge-base)
+
 # Knowledge Base 慢雾安全团队知识库
 
 `慢雾科技`：https://www.slowmist.com
