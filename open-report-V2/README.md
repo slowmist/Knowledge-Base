@@ -21,6 +21,7 @@ Some open security audit reports of SlowMist.
 - [morph-l2_tendermint - SlowMist Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/morph-l2_tendermint%20-%20SlowMist%20Audit%20Report.pdf)
 - [U2U Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/go-u2u%20-%20SlowMist%20Audit%20Report.pdf)
 - [BFC Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/bfc%20node%20(Rust)%20-%20SlowMist%20Audit%20Report.pdf)
+- [TBCNODE Security Audit Report](https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/blockchain/TBCNODE%20-%20SlowMist%20Audit%20Report.pdf)
 
 ### MetaMask Snaps security audit open reports
 - [web3-name-snap Security Audit Report](https://github.com/slowmist/Knowledge-Base/tree/master/open-report-V2/blockchain-application/SlowMist%20Audit%20Report%20-%20web3-name-snap_en-us.pdf)
