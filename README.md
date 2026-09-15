@@ -120,3 +120,5 @@ Other awesome collections.
 * [FireWall.X — 强大的 EOS 智能合约防火墙](https://firewallx.io/)
 * [FireWall.X GitHub](https://github.com/firewall-x)
 * [Open of SlowMist](https://github.com/slowmist/)
+* [HostDeFi](https://hostdefi.com) - Free token-safety scanner: A+–F grades from on-chain checks (mint/freeze authority, liquidity depth, holder concentration, contract flags) across Solana and 8 EVM chains.
+
